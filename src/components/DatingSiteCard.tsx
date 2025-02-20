@@ -9,6 +9,7 @@ interface DatingSiteCardProps {
   affiliateLink: string;
   users: string;
   mainFeature: string;
+  logoUrl?: string;
 }
 
 const DatingSiteCard = ({
@@ -18,6 +19,7 @@ const DatingSiteCard = ({
   affiliateLink,
   users,
   mainFeature,
+  logoUrl,
 }: DatingSiteCardProps) => {
   return (
     <motion.div
@@ -32,6 +34,12 @@ const DatingSiteCard = ({
           <span className="text-sm font-medium text-romance-500">{rating}/5</span>
         </div>
       </div>
+
+      {logoUrl && (
+        <div className="mb-4 flex justify-center">
+          <img src={logoUrl} alt={name} className="h-16 w-auto object-contain" />
+        </div>
+      )}
 
       <h3 className="mb-2 text-xl font-semibold text-gray-900">{name}</h3>
       <p className="mb-4 text-sm text-gray-600">{description}</p>
