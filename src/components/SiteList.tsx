@@ -6,11 +6,11 @@ const SiteList = () => {
     {
       name: "JM Date",
       description:
-        "Une plateforme de rencontre innovante qui met l'accent sur des connexions authentiques et des relations significatives.",
+        "Une plateforme de rencontres coquines qui met l'accent sur des connexions discrètes et des rencontres passionnées.",
       rating: 4.5,
       affiliateLink: "https://k.related-dating.com/?abc=2ab0b5837e6c2796&xa=n&acme=wid.85911&media=seo&tpls=3&v=sexy",
       users: "+1 million d'utilisateurs",
-      mainFeature: "Matchmaking intelligent",
+      mainFeature: "Rencontres adultes",
     },
   ];
 

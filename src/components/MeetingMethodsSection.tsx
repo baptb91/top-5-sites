@@ -5,19 +5,19 @@ import { Heart } from "lucide-react";
 const MeetingMethodsSection = () => {
   const methods = [
     {
-      title: "Sites de Rencontre",
+      title: "Sites Coquins",
       description:
-        "Les plateformes en ligne offrent un moyen pratique et efficace de rencontrer des personnes partageant vos intérêts.",
+        "Les plateformes en ligne offrent un moyen discret et efficace de faire des rencontres pour adultes.",
     },
     {
-      title: "Événements Sociaux",
+      title: "Soirées Privées",
       description:
-        "Participez à des événements locaux, des soirées à thème ou des activités de groupe pour rencontrer des personnes naturellement.",
+        "Participez à des soirées privées et des événements exclusifs pour faire des rencontres sans engagement.",
     },
     {
-      title: "Activités de Loisirs",
+      title: "Applications Spécialisées",
       description:
-        "Rejoignez des clubs ou des groupes d'activités qui vous passionnent pour rencontrer des personnes ayant les mêmes centres d'intérêt.",
+        "Utilisez des applications dédiées aux rencontres coquines pour trouver des partenaires partageant vos envies.",
     },
   ];
 
@@ -30,7 +30,7 @@ const MeetingMethodsSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-4 text-3xl font-bold text-gray-900"
         >
-          Comment Rencontrer des Femmes
+          Comment Faire des Rencontres
         </motion.h2>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

@@ -23,11 +23,11 @@ const Index = () => {
               transition={{ duration: 0.5 }}
               className="mb-4 text-3xl font-bold text-gray-900"
             >
-              Sites de Rencontre Recommandés
+              Sites de Rencontres Coquines
             </motion.h2>
             <p className="mx-auto max-w-2xl text-gray-600">
-              Découvrez notre sélection des meilleurs sites de rencontre,
-              soigneusement évalués pour vous aider à trouver l'amour.
+              Découvrez notre sélection des meilleurs sites de rencontres pour adultes,
+              soigneusement évalués pour des rencontres passionnées.
             </p>
           </div>
           <SiteList />
