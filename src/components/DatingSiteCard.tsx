@@ -1,5 +1,5 @@
 
-import { Heart, Link, User, Users } from "lucide-react";
+import { Heart, Link, User, Users, Shield, Monitor, Check } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface DatingSiteCardProps {
@@ -9,6 +9,9 @@ interface DatingSiteCardProps {
   affiliateLink: string;
   users: string;
   mainFeature: string;
+  prosList: string[];
+  platform: string;
+  privacy: string;
   logoUrl?: string;
 }
 
@@ -19,6 +22,9 @@ const DatingSiteCard = ({
   affiliateLink,
   users,
   mainFeature,
+  prosList,
+  platform,
+  privacy,
   logoUrl,
 }: DatingSiteCardProps) => {
   return (
@@ -53,6 +59,26 @@ const DatingSiteCard = ({
           <User className="h-4 w-4" />
           <span>{mainFeature}</span>
         </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <Shield className="h-4 w-4" />
+          <span>{privacy}</span>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <Monitor className="h-4 w-4" />
+          <span>{platform}</span>
+        </div>
+      </div>
+
+      <div className="mb-4">
+        <h4 className="mb-2 text-sm font-semibold text-gray-900">Points forts :</h4>
+        <ul className="space-y-1">
+          {prosList.map((pro, index) => (
+            <li key={index} className="flex items-center space-x-2 text-sm text-gray-600">
+              <Check className="h-4 w-4 text-romance-500" />
+              <span>{pro}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <a

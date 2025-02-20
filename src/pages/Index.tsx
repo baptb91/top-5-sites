@@ -3,6 +3,19 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import SiteList from "@/components/SiteList";
 import MeetingMethodsSection from "@/components/MeetingMethodsSection";
+import SeoContent from "@/components/SeoContent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Top 5 des Meilleurs Sites de Rencontres Coquines 2024",
+  description: "Découvrez notre classement des meilleurs sites de rencontres pour adultes. Guide complet, avis et conseils pour des rencontres discrètes et passionnées.",
+  keywords: "rencontres coquines, sites de rencontre, rencontres adultes, rencontres discrètes",
+  openGraph: {
+    title: "Top 5 des Meilleurs Sites de Rencontres Coquines 2024",
+    description: "Guide complet des meilleurs sites de rencontres pour adultes",
+    type: "website",
+  }
+};
 
 const Index = () => {
   return (
@@ -34,6 +47,7 @@ const Index = () => {
         </section>
 
         <MeetingMethodsSection />
+        <SeoContent />
       </div>
     </motion.div>
   );
