@@ -1,24 +1,45 @@
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, Shield, MessageCircle, CalendarCheck, MapPin, Lock } from "lucide-react";
 
 const MeetingMethodsSection = () => {
   const methods = [
     {
-      title: "Sites Coquins",
+      title: "Messagerie Sécurisée",
       description:
-        "Les plateformes en ligne offrent un moyen discret et efficace de faire des rencontres pour adultes.",
+        "Échangez en toute confiance grâce aux systèmes de messagerie cryptée. Envoyez des messages, photos et vidéos en privé.",
+      icon: MessageCircle
     },
     {
-      title: "Soirées Privées",
+      title: "Rencontres Locales",
       description:
-        "Participez à des soirées privées et des événements exclusifs pour faire des rencontres sans engagement.",
+        "Trouvez des partenaires près de chez vous grâce à la géolocalisation intelligente et aux suggestions personnalisées.",
+      icon: MapPin
     },
     {
-      title: "Applications Spécialisées",
+      title: "Événements Privés",
       description:
-        "Utilisez des applications dédiées aux rencontres coquines pour trouver des partenaires partageant vos envies.",
+        "Participez à des soirées exclusives et des rencontres organisées entre membres sélectionnés.",
+      icon: CalendarCheck
     },
+    {
+      title: "Confidentialité Garantie",
+      description:
+        "Votre vie privée est notre priorité. Profitez de fonctionnalités avancées pour protéger votre identité.",
+      icon: Lock
+    },
+    {
+      title: "Profils Vérifiés",
+      description:
+        "Interagissez uniquement avec des membres dont les profils ont été vérifiés par nos équipes.",
+      icon: Shield
+    },
+    {
+      title: "Compatibilité Avancée",
+      description:
+        "Notre système de matching vous propose les profils les plus compatibles avec vos critères.",
+      icon: Heart
+    }
   ];
 
   return (
@@ -30,8 +51,11 @@ const MeetingMethodsSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-4 text-3xl font-bold text-gray-900"
         >
-          Comment Faire des Rencontres
+          Fonctionnalités Essentielles pour vos Rencontres
         </motion.h2>
+        <p className="mx-auto max-w-2xl text-gray-600">
+          Découvrez les outils et méthodes qui font le succès de nos sites partenaires
+        </p>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {methods.map((method, index) => (
@@ -43,7 +67,7 @@ const MeetingMethodsSection = () => {
             className="rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
           >
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-romance-100">
-              <Heart className="h-6 w-6 text-romance-500" />
+              {React.createElement(method.icon, { className: "h-6 w-6 text-romance-500" })}
             </div>
             <h3 className="mb-2 text-xl font-semibold text-gray-900">
               {method.title}
