@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Star, CheckCircle, Users, Shield, Clock, ThumbsUp } from "lucide-react";
 
@@ -58,6 +57,90 @@ const SiteList = () => {
       },
       affiliateLink: "https://k.related-dating.com/?abc=2ab0b5837e6c2796&xa=n&acme=wid.85911&media=seo&tpls=3&v=sexy",
       logoUrl: "/lovable-uploads/bf6fe96a-7b07-4b5f-a8e9-61a9977d06ea.png",
+    },
+    {
+      name: "Hot Dates",
+      position: 3,
+      rating: 4.2,
+      description: "La plateforme qui met du piment dans vos soirées !",
+      longDescription: `
+        🌶️ Hot Dates, c'est un peu comme votre meilleur wingman, mais en version digitale ! 
+        Imaginez une plateforme qui comprend vos envies et sait exactement comment vous mettre 
+        en valeur.
+
+        Fini les conversations gênantes et les rendez-vous qui ne mènent nulle part.
+        Ici, tout est fait pour que la magie opère rapidement et naturellement.
+      `,
+      pros: [
+        "Matching intelligent basé sur vos préférences",
+        "Photos HD et vidéos privées",
+        "Chat vocal disponible",
+        "Géolocalisation précise",
+        "Profils certifiés uniquement"
+      ],
+      stats: {
+        users: "+800 000 utilisateurs",
+        success: "82% de satisfaction",
+        response: "Réponse < 3h"
+      },
+      affiliateLink: "https://k.related-dating.com/?abc=2ab0b5837e6c2796&xa=n&acme=wid.85911&media=seo&tpls=3&v=sexy",
+      logoUrl: "/lovable-uploads/ce51fe8e-dfe9-4f07-8311-41a128f4e000.png",
+    },
+    {
+      name: "DateXpress",
+      position: 4,
+      rating: 4.0,
+      description: "Des rencontres rapides pour moments intenses",
+      longDescription: `
+        ⚡ Vous n'avez pas le temps de perdre votre temps ? DateXpress non plus !
+        Cette plateforme est conçue pour ceux qui savent ce qu'ils veulent et n'ont
+        pas peur de le dire.
+
+        C'est un peu comme un speed dating, mais en version 2.0 : 
+        plus rapide, plus efficace, et surtout plus fun !
+      `,
+      pros: [
+        "Système de matching express",
+        "Recherche avancée par critères",
+        "Notifications instantanées",
+        "Confidentialité garantie",
+        "Support réactif 7j/7"
+      ],
+      stats: {
+        users: "+300 000 utilisateurs",
+        success: "75% de matchs actifs",
+        response: "Support 24/7"
+      },
+      affiliateLink: "https://k.related-dating.com/?abc=2ab0b5837e6c2796&xa=n&acme=wid.85911&media=seo&tpls=3&v=sexy",
+      logoUrl: "/lovable-uploads/365ab1bb-4f55-4356-987c-3e75a85f877f.png",
+    },
+    {
+      name: "Love&Play",
+      position: 5,
+      rating: 3.8,
+      description: "L'art de la séduction version moderne",
+      longDescription: `
+        💝 Love&Play, c'est l'endroit où la séduction devient un jeu d'enfant !
+        Fini le stress des rencontres traditionnelles, place à une approche plus
+        ludique et décontractée.
+
+        Pensez à un cocktail parfait : un zeste de fun, une dose de sensualité,
+        et une grande mesure de connexions authentiques. C'est exactement ça !
+      `,
+      pros: [
+        "Interface ludique et intuitive",
+        "Événements thématiques réguliers",
+        "Messagerie multimédia",
+        "Profils détaillés et vérifiés",
+        "Mode découverte gratuit"
+      ],
+      stats: {
+        users: "+250 000 utilisateurs",
+        success: "71% de rencontres réelles",
+        response: "Réponse < 4h"
+      },
+      affiliateLink: "https://k.related-dating.com/?abc=2ab0b5837e6c2796&xa=n&acme=wid.85911&media=seo&tpls=3&v=sexy",
+      logoUrl: "/lovable-uploads/0cf2281f-d919-430e-ac86-f518fb2c0b13.png",
     }
   ];
 
