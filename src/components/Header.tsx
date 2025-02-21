@@ -10,12 +10,12 @@ const Header = () => {
         transition={{ duration: 0.6 }}
         className="relative z-10"
       >
-        <h1 className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
-          Rencontres Coquines
+        <h1 className="mb-6 text-5xl font-bold text-gray-900 sm:text-6xl md:text-7xl">
+          Top 5 Sites de<br />Rencontres Coquines
         </h1>
-        <p className="mx-auto max-w-2xl text-lg text-gray-600">
-          Découvrez les meilleurs sites de rencontres pour adultes. Des rencontres
-          discrètes et sans engagement vous attendent.
+        <p className="mx-auto max-w-2xl text-xl text-gray-600">
+          Le guide ultime des meilleures plateformes pour des rencontres
+          discrètes et sans engagement. Classement 2024 mis à jour.
         </p>
       </motion.div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-romance-50 to-white/0" />

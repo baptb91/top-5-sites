@@ -13,29 +13,39 @@ const Index = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-gradient-to-b from-white to-romance-50"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-8">
         <Header />
         
-        <section className="mb-16">
-          <div className="mb-12 text-center">
+        <section className="mb-20">
+          <div className="mb-16 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="inline-block rounded-full bg-romance-100 px-6 py-2 mb-6"
+            >
+              <span className="text-romance-600 font-semibold">Top 5 - 2024</span>
+            </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-4 text-3xl font-bold text-gray-900"
+              className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl"
             >
-              Sites de Rencontres Coquines
+              Top 5 des Meilleurs Sites de Rencontres Coquines
             </motion.h2>
-            <p className="mx-auto max-w-2xl text-gray-600">
-              Découvrez notre sélection des meilleurs sites de rencontres pour adultes,
-              soigneusement évalués pour des rencontres passionnées.
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Notre sélection exclusive des plateformes les plus performantes pour des rencontres 
+              passionnées et discrètes. Découvrez les sites les mieux notés de 2024.
             </p>
           </div>
           <SiteList />
         </section>
 
-        <MeetingMethodsSection />
-        <SeoContent />
+        <div className="max-w-7xl mx-auto">
+          <MeetingMethodsSection />
+          <SeoContent />
+        </div>
       </div>
     </motion.div>
   );
