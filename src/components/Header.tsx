@@ -15,7 +15,7 @@ const Header = () => {
         </h1>
         <p className="mx-auto max-w-2xl text-xl text-gray-600">
           Le guide ultime des meilleures plateformes pour des rencontres
-          discrètes et sans engagement. Classement 2024 mis à jour.
+          discrètes et sans engagement. Classement mis à jour régulièrement.
         </p>
       </motion.div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-romance-50 to-white/0" />

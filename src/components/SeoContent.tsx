@@ -11,7 +11,7 @@ const SeoContent = () => {
           transition={{ duration: 0.5 }}
           className="prose prose-lg mx-auto max-w-4xl"
         >
-          <h2>Top 5 des Sites de Rencontres Coquines en 2024</h2>
+          <h2>Top 5 des Sites de Rencontres Coquines</h2>
           <p>
             Notre guide complet des cinq meilleures plateformes vous aide à choisir
             le site idéal pour vos rencontres coquines. Que vous recherchiez des
