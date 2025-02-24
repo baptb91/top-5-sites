@@ -11,108 +11,99 @@ const SeoContent = () => {
           transition={{ duration: 0.5 }}
           className="prose prose-lg mx-auto max-w-4xl"
         >
-          <h2>Guide Complet des Sites de Rencontres Coquines</h2>
+          <h2 className="text-3xl font-bold mb-8">Comment choisir un site de rencontre coquine ?</h2>
           
-          <h3>Analyse Détaillée de Chaque Plateforme</h3>
+          <h3 className="text-2xl font-semibold mb-6">Notre Processus d'Évaluation</h3>
+          <p className="mb-6 text-gray-700">
+            Pour vous garantir une expérience de qualité, notre équipe suit une méthodologie rigoureuse :
+          </p>
+          <ul className="space-y-3 mb-8 text-gray-700">
+            <li>Test approfondi avec des profils réels (hommes entre 30 et 50 ans)</li>
+            <li>Vérification stricte de la fiabilité (modération, détection des faux profils)</li>
+            <li>Contrôle des systèmes de paiement (sécurité, cryptage, options disponibles)</li>
+            <li>Analyse du taux d'activité des membres (connexions hebdomadaires)</li>
+            <li>Évaluation complète des fonctionnalités (chat, photos privées, événements)</li>
+            <li>Transparence des tarifs et des conditions d'utilisation</li>
+          </ul>
+
+          <h3 className="text-2xl font-semibold mb-6">La Rencontre Coquine en Ligne : Sûre et Efficace</h3>
+          <p className="mb-6 text-gray-700">
+            Le monde des rencontres coquines s'est largement digitalisé, offrant de nouvelles opportunités 
+            pour des rencontres discrètes et passionnées. Les plateformes spécialisées sont devenues le moyen 
+            privilégié pour faire des rencontres adaptées à vos envies, en toute confidentialité.
+          </p>
+
+          <h3 className="text-2xl font-semibold mb-6">Avantages des Sites de Rencontres Coquines</h3>
           
-          <h4>1. Spiice - La Référence des Rencontres Modernes</h4>
-          <p>
-            Spiice se démarque par son interface moderne et son approche innovante des rencontres coquines.
-            La plateforme offre plusieurs avantages uniques :
+          <h4 className="text-xl font-medium mb-4">Discrétion Absolue</h4>
+          <p className="mb-6 text-gray-700">
+            La confidentialité est la priorité numéro une. Les sites que nous recommandons offrent :
           </p>
-          <ul>
-            <li>Système de vérification des profils en deux étapes</li>
-            <li>Messagerie instantanée avec fonction d'envoi de photos sécurisées</li>
-            <li>Mode "invisible" pour naviguer en toute discrétion</li>
-            <li>Plus de 500 000 membres actifs en France</li>
+          <ul className="space-y-3 mb-8 text-gray-700">
+            <li>Modes de navigation privés</li>
+            <li>Options de contrôle de visibilité du profil</li>
+            <li>Paiements discrets et sécurisés</li>
+            <li>Protection maximale des données personnelles</li>
           </ul>
 
-          <h4>2. JM Date - L'Expert des Rencontres Passionnées</h4>
-          <p>
-            JM Date excelle dans les rencontres entre adultes consentants avec une communauté de plus d'un million d'utilisateurs :
+          <h4 className="text-xl font-medium mb-4">Multiplicité des Rencontres</h4>
+          <p className="mb-6 text-gray-700">
+            Contrairement aux rencontres traditionnelles, les plateformes en ligne permettent :
           </p>
-          <ul>
-            <li>Système de matching avancé basé sur les affinités</li>
-            <li>Chat vidéo sécurisé pour faire connaissance</li>
-            <li>Organisation d'événements privés entre membres</li>
-            <li>Protection renforcée des données personnelles</li>
+          <ul className="space-y-3 mb-8 text-gray-700">
+            <li>Des échanges simultanés avec plusieurs personnes</li>
+            <li>Une sélection précise selon vos critères</li>
+            <li>Des rencontres rapides et sans prise de tête</li>
+            <li>Un large choix de profils actifs et vérifiés</li>
           </ul>
 
-          <h4>3. Power Dating - La Solution Rapide et Efficace</h4>
-          <p>
-            Power Dating se concentre sur les rencontres rapides et sans prise de tête :
+          <h4 className="text-xl font-medium mb-4">Rencontres par Affinités</h4>
+          <p className="mb-6 text-gray-700">
+            Les sites modernes permettent de filtrer vos recherches selon :
           </p>
-          <ul>
-            <li>Système de géolocalisation précis</li>
-            <li>Rencontres express organisées dans votre ville</li>
-            <li>Profils détaillés avec photos vérifiées</li>
-            <li>Messages vocaux pour plus d'authenticité</li>
+          <ul className="space-y-3 mb-8 text-gray-700">
+            <li>Vos préférences physiques et critères d'âge</li>
+            <li>Le type de rencontre recherché</li>
+            <li>La localisation géographique</li>
+            <li>Les disponibilités et moments propices</li>
           </ul>
 
-          <h3>Conseils pour Réussir vos Rencontres</h3>
-          
-          <h4>Créer un Profil Attractif</h4>
-          <ul>
-            <li>Utilisez des photos récentes et de qualité</li>
-            <li>Rédigez une description authentique et détaillée</li>
-            <li>Soyez clair sur vos attentes et désirs</li>
-            <li>Mettez en avant votre personnalité unique</li>
-          </ul>
-
-          <h4>Techniques de Premier Contact</h4>
-          <ul>
-            <li>Personnalisez votre message d'approche</li>
-            <li>Mentionnez un détail du profil qui vous a interpellé</li>
-            <li>Posez des questions ouvertes pour engager la conversation</li>
-            <li>Restez courtois et respectueux en toutes circonstances</li>
-          </ul>
-
-          <h4>Organisation des Rencontres</h4>
-          <ul>
-            <li>Privilégiez un premier rendez-vous dans un lieu public</li>
-            <li>Vérifiez la compatibilité des attentes avant la rencontre</li>
-            <li>Fixez des limites claires et respectez-les</li>
-            <li>Gardez toujours une option de sortie</li>
-          </ul>
-
-          <h3>Questions Fréquemment Posées</h3>
-          
-          <h4>Sécurité et Confidentialité</h4>
-          <p>
-            Tous nos sites partenaires utilisent le cryptage SSL pour protéger vos données.
-            Vos informations personnelles ne sont jamais partagées sans votre consentement.
-            Chaque plateforme dispose d'une équipe de modération active 24/7.
+          <h3 className="text-2xl font-semibold mb-6">Sites Gratuits vs Sites Payants</h3>
+          <p className="mb-6 text-gray-700">
+            Notre expérience montre clairement que les sites payants offrent une bien meilleure qualité de service.
+            Les avantages incluent :
           </p>
-
-          <h4>Coûts et Abonnements</h4>
-          <p>
-            Les sites proposent généralement :
-          </p>
-          <ul>
-            <li>Une version gratuite pour tester les fonctionnalités de base</li>
-            <li>Des abonnements premium pour accéder à toutes les fonctionnalités</li>
-            <li>Des options de paiement sécurisées et discrètes</li>
-            <li>Des garanties de remboursement selon les plateformes</li>
+          <ul className="space-y-3 mb-8 text-gray-700">
+            <li>Une modération active et efficace</li>
+            <li>Des profils vérifiés et authentiques</li>
+            <li>Une communauté d'utilisateurs investis et sérieux</li>
+            <li>Des fonctionnalités avancées pour optimiser vos rencontres</li>
           </ul>
 
-          <h3>Nos Critères d'Évaluation</h3>
-          <p>
-            Chaque site de notre top 5 a été rigoureusement évalué selon :
+          <h3 className="text-2xl font-semibold mb-6">La Sécurité Avant Tout</h3>
+          <p className="mb-6 text-gray-700">
+            Les sites que nous recommandons mettent l'accent sur votre sécurité avec :
           </p>
-          <ul>
-            <li>La qualité et l'activité de la communauté</li>
-            <li>Les fonctionnalités disponibles</li>
-            <li>Le rapport qualité/prix des abonnements</li>
-            <li>La sécurité et la protection des données</li>
-            <li>La facilité d'utilisation de l'interface</li>
-            <li>La réactivité du support client</li>
+          <ul className="space-y-3 mb-8 text-gray-700">
+            <li>Une équipe de modération disponible 24/7</li>
+            <li>Des systèmes de blocage instantané des profils indésirables</li>
+            <li>La vérification des photos et des informations</li>
+            <li>Un support client réactif et professionnel</li>
           </ul>
 
-          <h3>Conclusion</h3>
-          <p>
-            Notre sélection des meilleurs sites de rencontres coquines est régulièrement mise à jour
-            pour vous garantir les meilleures expériences possibles. Chaque plateforme a ses points forts,
-            choisissez celle qui correspond le mieux à vos attentes et à votre style de rencontres.
+          <h3 className="text-2xl font-semibold mb-6">Le Marché des Rencontres Coquines</h3>
+          <p className="mb-6 text-gray-700">
+            Le secteur des rencontres coquines s'est considérablement professionnalisé. Que vous soyez :
+          </p>
+          <ul className="space-y-3 mb-8 text-gray-700">
+            <li>En couple à la recherche d'aventures discrètes</li>
+            <li>Célibataire cherchant des moments intenses</li>
+            <li>Curieux d'expérimenter de nouvelles expériences</li>
+            <li>Amateur de rencontres sans prise de tête</li>
+          </ul>
+
+          <p className="text-gray-700">
+            Nos sites partenaires répondront à vos attentes avec professionnalisme et discrétion.
           </p>
         </motion.div>
       </div>
