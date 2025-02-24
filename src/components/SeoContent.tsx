@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import Image from "./ui/image";
 
@@ -34,16 +35,11 @@ const SeoContent = () => {
             <li>Transparence des tarifs et des conditions d'utilisation</li>
           </ul>
 
-          <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="my-8">
             <Image
               src="/lovable-uploads/dd60dd92-a4da-447c-987f-e67953948868.png"
               alt="Utilisatrice consultant son profil de rencontre dans un environnement confortable"
-              className="rounded-lg w-full object-cover h-48"
-            />
-            <Image
-              src="/lovable-uploads/246a3f22-6751-41e7-86cc-87af7137a6d9.png"
-              alt="Femme sportive connectée sur une plateforme de rencontre"
-              className="rounded-lg w-full object-cover h-48"
+              className="rounded-lg w-full object-cover h-64"
             />
           </div>
 
@@ -53,14 +49,6 @@ const SeoContent = () => {
             pour des rencontres discrètes et passionnées. Les plateformes spécialisées sont devenues le moyen 
             privilégié pour faire des rencontres adaptées à vos envies, en toute confidentialité.
           </p>
-
-          <div className="my-8">
-            <Image
-              src="/lovable-uploads/ffdead25-0da0-4d75-9f7e-8f480ba001b9.png"
-              alt="Membre active utilisant l'application de rencontre dans un cadre lumineux"
-              className="rounded-lg w-full object-cover h-64"
-            />
-          </div>
 
           <h3 className="text-2xl font-semibold mb-6">Avantages des Sites de Rencontres Coquines</h3>
           
@@ -75,6 +63,14 @@ const SeoContent = () => {
             <li>Protection maximale des données personnelles</li>
           </ul>
 
+          <div className="my-8">
+            <Image
+              src="/lovable-uploads/246a3f22-6751-41e7-86cc-87af7137a6d9.png"
+              alt="Femme sportive connectée sur une plateforme de rencontre"
+              className="rounded-lg w-full object-cover h-64"
+            />
+          </div>
+
           <h4 className="text-xl font-medium mb-4">Multiplicité des Rencontres</h4>
           <p className="mb-6 text-gray-700">
             Contrairement aux rencontres traditionnelles, les plateformes en ligne permettent :
@@ -85,6 +81,14 @@ const SeoContent = () => {
             <li>Des rencontres rapides et sans prise de tête</li>
             <li>Un large choix de profils actifs et vérifiés</li>
           </ul>
+
+          <div className="my-8">
+            <Image
+              src="/lovable-uploads/ffdead25-0da0-4d75-9f7e-8f480ba001b9.png"
+              alt="Membre active utilisant l'application de rencontre dans un cadre lumineux"
+              className="rounded-lg w-full object-cover h-64"
+            />
+          </div>
 
           <h4 className="text-xl font-medium mb-4">Rencontres par Affinités</h4>
           <p className="mb-6 text-gray-700">
