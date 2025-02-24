@@ -59,87 +59,89 @@ const SiteList = () => {
       logoUrl: "/lovable-uploads/bf6fe96a-7b07-4b5f-a8e9-61a9977d06ea.png",
     },
     {
-      name: "Hot Dates",
+      name: "Infidèles",
       position: 3,
-      rating: 4.2,
-      description: "La plateforme qui met du piment dans vos soirées !",
+      rating: 4.5,
+      description: "Le site de référence pour les rencontres discrètes",
       longDescription: `
-        🌶️ Hot Dates, c'est un peu comme votre meilleur wingman, mais en version digitale ! 
-        Imaginez une plateforme qui comprend vos envies et sait exactement comment vous mettre 
-        en valeur.
+        🌙 Envie d'aventure sans compromis ? Infidèles est LA plateforme qui comprend 
+        vos besoins et votre situation. Discrétion absolue et rencontres de qualité sont 
+        au rendez-vous.
 
-        Fini les conversations gênantes et les rendez-vous qui ne mènent nulle part.
-        Ici, tout est fait pour que la magie opère rapidement et naturellement.
+        Une communauté qui partage les mêmes attentes que vous, avec une interface 
+        pensée pour préserver votre vie privée. Ici, pas de jugement, que des 
+        possibilités !
       `,
       pros: [
-        "Matching intelligent basé sur vos préférences",
-        "Photos HD et vidéos privées",
-        "Chat vocal disponible",
-        "Géolocalisation précise",
-        "Profils certifiés uniquement"
+        "Discrétion maximale garantie",
+        "Mode fantôme disponible",
+        "Suppression instantanée des conversations",
+        "Géolocalisation intelligente",
+        "Profils vérifiés manuellement"
       ],
       stats: {
         users: "+800 000 utilisateurs",
-        success: "82% de satisfaction",
-        response: "Réponse < 3h"
+        success: "85% de satisfaction",
+        response: "Réponse < 1h"
       },
-      affiliateLink: "https://k.related-dating.com/?abc=2ab0b5837e6c2796&xa=n&acme=wid.85911&media=seo&tpls=3&v=sexy",
+      affiliateLink: "https://k.related-dating.com/?abc=0e1679787e276c50&xa=n&acme=wid.85911&media=seo&tpls=1",
       logoUrl: "/lovable-uploads/ce51fe8e-dfe9-4f07-8311-41a128f4e000.png",
     },
     {
-      name: "DateXpress",
+      name: "BeSexy",
       position: 4,
-      rating: 4.0,
-      description: "Des rencontres rapides pour moments intenses",
+      rating: 4.3,
+      description: "L'univers libertin qui fait tomber les barrières",
       longDescription: `
-        ⚡ Vous n'avez pas le temps de perdre votre temps ? DateXpress non plus !
-        Cette plateforme est conçue pour ceux qui savent ce qu'ils veulent et n'ont
-        pas peur de le dire.
+        🔥 BeSexy, c'est l'endroit où la sensualité rencontre la liberté !
+        Une plateforme libérée des conventions, où l'exploration et le plaisir
+        sont les maîtres mots.
 
-        C'est un peu comme un speed dating, mais en version 2.0 : 
-        plus rapide, plus efficace, et surtout plus fun !
+        Ici, pas de tabous : que vous soyez novice ou expérimenté, vous trouverez
+        votre place dans cette communauté ouverte d'esprit et respectueuse.
       `,
       pros: [
-        "Système de matching express",
-        "Recherche avancée par critères",
-        "Notifications instantanées",
-        "Confidentialité garantie",
-        "Support réactif 7j/7"
+        "Événements privés exclusifs",
+        "Chat vidéo HD sécurisé",
+        "Galeries photos privées",
+        "Messagerie cryptée",
+        "Communauté active 24/7"
       ],
       stats: {
-        users: "+300 000 utilisateurs",
-        success: "75% de matchs actifs",
+        users: "+400 000 utilisateurs",
+        success: "82% de matchs actifs",
         response: "Support 24/7"
       },
-      affiliateLink: "https://k.related-dating.com/?abc=2ab0b5837e6c2796&xa=n&acme=wid.85911&media=seo&tpls=3&v=sexy",
+      affiliateLink: "https://k.related-dating.com/?abc=dad1c2d8a4afc009&xa=n&acme=wid.85911&media=seo",
       logoUrl: "/lovable-uploads/365ab1bb-4f55-4356-987c-3e75a85f877f.png",
     },
     {
-      name: "Love&Play",
+      name: "Power Dating",
       position: 5,
-      rating: 3.8,
-      description: "L'art de la séduction version moderne",
+      rating: 4.0,
+      description: "La puissance des rencontres nouvelle génération",
       longDescription: `
-        💝 Love&Play, c'est l'endroit où la séduction devient un jeu d'enfant !
-        Fini le stress des rencontres traditionnelles, place à une approche plus
-        ludique et décontractée.
+        ⚡ Power Dating, c'est la plateforme qui électrise vos rencontres !
+        Fini les sites traditionnels ennuyeux, place à une expérience
+        dynamique et moderne.
 
-        Pensez à un cocktail parfait : un zeste de fun, une dose de sensualité,
-        et une grande mesure de connexions authentiques. C'est exactement ça !
+        Imaginez un monde où chaque match est une nouvelle aventure excitante,
+        où la chimie opère instantanément. C'est exactement ce que vous 
+        trouverez ici !
       `,
       pros: [
-        "Interface ludique et intuitive",
-        "Événements thématiques réguliers",
-        "Messagerie multimédia",
-        "Profils détaillés et vérifiés",
-        "Mode découverte gratuit"
+        "Algorithme de matching avancé",
+        "Profils ultra-détaillés",
+        "Stories et contenus exclusifs",
+        "Chat multimédia innovant",
+        "Système de badges unique"
       ],
       stats: {
-        users: "+250 000 utilisateurs",
-        success: "71% de rencontres réelles",
-        response: "Réponse < 4h"
+        users: "+350 000 utilisateurs",
+        success: "80% de retours positifs",
+        response: "Réponse < 2h"
       },
-      affiliateLink: "https://k.related-dating.com/?abc=2ab0b5837e6c2796&xa=n&acme=wid.85911&media=seo&tpls=3&v=sexy",
+      affiliateLink: "https://k.related-dating.com/?abc=4ef7627c47edba3a&xa=n&acme=wid.85911&media=seo&tpls=1",
       logoUrl: "/lovable-uploads/0cf2281f-d919-430e-ac86-f518fb2c0b13.png",
     }
   ];
