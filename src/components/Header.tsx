@@ -1,24 +1,32 @@
 
-import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="relative mb-16 overflow-hidden py-20 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10"
-      >
-        <h1 className="mb-6 text-5xl font-bold text-gray-900 sm:text-6xl md:text-7xl">
-          Top 5 Sites de<br />Rencontres Coquines
-        </h1>
-        <p className="mx-auto max-w-2xl text-xl text-gray-600">
-          Le guide ultime des meilleures plateformes pour des rencontres
-          discrètes et sans engagement. Classement mis à jour régulièrement.
-        </p>
-      </motion.div>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-romance-50 to-white/0" />
+    <header className="flex items-center justify-between py-6 mb-12">
+      <Link to="/" className="text-2xl font-bold text-gray-900">
+        Top5 Rencontres
+      </Link>
+      <nav>
+        <ul className="flex space-x-8">
+          <li>
+            <Link 
+              to="/" 
+              className="text-gray-600 hover:text-romance-600 transition-colors"
+            >
+              Accueil
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/blog" 
+              className="text-gray-600 hover:text-romance-600 transition-colors"
+            >
+              Blog
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
