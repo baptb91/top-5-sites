@@ -19,14 +19,6 @@ const Index = () => {
         
         <section className="mb-20">
           <div className="mb-16 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="inline-block rounded-full bg-romance-100 px-6 py-2 mb-6"
-            >
-              <span className="text-romance-600 font-semibold">Top 5</span>
-            </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
