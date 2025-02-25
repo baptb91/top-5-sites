@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import SiteList from "@/components/SiteList";
 import MeetingMethodsSection from "@/components/MeetingMethodsSection";
@@ -46,6 +47,43 @@ const Index = () => {
           <MeetingMethodsSection />
           <SeoContent />
         </div>
+
+        <footer className="mt-20 border-t border-gray-200 pt-8 pb-4">
+          <div className="text-center">
+            <nav className="space-x-4 text-sm text-gray-600">
+              <Link 
+                to="/mentions-legales" 
+                className="hover:text-romance-600 transition-colors"
+              >
+                Mentions Légales
+              </Link>
+              <span>•</span>
+              <Link 
+                to="/mentions-legales#privacy" 
+                className="hover:text-romance-600 transition-colors"
+              >
+                Politique de Confidentialité
+              </Link>
+              <span>•</span>
+              <Link 
+                to="/mentions-legales#terms" 
+                className="hover:text-romance-600 transition-colors"
+              >
+                Conditions d'Utilisation
+              </Link>
+              <span>•</span>
+              <Link 
+                to="/mentions-legales#cookies" 
+                className="hover:text-romance-600 transition-colors"
+              >
+                Politique des Cookies
+              </Link>
+            </nav>
+            <p className="mt-4 text-sm text-gray-500">
+              © {new Date().getFullYear()} Tous droits réservés
+            </p>
+          </div>
+        </footer>
       </div>
     </motion.div>
   );
