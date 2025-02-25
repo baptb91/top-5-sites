@@ -15,17 +15,18 @@ const Blog = () => {
       <div className="container mx-auto px-4 py-8">
         <Header />
         
-        <header className="text-center mb-16">
+        <header className="text-center max-w-3xl mx-auto mb-20">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl font-bold text-gray-900 mb-4"
+            className="text-5xl font-bold text-gray-900 mb-6 leading-tight"
           >
             Blog Rencontres Coquines
           </motion.h1>
-          <p className="text-xl text-gray-600">
-            Découvrez nos articles et conseils pour des rencontres réussies
+          <p className="text-xl text-gray-600 leading-relaxed">
+            Découvrez nos articles et conseils pour des rencontres réussies. 
+            Des astuces pratiques et des guides complets pour optimiser votre expérience.
           </p>
         </header>
 

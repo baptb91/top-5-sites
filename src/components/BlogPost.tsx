@@ -24,30 +24,39 @@ const BlogPost = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto px-4 py-16"
+      className="min-h-screen bg-gradient-to-b from-white to-romance-50"
     >
-      <div className="max-w-4xl mx-auto">
-        <Link to="/blog" className="text-romance-600 hover:underline mb-8 inline-block">
-          ← Retour aux articles
-        </Link>
-        
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
-          <div className="flex items-center text-sm text-gray-500">
-            <time dateTime={post.date}>{post.date}</time>
-            <span className="mx-2">•</span>
-            <span>{post.readTime}</span>
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <Link to="/blog" className="text-romance-600 hover:underline mb-8 inline-flex items-center">
+            <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Retour aux articles
+          </Link>
+          
+          <header className="mb-12">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              {post.title}
+            </h1>
+            <div className="flex items-center text-sm text-gray-600 border-b border-gray-200 pb-8">
+              <time dateTime={post.date} className="font-medium">
+                {post.date}
+              </time>
+              <span className="mx-3">•</span>
+              <span className="font-medium">{post.readTime}</span>
+            </div>
+          </header>
+
+          <img
+            src={post.imageUrl}
+            alt={post.title}
+            className="w-full h-[500px] object-cover rounded-2xl mb-12 shadow-xl"
+          />
+
+          <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-romance-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:list-disc prose-ul:pl-6 prose-li:my-2">
+            <Markdown>{post.content}</Markdown>
           </div>
-        </header>
-
-        <img
-          src={post.imageUrl}
-          alt={post.title}
-          className="w-full h-96 object-cover rounded-xl mb-8"
-        />
-
-        <div className="prose prose-lg max-w-none">
-          <Markdown>{post.content}</Markdown>
         </div>
       </div>
     </motion.article>
