@@ -138,7 +138,7 @@ const SeoContent = () => {
 
             <div className="p-4 bg-romance-50 rounded-lg mb-2">
               <p className="text-sm text-gray-700 italic">
-                <span className="font-semibold">💡 Conseil d'expert :</span> Consultez notre <Link to="/blog/secrets-seduction-site-rencontre-coquine#top" className="text-romance-600 hover:underline">guide pratique pour séduire en ligne</Link> et maximisez vos chances de succès !
+                <span className="font-semibold">💡 Conseil d'expert :</span> Consultez notre <Link to="/blog/secrets-seduction-site-rencontre-coquine#article-top" className="text-romance-600 hover:underline">guide pratique pour séduire en ligne</Link> et maximisez vos chances de succès !
               </p>
             </div>
           </div>
@@ -226,7 +226,7 @@ const SeoContent = () => {
               </div>
             </div>
             <div className="mt-6 text-center">
-              <Link to="/blog/erreurs-a-eviter-site-rencontre-coquine#top" className="text-romance-600 hover:underline">
+              <Link to="/blog/erreurs-a-eviter-site-rencontre-coquine#article-top" className="text-romance-600 hover:underline">
                 Découvrez les erreurs à éviter absolument sur les sites de rencontres coquines
               </Link>
             </div>
@@ -258,7 +258,7 @@ const SeoContent = () => {
 
             <div className="p-4 bg-romance-50 rounded-lg mb-2">
               <p className="text-sm text-gray-700 italic">
-                <span className="font-semibold">💡 Conseil d'expert :</span> Avant de créer votre profil, consultez notre <Link to="/blog/rediger-profil-irresistible-rencontre-coquine#top" className="text-romance-600 hover:underline">guide pour rédiger un profil irrésistible</Link> !
+                <span className="font-semibold">💡 Conseil d'expert :</span> Avant de créer votre profil, consultez notre <Link to="/blog/rediger-profil-irresistible-rencontre-coquine#article-top" className="text-romance-600 hover:underline">guide pour rédiger un profil irrésistible</Link> !
               </p>
             </div>
           </div>
