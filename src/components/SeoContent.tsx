@@ -56,9 +56,16 @@ const SeoContent = () => {
               </li>
             </ul>
             <div className="text-center">
-              <Link to="/" className="inline-block bg-romance-600 hover:bg-romance-700 text-white font-semibold py-2 px-6 rounded-full transition-colors">
+              <a 
+                href="#" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="inline-block bg-romance-600 hover:bg-romance-700 text-white font-semibold py-2 px-6 rounded-full transition-colors"
+              >
                 Découvrir notre classement complet
-              </Link>
+              </a>
             </div>
           </div>
 
