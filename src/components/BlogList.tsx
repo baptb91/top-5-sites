@@ -8,9 +8,17 @@ interface BlogListProps {
 }
 
 const BlogList = ({ posts }: BlogListProps) => {
+  // Create a copy of the posts array and reverse it to display newest first
+  const sortedPosts = [...posts].sort((a, b) => {
+    // Parse dates and sort in descending order (newest first)
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+
   return (
     <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-      {posts.map((post, index) => (
+      {sortedPosts.map((post, index) => (
         <motion.article
           key={post.id}
           initial={{ opacity: 0, y: 20 }}
@@ -29,9 +37,7 @@ const BlogList = ({ posts }: BlogListProps) => {
             </div>
             <div className="flex-grow p-8">
               <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                <time dateTime={post.date} className="font-medium">
-                  {post.date}
-                </time>
+                {/* Removed date display as requested */}
                 <span className="font-medium">{post.readTime}</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-romance-600 transition-colors">
