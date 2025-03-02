@@ -7,9 +7,9 @@ import { flirtingTechniquesPost } from "./blog-posts/flirtingTechniquesPost";
 import { attractMoreMessagesPost } from "./blog-posts/attractMoreMessagesPost";
 
 export const blogPosts: BlogPost[] = [
-  attractMoreMessagesPost,
-  flirtingTechniquesPost,
+  datingProfilePost,
+  avoidErrorsPost, 
   seductionSecretsPost,
-  avoidErrorsPost,
-  datingProfilePost
+  flirtingTechniquesPost,
+  attractMoreMessagesPost
 ];

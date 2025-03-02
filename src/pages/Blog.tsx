@@ -5,6 +5,9 @@ import { blogPosts } from "@/data/blogPosts";
 import Header from "@/components/Header";
 
 const Blog = () => {
+  // Log blog posts to help debugging
+  console.log("Blog posts:", blogPosts);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
