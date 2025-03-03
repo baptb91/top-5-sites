@@ -7,7 +7,7 @@ export const attractMoreMessagesPost: BlogPost = {
   slug: "attirer-plus-messages-application-rencontre",
   excerpt: "Découvrez 10 astuces éprouvées pour recevoir plus de messages et maximiser vos chances de succès sur les applications de rencontre.",
   date: "2024-03-15",
-  imageUrl: "/lovable-uploads/246a3f22-6751-41e7-86cc-87af7137a6d9.png",
+  imageUrl: "/lovable-uploads/207bab30-93e0-4564-b332-33c2b5b9387a.png",
   readTime: "7 min de lecture",
   content: `
 # **Comment Attirer Plus de Messages sur une Application de Rencontre : 10 Astuces Efficaces**
