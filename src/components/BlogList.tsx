@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BlogPost } from "@/types/blog";
+import Image from "@/components/ui/image";
 
 interface BlogListProps {
   posts: BlogPost[];
@@ -27,11 +28,11 @@ const BlogList = ({ posts }: BlogListProps) => {
           className="group flex flex-col h-full rounded-2xl bg-white shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
         >
           <Link to={`/blog/${post.slug}`} className="flex flex-col h-full">
-            <div className="relative">
-              <img
+            <div className="relative h-48 overflow-hidden">
+              <Image
                 src={post.imageUrl}
                 alt={post.title}
-                className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
