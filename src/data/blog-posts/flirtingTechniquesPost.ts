@@ -1,4 +1,3 @@
-
 import { BlogPost } from "@/types/blog";
 
 export const flirtingTechniquesPost: BlogPost = {
@@ -12,7 +11,6 @@ export const flirtingTechniquesPost: BlogPost = {
   content: `
 # **Les Techniques de Drague en Ligne qui Fonctionnent à Tous les Coups : Guide Pratique pour des Résultats Garantis**
 
-📅 **Mise à jour** : 5 avril 2024  
 ⏳ **Temps de lecture** : 8 min
 
 

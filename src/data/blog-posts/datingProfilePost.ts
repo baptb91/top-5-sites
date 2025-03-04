@@ -1,4 +1,3 @@
-
 import { BlogPost } from "@/types/blog";
 
 export const datingProfilePost: BlogPost = {
@@ -12,7 +11,6 @@ export const datingProfilePost: BlogPost = {
   content: `
 # **Comment Rédiger un Profil Irrésistible sur un Site de Rencontre Coquine**
 
-📅 **Mise à jour** : 20 février 2024  
 ⏳ **Temps de lecture** : 8 min
 
 
@@ -23,7 +21,6 @@ Les sites de rencontres coquines sont aujourd'hui l'un des **meilleurs moyens de
 > 💡 **Astuce** : Avant de commencer, [découvrez les erreurs à éviter absolument](/blog/erreurs-a-eviter-site-rencontre-coquine) pour maximiser vos chances de succès.
 
 [Découvrez notre guide complet des meilleurs sites de rencontres coquines](/) pour choisir la meilleure plateforme.
-
 
 ## **1. La Photo de Profil : Votre Meilleur Atout Séduction** 📸
 

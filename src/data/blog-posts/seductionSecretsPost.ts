@@ -1,4 +1,3 @@
-
 import { BlogPost } from "@/types/blog";
 
 export const seductionSecretsPost: BlogPost = {
@@ -12,7 +11,6 @@ export const seductionSecretsPost: BlogPost = {
   content: `
 # **Les Secrets pour Séduire sur un Site de Rencontre Coquine : Guide Pratique pour Briller en Ligne**
 
-📅 **Mise à jour** : 10 mars 2024  
 ⏳ **Temps de lecture** : 7 min
 
 

@@ -1,4 +1,3 @@
-
 import { BlogPost } from "@/types/blog";
 
 export const attractMoreMessagesPost: BlogPost = {
@@ -12,7 +11,6 @@ export const attractMoreMessagesPost: BlogPost = {
   content: `
 # **Comment Attirer Plus de Messages sur une Application de Rencontre : 10 Astuces Efficaces**
 
-📅 **Mise à jour** : 15 mars 2024  
 ⏳ **Temps de lecture** : 7 min
 
 ## **Introduction**

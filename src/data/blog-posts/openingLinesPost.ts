@@ -1,4 +1,3 @@
-
 import { BlogPost } from "@/types/blog";
 
 export const openingLinesPost: BlogPost = {
@@ -12,7 +11,6 @@ export const openingLinesPost: BlogPost = {
   content: `
 # **Les 10 Phrases d'Accroche qui Attirent le Plus de Réponses sur les Applications de Rencontre**
 
-📅 **Mise à jour** : 5 avril 2024  
 ⏳ **Temps de lecture** : 7 min
 
 ## **Introduction**
@@ -140,4 +138,3 @@ Une bonne phrase d'accroche est la clé pour démarrer une conversation mémorab
 
 *Dernière mise à jour : 5 avril 2024*`
 };
-

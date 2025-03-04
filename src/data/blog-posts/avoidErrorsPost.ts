@@ -1,4 +1,3 @@
-
 import { BlogPost } from "@/types/blog";
 
 export const avoidErrorsPost: BlogPost = {
@@ -12,7 +11,6 @@ export const avoidErrorsPost: BlogPost = {
   content: `
 # **Les 5 Erreurs à Éviter Absolument sur un Site de Rencontre Coquine**
 
-📅 **Mise à jour** : 25 février 2024  
 ⏳ **Temps de lecture** : 6 min
 
 
