@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Image from "./ui/image";
 import { Link } from "react-router-dom";
@@ -18,8 +17,9 @@ const SeoContent = () => {
           <div className="my-8">
             <Image
               src="/lovable-uploads/1b836fd3-2a34-42fa-ab3f-8bf1e3d74f96.png"
-              alt="Femme souriante utilisant un site de rencontre en ligne avec discrétion"
+              alt="Femme souriante utilisant un site de rencontre en ligne avec discrétion - Conseils pour choisir un site de rencontre coquine"
               className="rounded-lg w-full object-cover h-64 shadow-md"
+              title="Guide pour choisir le meilleur site de rencontre coquine"
             />
             <p className="text-sm text-gray-500 text-center mt-2">Trouver la plateforme idéale pour des rencontres discrètes</p>
           </div>
@@ -72,8 +72,9 @@ const SeoContent = () => {
           <div className="my-8">
             <Image
               src="/lovable-uploads/dd60dd92-a4da-447c-987f-e67953948868.png"
-              alt="Utilisatrice consultant son profil de rencontre dans un environnement confortable"
+              alt="Utilisatrice consultant son profil de rencontre dans un environnement confortable - Sites de rencontres coquines sûrs et efficaces"
               className="rounded-lg w-full object-cover h-64 shadow-md"
+              title="Rencontres coquines en ligne - Sécurité et efficacité garanties"
             />
           </div>
 
@@ -114,8 +115,9 @@ const SeoContent = () => {
           <div className="my-8">
             <Image
               src="/lovable-uploads/246a3f22-6751-41e7-86cc-87af7137a6d9.png"
-              alt="Femme sportive connectée sur une plateforme de rencontre"
+              alt="Femme sportive connectée sur une plateforme de rencontre - Avantages des sites de rencontres coquines"
               className="rounded-lg w-full object-cover h-64 shadow-md"
+              title="Multiplicité des rencontres sur les plateformes coquines"
             />
           </div>
 
@@ -153,8 +155,9 @@ const SeoContent = () => {
           <div className="my-8">
             <Image
               src="/lovable-uploads/ffdead25-0da0-4d75-9f7e-8f480ba001b9.png"
-              alt="Membre active utilisant l'application de rencontre dans un cadre lumineux"
+              alt="Membre active utilisant l'application de rencontre dans un cadre lumineux - Rencontres par affinités"
               className="rounded-lg w-full object-cover h-64 shadow-md"
+              title="Trouver des partenaires par affinités sur les sites de rencontres coquines"
             />
           </div>
 
