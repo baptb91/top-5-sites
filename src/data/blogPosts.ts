@@ -6,6 +6,7 @@ import { seductionSecretsPost } from "./blog-posts/seductionSecretsPost";
 import { flirtingTechniquesPost } from "./blog-posts/flirtingTechniquesPost";
 import { attractMoreMessagesPost } from "./blog-posts/attractMoreMessagesPost";
 import { openingLinesPost } from "./blog-posts/openingLinesPost";
+import { firstMessagePost } from "./blog-posts/firstMessagePost";
 
 export const blogPosts: BlogPost[] = [
   datingProfilePost,
@@ -13,6 +14,7 @@ export const blogPosts: BlogPost[] = [
   seductionSecretsPost,
   flirtingTechniquesPost,
   attractMoreMessagesPost,
-  openingLinesPost
+  openingLinesPost,
+  firstMessagePost
 ];
 
