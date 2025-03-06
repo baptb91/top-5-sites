@@ -1,0 +1,71 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://www.rencontrecoquine.info/</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Page Blog -->
+  <url>
+    <loc>https://www.rencontrecoquine.info/blog</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Pages individuelles des articles de blog -->
+  <url>
+    <loc>https://www.rencontrecoquine.info/blog/creer-un-profil-gagnant-sur-un-site-de-rencontre-coquin</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/blog/eviter-les-5-erreurs-qui-font-fuir-sur-les-sites-de-rencontres-coquines</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/blog/les-secrets-de-seduction-que-personne-ne-vous-revele-sur-les-sites-libertins</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/blog/techniques-de-flirt-pour-pimenter-vos-echanges-en-ligne</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/blog/comment-recevoir-plus-de-messages-sur-un-site-coquin</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/blog/30-phrases-douverture-efficaces-pour-briser-la-glace-sur-un-site-coquin</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/blog/comment-reussir-un-premier-message-impactant-sur-un-site-coquin</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Page de mentions légales -->
+  <url>
+    <loc>https://www.rencontrecoquine.info/mentions-legales</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
