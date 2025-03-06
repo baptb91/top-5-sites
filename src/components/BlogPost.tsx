@@ -26,25 +26,62 @@ const BlogPost = () => {
 
   // Extraction des premières phrases de l'excerpt pour la meta description
   const metaDescription = post.excerpt.length > 155 ? post.excerpt.substring(0, 155) + '...' : post.excerpt;
+  
+  // Création de mots-clés à partir du slug et du titre
+  const keywords = `rencontres coquines, ${post.slug.replace(/-/g, ', ')}, ${post.title.toLowerCase().split(' ').slice(0, 5).join(', ')}`;
 
   return (
     <>
       <Helmet>
-        <title>{post.title} | RencontreCoquine.info</title>
+        <title>{post.title} | Guide Rencontres Coquines 2024</title>
         <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={`rencontres coquines, ${post.slug.replace(/-/g, ', ')}, conseils rencontres libertines`} />
+        <meta name="keywords" content={keywords} />
         <link rel="canonical" href={`https://www.rencontrecoquine.info/blog/${post.slug}`} />
+        
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content={`https://www.rencontrecoquine.info${post.imageUrl}`} />
         <meta property="og:url" content={`https://www.rencontrecoquine.info/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
+        
         <meta property="article:published_time" content={new Date(post.date).toISOString()} />
         <meta property="article:section" content="Rencontres Coquines" />
+        <meta property="article:tag" content={post.slug.replace(/-/g, ', ')} />
+        
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={`https://www.rencontrecoquine.info${post.imageUrl}`} />
+        
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "${post.title}",
+              "image": "https://www.rencontrecoquine.info${post.imageUrl}",
+              "datePublished": "${new Date(post.date).toISOString()}",
+              "dateModified": "${new Date().toISOString()}",
+              "author": {
+                "@type": "Organization",
+                "name": "RencontreCoquine.info"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "RencontreCoquine.info",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png"
+                }
+              },
+              "description": "${metaDescription.replace(/"/g, '\\"')}",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.rencontrecoquine.info/blog/${post.slug}"
+              }
+            }
+          `}
+        </script>
       </Helmet>
 
       <motion.article

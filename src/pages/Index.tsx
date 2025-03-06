@@ -11,14 +11,17 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Top 5 Meilleurs Sites de Rencontres Coquines 2024 | Guide Complet</title>
-        <meta name="description" content="Découvrez notre classement des meilleurs sites de rencontres coquines 2024. Comparatif détaillé, conseils d'experts et guides pratiques pour rencontres libertines réussies." />
-        <meta name="keywords" content="sites de rencontres coquines, rencontres libertines, rencontres adultes, meilleur site rencontre coquine, comparatif sites libertins" />
+        <title>Top 5 Meilleurs Sites de Rencontres Coquines 2024 | Guide Complet et Comparatif</title>
+        <meta name="description" content="Classement exclusif des meilleurs sites de rencontres coquines 2024. Comparatif détaillé, tests utilisateurs, conseils d'experts et guides pratiques pour des rencontres libertines réussies." />
+        <meta name="keywords" content="sites de rencontres coquines, rencontres libertines, rencontres adultes, meilleur site rencontre coquine, comparatif sites libertins, site de rencontres, rencontres passionnées" />
         <link rel="canonical" href="https://www.rencontrecoquine.info" />
-        <meta property="og:title" content="Top 5 Meilleurs Sites de Rencontres Coquines 2024 | Guide Complet" />
-        <meta property="og:description" content="Découvrez notre classement des meilleurs sites de rencontres coquines. Comparatif détaillé et conseils d'experts pour des rencontres libertines réussies." />
+        
+        <meta property="og:title" content="Top 5 Meilleurs Sites de Rencontres Coquines 2024 | Guide Exclusif" />
+        <meta property="og:description" content="Découvrez notre classement des meilleurs sites de rencontres coquines, basé sur des tests réels et l'expérience de vrais utilisateurs. Comparatif détaillé et conseils d'experts." />
         <meta property="og:url" content="https://www.rencontrecoquine.info" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png" />
+        
         <script type="application/ld+json">
           {`
             {
@@ -40,7 +43,7 @@ const Index = () => {
               "@context": "https://schema.org",
               "@type": "Article",
               "headline": "Top 5 Meilleurs Sites de Rencontres Coquines en 2024",
-              "image": "https://www.rencontrecoquine.info/og-image.png",
+              "image": "https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png",
               "author": {
                 "@type": "Organization",
                 "name": "RencontreCoquine.info"
@@ -50,11 +53,45 @@ const Index = () => {
                 "name": "RencontreCoquine.info",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.rencontrecoquine.info/og-image.png"
+                  "url": "https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png"
                 }
               },
               "datePublished": "2024-04-24",
-              "dateModified": "${new Date().toISOString().split('T')[0]}"
+              "dateModified": "${new Date().toISOString().split('T')[0]}",
+              "description": "Guide complet des meilleurs sites de rencontres coquines en 2024, avec comparatif détaillé et conseils pour maximiser vos chances.",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.rencontrecoquine.info"
+              }
+            }
+          `}
+        </script>
+        
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Guide des Meilleurs Sites de Rencontres Coquines",
+                  "url": "https://www.rencontrecoquine.info"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog Rencontres Coquines",
+                  "url": "https://www.rencontrecoquine.info/blog"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Mentions Légales",
+                  "url": "https://www.rencontrecoquine.info/mentions-legales"
+                }
+              ]
             }
           `}
         </script>

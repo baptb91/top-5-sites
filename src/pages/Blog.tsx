@@ -12,14 +12,34 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Blog Rencontres Coquines | Articles et Conseils pour Rencontres Réussies</title>
-        <meta name="description" content="Découvrez nos meilleurs conseils, astuces et guides pratiques pour optimiser vos expériences sur les sites de rencontres coquines et libertines." />
-        <meta name="keywords" content="blog rencontres coquines, conseils rencontres coquines, astuces séduction, guide rencontres libertines" />
+        <title>Blog Rencontres Coquines 2024 | Conseils d'Experts pour Séduction et Rencontres Réussies</title>
+        <meta name="description" content="Articles exclusifs et conseils d'experts pour optimiser vos expériences sur les sites de rencontres coquines. Techniques de séduction, astuces pour profils attractifs et guides de conversation." />
+        <meta name="keywords" content="blog rencontres coquines, conseils rencontres coquines, astuces séduction, guide rencontres libertines, premier message, profil attractif" />
         <link rel="canonical" href="https://www.rencontrecoquine.info/blog" />
-        <meta property="og:title" content="Blog Rencontres Coquines | Articles et Conseils pour Rencontres Réussies" />
-        <meta property="og:description" content="Guides pratiques et conseils d'experts pour vos rencontres coquines. Apprenez à optimiser votre profil, éviter les pièges et séduire efficacement." />
+        <meta property="og:title" content="Blog Rencontres Coquines 2024 | Conseils d'Experts pour des Rencontres Réussies" />
+        <meta property="og:description" content="Articles exclusifs et guides pratiques pour optimiser vos expériences de rencontres. Apprenez à créer un profil irrésistible, éviter les pièges courants et maîtriser l'art de la séduction en ligne." />
         <meta property="og:url" content="https://www.rencontrecoquine.info/blog" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Blog",
+              "name": "Blog Rencontres Coquines",
+              "url": "https://www.rencontrecoquine.info/blog",
+              "description": "Articles et guides pour réussir vos rencontres coquines en ligne",
+              "publisher": {
+                "@type": "Organization",
+                "name": "RencontreCoquine.info",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png"
+                }
+              }
+            }
+          `}
+        </script>
       </Helmet>
       
       <motion.div
