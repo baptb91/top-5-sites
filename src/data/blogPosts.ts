@@ -7,8 +7,10 @@ import { flirtingTechniquesPost } from "./blog-posts/flirtingTechniquesPost";
 import { attractMoreMessagesPost } from "./blog-posts/attractMoreMessagesPost";
 import { openingLinesPost } from "./blog-posts/openingLinesPost";
 import { firstMessagePost } from "./blog-posts/firstMessagePost";
+import { instantConnectionPost } from "./blog-posts/instantConnectionPost";
 
 export const blogPosts: BlogPost[] = [
+  instantConnectionPost, // Ajout du nouvel article en tête de liste
   datingProfilePost,
   avoidErrorsPost, 
   seductionSecretsPost,
@@ -17,4 +19,3 @@ export const blogPosts: BlogPost[] = [
   openingLinesPost,
   firstMessagePost
 ];
-
