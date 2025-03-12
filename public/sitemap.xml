@@ -1,69 +1,63 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Page d'accueil -->
   <url>
-    <loc>https://www.rencontrecoquine.info/</loc>
-    <lastmod>2024-05-22</lastmod>
+    <loc>https://rencontrecoquine.info/</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Page Blog -->
   <url>
-    <loc>https://www.rencontrecoquine.info/blog</loc>
-    <lastmod>2024-05-22</lastmod>
+    <loc>https://rencontrecoquine.info/blog</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Pages individuelles des articles de blog -->
   <url>
-    <loc>https://www.rencontrecoquine.info/blog/creer-connexion-instantanee-personne-en-ligne</loc>
-    <lastmod>2024-05-22</lastmod>
+    <loc>https://rencontrecoquine.info/blog/creer-connexion-instantanee-personne-en-ligne</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rencontrecoquine.info/blog/rediger-profil-irresistible-rencontre-coquine</loc>
-    <lastmod>2024-05-15</lastmod>
+    <loc>https://rencontrecoquine.info/blog/rediger-profil-irresistible-rencontre-coquine</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rencontrecoquine.info/blog/erreurs-a-eviter-site-rencontre-coquine</loc>
-    <lastmod>2024-05-15</lastmod>
+    <loc>https://rencontrecoquine.info/blog/erreurs-a-eviter-site-rencontre-coquine</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rencontrecoquine.info/blog/techniques-flirt-efficaces-rencontres-coquines</loc>
-    <lastmod>2024-05-15</lastmod>
+    <loc>https://rencontrecoquine.info/blog/techniques-flirt-efficaces-rencontres-coquines</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rencontrecoquine.info/blog/attirer-plus-messages-application-rencontre</loc>
-    <lastmod>2024-05-15</lastmod>
+    <loc>https://rencontrecoquine.info/blog/attirer-plus-messages-application-rencontre</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rencontrecoquine.info/blog/phrases-accroche-efficaces-applications-rencontre</loc>
-    <lastmod>2024-05-15</lastmod>
+    <loc>https://rencontrecoquine.info/blog/phrases-accroche-efficaces-applications-rencontre</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rencontrecoquine.info/blog/premier-message-impactant-site-coquin</loc>
-    <lastmod>2024-05-15</lastmod>
+    <loc>https://rencontrecoquine.info/blog/premier-message-impactant-site-coquin</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Page de mentions légales -->
   <url>
-    <loc>https://www.rencontrecoquine.info/mentions-legales</loc>
-    <lastmod>2024-05-15</lastmod>
+    <loc>https://rencontrecoquine.info/mentions-legales</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
