@@ -24,8 +24,8 @@ export default defineConfig(({ mode }) => ({
       output: {
         assetFileNames: (assetInfo) => {
           // Keep XML files at the root level
-          if (assetInfo.name === 'sitemap.xml' || assetInfo.name === 'sitemap-index.xml') {
-            return assetInfo.name;
+          if (assetInfo.name && (assetInfo.name.endsWith('sitemap.xml') || assetInfo.name.endsWith('sitemap-index.xml'))) {
+            return '[name]';
           }
           return 'assets/[name]-[hash][extname]';
         },
