@@ -1,5 +1,7 @@
+
 import { motion } from "framer-motion";
 import { Star, CheckCircle, Users, Shield, Clock, ThumbsUp } from "lucide-react";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 const SiteList = () => {
   const sites = [
@@ -164,10 +166,12 @@ const SiteList = () => {
           <div className="grid gap-8 lg:grid-cols-3">
             {/* Logo et notation */}
             <div className="text-center">
-              <img 
+              <OptimizedImage 
                 src={site.logoUrl} 
-                alt={site.name} 
+                alt={`Logo ${site.name}`} 
                 className="mx-auto mb-4 h-20 w-auto"
+                width={80}
+                height={80}
               />
               <div className="flex items-center justify-center space-x-1">
                 {Array.from({ length: Math.floor(site.rating) }).map((_, i) => (

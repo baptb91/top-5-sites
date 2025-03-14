@@ -8,16 +8,18 @@ import MeetingMethodsSection from "@/components/MeetingMethodsSection";
 import SeoContent from "@/components/SeoContent";
 
 const Index = () => {
+  const currentDate = new Date().toISOString().split('T')[0];
+
   return (
     <>
       <Helmet>
-        <title>Top 5 Sites Coquins 2025 : Le Vrai Classement (Tests Confidentialité + Avis)</title>
-        <meta name="description" content="Découvrez notre enquête exclusive 2025 avec 37 critères d'évaluation. Comparatif objectif des plateformes libertines françaises les plus sûres et discrètes." />
+        <title>Top Sites Rencontres Coquines en 2025 | Classement + Avis</title>
+        <meta name="description" content="Découvrez notre classement exclusif des meilleurs sites coquins en 2025. Avis détaillés, tests réels et comparatif des fonctionnalités pour trouver votre plateforme idéale." />
         <meta name="keywords" content="comparatif sites rencontres coquines 2025, avis sites libertins sécurisés, classement applications discrètes adultes, site rencontre adulte vérifié 18+, application coquine sans engagement, meilleur site libertin français modéré" />
         <link rel="canonical" href="https://www.rencontrecoquine.info" />
         
-        <meta property="og:title" content="Top 5 Sites Coquins 2025 : Le Vrai Classement (Tests Confidentialité + Avis)" />
-        <meta property="og:description" content="Découvrez notre enquête exclusive 2025 avec 37 critères d'évaluation. Comparatif objectif des plateformes libertines françaises les plus sûres et discrètes." />
+        <meta property="og:title" content="Top Sites Rencontres Coquines en 2025 | Classement + Avis" />
+        <meta property="og:description" content="Découvrez notre classement exclusif des meilleurs sites coquins en 2025. Avis détaillés, tests réels et comparatif des fonctionnalités pour trouver votre plateforme idéale." />
         <meta property="og:url" content="https://www.rencontrecoquine.info" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png" />
@@ -30,7 +32,7 @@ const Index = () => {
               "name": "Classement Sites Rencontres Adultes",
               "review": {
                 "@type": "Review",
-                "author": {"@type": "Organization","name": "Labo Sécurité Numérique"},
+                "author": {"@type": "Organization","name": "RencontreCoquine.info"},
                 "reviewRating": {
                   "@type": "Rating",
                   "ratingValue": "4.8",
@@ -75,7 +77,7 @@ const Index = () => {
                 }
               },
               "datePublished": "2024-04-24",
-              "dateModified": "${new Date().toISOString().split('T')[0]}",
+              "dateModified": "${currentDate}",
               "description": "Guide complet des meilleurs sites de rencontres coquines en 2025, avec comparatif détaillé et conseils pour maximiser vos chances.",
               "mainEntityOfPage": {
                 "@type": "WebPage",
@@ -113,6 +115,14 @@ const Index = () => {
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "La majorité des sites sérieux demandent une forme de vérification pour confirmer votre âge et réduire les faux profils. Cette vérification peut être plus ou moins poussée selon les plateformes, allant d'une simple vérification d'email à des contrôles plus approfondis pour les sites premium."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Quels sont les critères pour choisir un site de rencontres coquin ?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Les critères essentiels incluent la sécurité des données personnelles, la qualité de la modération, le ratio hommes/femmes, les fonctionnalités de confidentialité, la facilité d'utilisation et la présence d'une application mobile. Notre classement tient compte de 37 critères différents évalués sur chaque plateforme."
                   }
                 }
               ]
@@ -167,17 +177,31 @@ const Index = () => {
                 transition={{ duration: 0.5 }}
                 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl"
               >
-                Top 5 des Meilleurs Sites de Rencontres Coquines
+                Top Sites Rencontres Coquines en France
               </motion.h1>
               <p className="mx-auto max-w-2xl text-lg text-gray-600">
-                Notre sélection exclusive des plateformes les plus performantes pour des rencontres 
-                passionnées et discrètes. Découvrez les sites les mieux notés et testés par nos experts.
+                Notre sélection exclusive des plateformes les plus performantes en 2025 pour des rencontres 
+                passionnées et discrètes. Découvrez les sites les mieux notés selon 37 critères d'évaluation.
               </p>
             </div>
             <SiteList />
           </section>
 
           <div className="max-w-7xl mx-auto">
+            <section className="mb-16">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Pourquoi choisir un site libertin ?</h2>
+              <p className="text-gray-700 mb-4">
+                Les sites de rencontres coquines offrent un espace sécurisé pour explorer vos désirs sans jugement. 
+                Contrairement aux applications de rencontres traditionnelles, ces plateformes spécialisées vous permettent 
+                d'être explicite sur vos attentes et de rencontrer des personnes partageant les mêmes envies.
+              </p>
+              <p className="text-gray-700">
+                Notre classement privilégie les sites qui garantissent votre anonymat, protègent vos données personnelles 
+                et offrent une expérience utilisateur de qualité. Chaque plateforme a été testée par notre équipe selon 
+                une méthodologie rigoureuse pour vous assurer des rencontres à la fois excitantes et sécurisées.
+              </p>
+            </section>
+            
             <MeetingMethodsSection />
             <SeoContent />
           </div>
