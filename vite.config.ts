@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -18,6 +19,8 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    // Add extensions to ensure proper file resolution
+    extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
   },
   build: {
     cssCodeSplit: false, // Combine CSS into a single file
@@ -26,7 +29,7 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
-          ui: ['@/components/ui']
+          ui: ['@/components/ui/button', '@/components/ui/card'] // Reference specific files, not directories
         },
         assetFileNames: (assetInfo) => {
           // Keep XML files at the root level
