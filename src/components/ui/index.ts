@@ -23,7 +23,6 @@ import Image from "./image";
 import { Input } from "./input";
 import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "./input-otp";
 import { Label } from "./label";
-import OptimizedImage from "./optimized-image";
 import { Separator } from "./separator";
 import { Skeleton } from "./skeleton";
 import { Slider } from "./slider";
@@ -138,7 +137,6 @@ export {
   InputOTPSlot,
   InputOTPSeparator,
   Label,
-  OptimizedImage,
   Separator,
   Skeleton,
   Slider,

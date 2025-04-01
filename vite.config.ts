@@ -29,7 +29,22 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
-          ui: ['@/components/ui/button', '@/components/ui/card'] // Reference specific files, not directories
+          // Référence des fichiers individuels plutôt que des dossiers
+          ui: [
+            '@/components/ui/button.tsx', 
+            '@/components/ui/card.tsx',
+            '@/components/ui/accordion.tsx',
+            '@/components/ui/alert.tsx',
+            '@/components/ui/avatar.tsx',
+            '@/components/ui/badge.tsx',
+            '@/components/ui/calendar.tsx',
+            '@/components/ui/form.tsx',
+            '@/components/ui/hover-card.tsx',
+            '@/components/ui/image.tsx',
+            '@/components/ui/input.tsx',
+            '@/components/ui/label.tsx',
+            '@/components/ui/separator.tsx',
+          ]
         },
         assetFileNames: (assetInfo) => {
           // Keep XML files at the root level
