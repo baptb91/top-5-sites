@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 Allow: /blog/
+Allow: /blog/*
 Disallow: /mentions-legales
 
 Sitemap: https://rencontrecoquine.info/sitemap-index.xml
-

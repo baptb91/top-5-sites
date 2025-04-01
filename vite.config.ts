@@ -24,6 +24,8 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: false, // Combine CSS into a single file
     sourcemap: false, // Disable sourcemaps in production
     outDir: 'dist',
+    // Generate a template that routes all requests to index.html
+    // This is crucial for SPA routing with history API
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -50,8 +52,7 @@ export default defineConfig(({ mode }) => ({
         assetFileNames: (assetInfo) => {
           // Keep XML files and robots.txt at the root level
           if (assetInfo.name && 
-              (assetInfo.name.endsWith('sitemap.xml') || 
-               assetInfo.name.endsWith('sitemap-index.xml') || 
+              (assetInfo.name.endsWith('.xml') || 
                assetInfo.name.endsWith('robots.txt'))) {
             return '[name]';
           }
@@ -64,7 +65,7 @@ export default defineConfig(({ mode }) => ({
     minify: 'terser', // Use terser for better minification
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console.log in production
+        drop_console: false, // Keep console logs in production for now for debugging
         drop_debugger: true // Remove debugger statements
       }
     }

@@ -1,26 +1,30 @@
 
 import { motion } from "framer-motion";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { blogPosts } from "@/data/blogPosts";
 import Markdown from "react-markdown";
+import { useEffect } from "react";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const post = blogPosts.find((post) => post.slug === slug);
 
+  // Log page access for debugging
+  useEffect(() => {
+    console.log(`BlogPost accessed with slug: ${slug}`);
+    console.log(`Post found:`, post ? "Yes" : "No");
+    
+    // If post not found, log all available slugs for comparison
+    if (!post) {
+      console.log("Available slugs:", blogPosts.map(p => p.slug));
+    }
+  }, [slug, post]);
+
+  // If post not found, return special 404 component specifically for blog pages
   if (!post) {
     return (
-      <div className="container mx-auto px-4 py-16">
-        <Helmet>
-          <title>Article non trouvé | RencontreCoquine.info</title>
-          <meta name="robots" content="noindex, nofollow" />
-        </Helmet>
-        <h1 className="text-2xl font-bold text-gray-900">Article non trouvé</h1>
-        <Link to="/blog" className="text-romance-600 hover:underline">
-          Retour aux articles
-        </Link>
-      </div>
+      <Navigate to={`/not-found?original-path=/blog/${slug}`} replace />
     );
   }
 
@@ -30,6 +34,10 @@ const BlogPost = () => {
   // Création de mots-clés à partir du slug et du titre
   const keywords = `rencontres coquines, ${post.slug.replace(/-/g, ', ')}, ${post.title.toLowerCase().split(' ').slice(0, 5).join(', ')}`;
 
+  // Fix date format for ISO
+  const publishDate = new Date(post.date).toISOString();
+  const modifiedDate = new Date().toISOString();
+
   return (
     <>
       <Helmet>
@@ -38,7 +46,7 @@ const BlogPost = () => {
         <meta name="keywords" content={keywords} />
         <meta name="author" content="RencontreCoquine.info" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta http-equiv="content-language" content="fr" />
+        <meta httpEquiv="content-language" content="fr" />
         
         <link rel="canonical" href={`https://rencontrecoquine.info/blog/${post.slug}`} />
         
@@ -49,8 +57,8 @@ const BlogPost = () => {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="RencontreCoquine.info" />
         
-        <meta property="article:published_time" content={new Date(post.date).toISOString()} />
-        <meta property="article:modified_time" content={new Date().toISOString()} />
+        <meta property="article:published_time" content={publishDate} />
+        <meta property="article:modified_time" content={modifiedDate} />
         <meta property="article:section" content="Rencontres Coquines" />
         <meta property="article:tag" content={post.slug.replace(/-/g, ', ')} />
         
@@ -64,10 +72,10 @@ const BlogPost = () => {
             {
               "@context": "https://schema.org",
               "@type": "BlogPosting",
-              "headline": "${post.title}",
+              "headline": "${post.title.replace(/"/g, '\\"')}",
               "image": "https://rencontrecoquine.info${post.imageUrl}",
-              "datePublished": "${new Date(post.date).toISOString()}",
-              "dateModified": "${new Date().toISOString()}",
+              "datePublished": "${publishDate}",
+              "dateModified": "${modifiedDate}",
               "author": {
                 "@type": "Organization",
                 "name": "RencontreCoquine.info"
