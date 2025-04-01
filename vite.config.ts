@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -19,36 +18,41 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    // Add extensions to ensure proper file resolution
     extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
   },
   build: {
     cssCodeSplit: false, // Combine CSS into a single file
     sourcemap: false, // Disable sourcemaps in production
+    outDir: 'dist',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
-          // Référence des fichiers individuels plutôt que des dossiers
-          ui: [
-            '@/components/ui/button.tsx', 
-            '@/components/ui/card.tsx',
-            '@/components/ui/accordion.tsx',
-            '@/components/ui/alert.tsx',
-            '@/components/ui/avatar.tsx',
-            '@/components/ui/badge.tsx',
-            '@/components/ui/calendar.tsx',
-            '@/components/ui/form.tsx',
-            '@/components/ui/hover-card.tsx',
-            '@/components/ui/image.tsx',
-            '@/components/ui/input.tsx',
-            '@/components/ui/label.tsx',
-            '@/components/ui/separator.tsx',
-          ]
+        manualChunks: (id) => {
+          // Vendor chunk for major libraries
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || 
+                id.includes('react-dom') || 
+                id.includes('framer-motion') || 
+                id.includes('react-router-dom')) {
+              return 'vendor';
+            }
+            if (id.includes('@radix-ui') || 
+                id.includes('tailwind') || 
+                id.includes('class-variance-authority')) {
+              return 'ui-libs';
+            }
+            return 'vendor-deps';  // Other dependencies
+          }
+          // UI components chunk
+          if (id.includes('src/components/ui/')) {
+            return 'ui';
+          }
         },
         assetFileNames: (assetInfo) => {
-          // Keep XML files at the root level
-          if (assetInfo.name && (assetInfo.name.endsWith('sitemap.xml') || assetInfo.name.endsWith('sitemap-index.xml') || assetInfo.name.endsWith('robots.txt'))) {
+          // Keep XML files and robots.txt at the root level
+          if (assetInfo.name && 
+              (assetInfo.name.endsWith('sitemap.xml') || 
+               assetInfo.name.endsWith('sitemap-index.xml') || 
+               assetInfo.name.endsWith('robots.txt'))) {
             return '[name]';
           }
           return 'assets/[name]-[hash][extname]';

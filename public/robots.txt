@@ -1,5 +1,8 @@
+
 User-agent: *
 Allow: /
+Allow: /blog/
 Disallow: /mentions-legales
 
 Sitemap: https://rencontrecoquine.info/sitemap-index.xml
+

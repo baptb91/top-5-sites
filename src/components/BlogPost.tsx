@@ -36,22 +36,28 @@ const BlogPost = () => {
         <title>{post.title} | Guide Rencontres Coquines 2024</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={keywords} />
-        <link rel="canonical" href={`https://www.rencontrecoquine.info/blog/${post.slug}`} />
+        <meta name="author" content="RencontreCoquine.info" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta http-equiv="content-language" content="fr" />
+        
+        <link rel="canonical" href={`https://rencontrecoquine.info/blog/${post.slug}`} />
         
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:image" content={`https://www.rencontrecoquine.info${post.imageUrl}`} />
-        <meta property="og:url" content={`https://www.rencontrecoquine.info/blog/${post.slug}`} />
+        <meta property="og:image" content={`https://rencontrecoquine.info${post.imageUrl}`} />
+        <meta property="og:url" content={`https://rencontrecoquine.info/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RencontreCoquine.info" />
         
         <meta property="article:published_time" content={new Date(post.date).toISOString()} />
+        <meta property="article:modified_time" content={new Date().toISOString()} />
         <meta property="article:section" content="Rencontres Coquines" />
         <meta property="article:tag" content={post.slug.replace(/-/g, ', ')} />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content={`https://www.rencontrecoquine.info${post.imageUrl}`} />
+        <meta name="twitter:image" content={`https://rencontrecoquine.info${post.imageUrl}`} />
         
         <script type="application/ld+json">
           {`
@@ -59,7 +65,7 @@ const BlogPost = () => {
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               "headline": "${post.title}",
-              "image": "https://www.rencontrecoquine.info${post.imageUrl}",
+              "image": "https://rencontrecoquine.info${post.imageUrl}",
               "datePublished": "${new Date(post.date).toISOString()}",
               "dateModified": "${new Date().toISOString()}",
               "author": {
@@ -71,13 +77,13 @@ const BlogPost = () => {
                 "name": "RencontreCoquine.info",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png"
+                  "url": "https://rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png"
                 }
               },
               "description": "${metaDescription.replace(/"/g, '\\"')}",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://www.rencontrecoquine.info/blog/${post.slug}"
+                "@id": "https://rencontrecoquine.info/blog/${post.slug}"
               }
             }
           `}
