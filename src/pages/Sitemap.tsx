@@ -7,10 +7,9 @@ const Sitemap = () => {
     // Générer le sitemap
     const sitemap = generateSitemap();
     
-    // Définir le type de contenu comme XML
-    document.contentType = "application/xml;charset=UTF-8";
-    
-    // Écrire directement le XML dans le document
+    // Écrire le XML directement dans le document
+    document.open('text/xml');
+    document.write('<?xml version="1.0" encoding="UTF-8"?>');
     document.write(sitemap);
     document.close();
   }, []);
