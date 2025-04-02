@@ -1,4 +1,5 @@
 
+import { BlogPost } from "@/types/blog";
 import { blogPosts } from "@/data/blogPosts";
 
 interface SitemapURL {
@@ -29,7 +30,7 @@ export const generateSitemap = (): string => {
   ];
   
   // Ajouter chaque article de blog
-  blogPosts.forEach(post => {
+  blogPosts.forEach((post: BlogPost) => {
     urls.push({
       loc: `${baseURL}/blog/${post.slug}`,
       lastmod: today, // Date actuelle pour tous les articles
