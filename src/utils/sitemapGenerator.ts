@@ -32,7 +32,7 @@ export const generateSitemap = (): string => {
   blogPosts.forEach(post => {
     urls.push({
       loc: `${baseURL}/blog/${post.slug}`,
-      lastmod: today, // On pourrait utiliser post.date si c'est une vraie date de modification
+      lastmod: today, // Date actuelle pour tous les articles
       changefreq: "monthly",
       priority: "0.7"
     });

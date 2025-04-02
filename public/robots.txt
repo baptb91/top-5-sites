@@ -7,4 +7,3 @@ Disallow: /mentions-legales
 
 # Nous spécifions explicitement le sitemap-index pour les moteurs de recherche
 Sitemap: https://rencontrecoquine.info/sitemap-index.xml
-

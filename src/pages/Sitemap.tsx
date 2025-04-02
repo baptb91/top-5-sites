@@ -1,33 +1,22 @@
 
-import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 import { generateSitemap } from "@/utils/sitemapGenerator";
 
 const Sitemap = () => {
-  const [sitemap, setSitemap] = useState("");
-
   useEffect(() => {
-    // Récupérer le sitemap du localStorage ou le générer
-    const storedSitemap = localStorage.getItem('sitemap');
-    if (storedSitemap) {
-      setSitemap(storedSitemap);
-    } else {
-      setSitemap(generateSitemap());
-    }
+    // Générer le sitemap
+    const sitemap = generateSitemap();
+    
+    // Définir le type de contenu comme XML
+    document.contentType = "application/xml;charset=UTF-8";
+    
+    // Écrire directement le XML dans le document
+    document.write(sitemap);
+    document.close();
   }, []);
 
-  return (
-    <>
-      <Helmet>
-        <title>Sitemap | RencontreCoquine.info</title>
-        <meta name="robots" content="noindex, follow" />
-        <meta httpEquiv="Content-Type" content="text/xml; charset=utf-8" />
-      </Helmet>
-      <pre style={{ display: 'none' }}>
-        {sitemap}
-      </pre>
-    </>
-  );
+  // Le rendu React normal ne sera pas utilisé car nous écrivons directement au document
+  return null;
 };
 
 export default Sitemap;
