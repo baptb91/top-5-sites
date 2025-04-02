@@ -30,6 +30,11 @@ const SeoHandler = () => {
     
     // Log navigation for debugging purposes
     console.log(`Navigation to: ${pathname}`);
+
+    // Pour les robots de Google, ajouter les en-têtes appropriés
+    if (pathname.endsWith('.xml')) {
+      document.title = pathname.includes('index') ? 'Sitemap Index' : 'Sitemap';
+    }
   }, [pathname]);
 
   return null;
@@ -46,6 +51,9 @@ const App = () => {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/sitemap.xml" element={<Sitemap />} />
         <Route path="/sitemap-index.xml" element={<SitemapIndex />} />
+        {/* Ajout des chemins alternatifs pour les robots qui pourraient utiliser ces URL */}
+        <Route path="/sitemap" element={<Sitemap />} />
+        <Route path="/sitemap-index" element={<Sitemap />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

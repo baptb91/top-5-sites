@@ -1,7 +1,33 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import fs from "fs";
+
+// Plugin pour générer les sitemaps lors du build
+const sitemapPlugin = () => {
+  return {
+    name: 'vite-plugin-sitemap',
+    closeBundle: async () => {
+      try {
+        // Importer dynamiquement le module
+        const { generateSitemap, generateSitemapIndex } = await import('./src/utils/sitemapGenerator');
+        
+        const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemap();
+        const sitemapIndex = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemapIndex();
+        
+        // Écrire les fichiers dans le dossier dist
+        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap.xml'), sitemap);
+        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
+        
+        console.log('✅ Sitemap files generated successfully');
+      } catch (error) {
+        console.error('Error generating sitemap files:', error);
+      }
+    }
+  };
+};
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,6 +39,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' &&
     componentTagger(),
+    mode === 'production' && sitemapPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
