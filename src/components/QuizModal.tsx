@@ -1,11 +1,11 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { useQuizModal } from '@/hooks/useQuizModal';
 import { quizQuestions } from '@/data/quizQuestions';
 import { QuizOption, QuizResult } from '@/types/quiz';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog } from '@/components/ui/dialog';
+import { DialogContent } from '@/components/ui/dialog';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -98,7 +98,7 @@ const QuizModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={closeAndReset}>
-      <DialogContent className="max-w-md rounded-xl p-0 sm:max-w-lg md:max-w-2xl">
+      <DialogContent className="max-w-md rounded-xl p-0 sm:max-w-lg md:max-w-2xl" closeButton={false}>
         <div className="relative">
           {/* Barre de progression */}
           <div className="absolute left-0 top-0 h-1 w-full bg-gray-200">
