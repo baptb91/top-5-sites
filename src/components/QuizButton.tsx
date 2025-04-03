@@ -23,17 +23,14 @@ const QuizButton = () => {
       variants={{
         bounce: {
           y: [0, -8, 0],
-          transition: {
-            duration: 1.2,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut"
-          }
         }
       }}
-      // Démarrer l'animation de rebond après un délai
-      onAnimationComplete={() => {
-        document.querySelector('.quiz-button')?.classList.add('animate-bounce');
+      whileInView="bounce"
+      transition={{
+        duration: 1.2,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut"
       }}
     >
       <HelpCircle className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
