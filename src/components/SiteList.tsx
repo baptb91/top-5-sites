@@ -2,11 +2,13 @@
 import { motion } from "framer-motion";
 import { Star, CheckCircle, Users, Shield, Clock, ThumbsUp } from "lucide-react";
 import OptimizedImage from "@/components/ui/optimized-image";
+import QuizButton from "./QuizButton";
 
 const SiteList = () => {
   const sites = [
     {
       name: "Spiice",
+      id: "Spiice", // Ajout de l'ID pour le référencement depuis le quiz
       position: 1,
       rating: 5,
       description: "La nouvelle référence qui fait grimper la température !",
@@ -35,6 +37,7 @@ const SiteList = () => {
     },
     {
       name: "JM Date",
+      id: "JM Date",
       position: 2,
       rating: 4.5,
       description: "L'expert des rencontres passionnées et authentiques",
@@ -62,6 +65,7 @@ const SiteList = () => {
     },
     {
       name: "Infidèles",
+      id: "Infidèles",
       position: 3,
       rating: 4.5,
       description: "Le site de référence pour les rencontres discrètes",
@@ -91,6 +95,7 @@ const SiteList = () => {
     },
     {
       name: "BeSexy",
+      id: "BeSexy",
       position: 4,
       rating: 4.3,
       description: "L'univers libertin qui fait tomber les barrières",
@@ -119,6 +124,7 @@ const SiteList = () => {
     },
     {
       name: "Power Dating",
+      id: "Power Dating",
       position: 5,
       rating: 4.0,
       description: "La puissance des rencontres nouvelle génération",
@@ -150,9 +156,15 @@ const SiteList = () => {
 
   return (
     <div className="space-y-16">
+      {/* Ajout du bouton de quiz au-dessus du premier site */}
+      <div className="flex justify-center">
+        <QuizButton />
+      </div>
+      
       {sites.map((site, index) => (
         <motion.div
           key={index}
+          id={site.id} // Ajout de l'ID pour le scroll automatique
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.2 }}
