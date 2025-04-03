@@ -110,7 +110,7 @@ const QuizModal = () => {
             />
           </div>
 
-          {/* Bouton de fermeture */}
+          {/* Bouton de fermeture unique */}
           <button 
             onClick={closeAndReset} 
             className="absolute right-4 top-4 rounded-full bg-gray-100 p-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700"
