@@ -9,12 +9,24 @@ type ToastProps = {
   variant?: "default" | "destructive"
 }
 
-// Créer un système de toast simple
+// Create a reference to store the toast function
+let toastFunction: (props: Omit<ToastProps, "id">) => void;
+
+// Standalone toast function that can be imported without the hook
+export const toast = (props: Omit<ToastProps, "id">) => {
+  if (toastFunction) {
+    toastFunction(props);
+  } else {
+    console.warn("Toast function called before it was initialized");
+  }
+};
+
+// Simple toast system
 export const useToast = () => {
   const [toasts, setToasts] = useState<ToastProps[]>([])
 
   useEffect(() => {
-    // Supprimer automatiquement les toasts après 5 secondes
+    // Automatically remove toasts after 5 seconds
     const timer = setTimeout(() => {
       setToasts((prevToasts) => prevToasts.slice(1))
     }, 5000)
@@ -22,15 +34,27 @@ export const useToast = () => {
     return () => clearTimeout(timer)
   }, [toasts])
 
-  const toast = (props: Omit<ToastProps, "id">) => {
+  const internalToast = (props: Omit<ToastProps, "id">) => {
     setToasts((prevToasts) => [
       ...prevToasts,
       { id: Math.random().toString(36).substring(2, 9), ...props },
     ])
   }
 
+  // Update the reference to the toast function
+  useEffect(() => {
+    toastFunction = internalToast;
+    return () => {
+      if (toastFunction === internalToast) {
+        toastFunction = () => {
+          console.warn("Toast called after component unmounted");
+        };
+      }
+    };
+  }, []);
+
   return {
-    toast,
+    toast: internalToast,
     toasts,
   }
 }
