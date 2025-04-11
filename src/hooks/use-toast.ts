@@ -10,15 +10,13 @@ type ToastProps = {
 }
 
 // Create a reference to store the toast function
-let toastFunction: (props: Omit<ToastProps, "id">) => void;
+let toastFunction: (props: Omit<ToastProps, "id">) => void = () => {
+  console.warn("Toast function called before it was initialized");
+};
 
 // Standalone toast function that can be imported without the hook
 export const toast = (props: Omit<ToastProps, "id">) => {
-  if (toastFunction) {
-    toastFunction(props);
-  } else {
-    console.warn("Toast function called before it was initialized");
-  }
+  toastFunction(props);
 };
 
 // Simple toast system
