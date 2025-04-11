@@ -4,8 +4,7 @@ import { X, ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { useQuizModal } from '@/hooks/useQuizModal';
 import { quizQuestions } from '@/data/quizQuestions';
 import { QuizOption, QuizResult } from '@/types/quiz';
-import { Dialog } from '@/components/ui/dialog';
-import { DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogClose } from '@/components/ui/dialog';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -53,7 +52,6 @@ const QuizModal = () => {
       'Power Dating': 0,
     };
 
-    // Calculer les scores pour chaque site
     Object.entries(selectedOptions).forEach(([questionId, optionId]) => {
       const question = quizQuestions.find(q => q.id === questionId);
       if (question) {
@@ -66,7 +64,6 @@ const QuizModal = () => {
       }
     });
 
-    // Trouver le site avec le score le plus élevé
     const results: QuizResult[] = Object.entries(scores).map(([siteId, score]) => ({
       siteId,
       score,
@@ -75,7 +72,6 @@ const QuizModal = () => {
     results.sort((a, b) => b.score - a.score);
     setResultSite(results[0].siteId);
     
-    // Log pour le débogage
     console.log('Quiz results:', results);
   };
 
@@ -98,9 +94,8 @@ const QuizModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={closeAndReset}>
-      <DialogContent className="max-w-md rounded-xl p-0 sm:max-w-lg md:max-w-2xl" closeButton={false}>
+      <DialogContent className="max-w-md rounded-xl p-0 sm:max-w-lg md:max-w-2xl">
         <div className="relative">
-          {/* Barre de progression */}
           <div className="absolute left-0 top-0 h-1 w-full bg-gray-200">
             <motion.div
               className="h-full bg-romance-500"
@@ -110,7 +105,12 @@ const QuizModal = () => {
             />
           </div>
 
-          {/* Bouton de fermeture unique */}
+          <style jsx global>{`
+            .DialogContent [data-radix-dialog-close] {
+              display: none;
+            }
+          `}</style>
+
           <button 
             onClick={closeAndReset} 
             className="absolute right-4 top-4 rounded-full bg-gray-100 p-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700"
