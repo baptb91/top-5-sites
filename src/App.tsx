@@ -41,15 +41,6 @@ const SeoHandler = () => {
 };
 
 const App = () => {
-  console.log("App component rendering");
-  
-  useEffect(() => {
-    console.log("App component mounted");
-    return () => {
-      console.log("App component unmounted");
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-gray-50">
       <ScrollToTop />
@@ -62,7 +53,7 @@ const App = () => {
         <Route path="/sitemap-index.xml" element={<SitemapIndex />} />
         {/* Ajout des chemins alternatifs pour les robots qui pourraient utiliser ces URL */}
         <Route path="/sitemap" element={<Sitemap />} />
-        <Route path="/sitemap-index" element={<SitemapIndex />} />
+        <Route path="/sitemap-index" element={<Sitemap />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

@@ -5,7 +5,5 @@ Allow: /blog/
 Allow: /blog/*
 Disallow: /mentions-legales
 
-# Spécification explicite des sitemaps pour les moteurs de recherche
-Sitemap: https://rencontrecoquine.info/sitemap.xml
+# Nous spécifions explicitement le sitemap-index pour les moteurs de recherche
 Sitemap: https://rencontrecoquine.info/sitemap-index.xml
-
