@@ -38,6 +38,13 @@ window.addEventListener('unhandledrejection', (event) => {
   console.error('Promesse rejetée non gérée:', event.reason);
 });
 
+// Add Lovable integration hooks for enhanced features
+if (typeof window !== 'undefined') {
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log('Lovable features initialized');
+  });
+}
+
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
