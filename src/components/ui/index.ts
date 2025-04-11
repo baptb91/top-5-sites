@@ -23,6 +23,7 @@ import Image from "./image";
 import { Input } from "./input";
 import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "./input-otp";
 import { Label } from "./label";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "./navigation-menu";
 import { Separator } from "./separator";
 import { Skeleton } from "./skeleton";
 import { Slider } from "./slider";
@@ -137,6 +138,13 @@ export {
   InputOTPSlot,
   InputOTPSeparator,
   Label,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
   Separator,
   Skeleton,
   Slider,
