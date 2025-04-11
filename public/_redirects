@@ -1,5 +1,9 @@
 
 # Netlify redirects file
-# This ensures that all routes are handled by the SPA router
-/* /index.html 200
+# Nous protégeons le fichier XML des redirections SPA
+/sitemap.xml /sitemap.xml 200
+/sitemap-index.xml /sitemap-index.xml 200
+/robots.txt /robots.txt 200
 
+# Ensuite, on gère toutes les autres routes avec le SPA router
+/* /index.html 200

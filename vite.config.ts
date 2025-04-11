@@ -40,6 +40,13 @@ const sitemapPlugin = () => {
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap.xml'), sitemap);
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
         
+        // Copier également robots.txt s'il existe
+        const robotsSource = path.resolve(__dirname, './public/robots.txt');
+        const robotsDest = path.resolve(__dirname, './dist/robots.txt');
+        if (fs.existsSync(robotsSource)) {
+          fs.copyFileSync(robotsSource, robotsDest);
+        }
+        
         // Clean up the temporary file
         fs.unlinkSync(tempFile);
         

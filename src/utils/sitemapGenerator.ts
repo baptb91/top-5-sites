@@ -91,8 +91,15 @@ export const writeSitemapFiles = (): void => {
     const sitemapIndex = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemapIndex();
     
     // Écrire les fichiers dans le dossier public
-    fs.writeFileSync(path.resolve(__dirname, '../../public/sitemap.xml'), sitemap);
-    fs.writeFileSync(path.resolve(__dirname, '../../public/sitemap-index.xml'), sitemapIndex);
+    fs.writeFileSync(path.resolve(__dirname, '../../dist/sitemap.xml'), sitemap);
+    fs.writeFileSync(path.resolve(__dirname, '../../dist/sitemap-index.xml'), sitemapIndex);
+    
+    // Copier également robots.txt s'il existe
+    const robotsSource = path.resolve(__dirname, '../../public/robots.txt');
+    const robotsDest = path.resolve(__dirname, '../../dist/robots.txt');
+    if (fs.existsSync(robotsSource)) {
+      fs.copyFileSync(robotsSource, robotsDest);
+    }
     
     console.log('Sitemap files written successfully');
   } catch (error) {
