@@ -41,6 +41,15 @@ const SeoHandler = () => {
 };
 
 const App = () => {
+  console.log("App component rendering");
+  
+  useEffect(() => {
+    console.log("App component mounted");
+    return () => {
+      console.log("App component unmounted");
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
       <ScrollToTop />
