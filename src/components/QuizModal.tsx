@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { useQuizModal } from '@/hooks/useQuizModal';
@@ -17,6 +18,23 @@ const QuizModal = () => {
   const [showResults, setShowResults] = useState(false);
   const [resultSite, setResultSite] = useState<string | null>(null);
   const [progressValue, setProgressValue] = useState(0);
+
+  // Add effect to hide the default close button with CSS
+  useEffect(() => {
+    // Add a style element to hide the default close button
+    const style = document.createElement('style');
+    style.textContent = `
+      .DialogContent [data-radix-dialog-close] {
+        display: none;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Clean up the style element when component unmounts
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
 
   const handleOptionSelect = (questionId: string, optionId: string) => {
     setSelectedOptions({
@@ -104,12 +122,6 @@ const QuizModal = () => {
               transition={{ duration: 0.3 }}
             />
           </div>
-
-          <style jsx global>{`
-            .DialogContent [data-radix-dialog-close] {
-              display: none;
-            }
-          `}</style>
 
           <button 
             onClick={closeAndReset} 
