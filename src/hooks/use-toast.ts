@@ -1,6 +1,6 @@
 
 import * as React from "react"
-import { toast as sonnerToast, type ToastT, type ToastProps } from "sonner"
+import { toast as sonnerToast, type ToastT, type ToasterProps } from "sonner"
 
 const TOAST_LIMIT = 5
 const TOAST_REMOVE_DELAY = 1000000
@@ -11,6 +11,7 @@ type ToasterToast = ToastT & {
   description?: React.ReactNode
   action?: React.ReactNode
   cancel?: React.ReactNode
+  onOpenChange?: (open: boolean) => void
 }
 
 const actionTypes = {
@@ -86,7 +87,6 @@ const reducer = (state: State, action: Action): State => {
           t.id === toastId || toastId === undefined
             ? {
                 ...t,
-                open: false,
               }
             : t
         ),
@@ -151,7 +151,6 @@ function toast({ ...props }: Toast) {
     toast: {
       ...props,
       id,
-      open: true,
       onOpenChange: (open: boolean) => {
         if (!open) dismiss()
       },

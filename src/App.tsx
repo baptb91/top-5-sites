@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 import BlogPost from "./components/BlogPost";
 import Sitemap from "./pages/Sitemap";
 import SitemapIndex from "./pages/SitemapIndex";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
 
 // Debug log on app initialization
 console.log("App component initialized");
