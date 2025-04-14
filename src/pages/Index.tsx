@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import SiteList from "@/components/SiteList";
 import MeetingMethodsSection from "@/components/MeetingMethodsSection";
 import SeoContent from "@/components/SeoContent";
+import QuizModal from "@/components/QuizModal";
 
 const Index = () => {
   const currentDate = new Date().toISOString().split('T')[0];
@@ -244,6 +245,9 @@ const Index = () => {
           </footer>
         </div>
       </motion.div>
+      
+      {/* Le modal du quiz qui sera affiché quand isOpen est true */}
+      <QuizModal />
     </>
   );
 };

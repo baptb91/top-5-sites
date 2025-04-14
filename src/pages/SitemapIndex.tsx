@@ -1,22 +1,53 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { generateSitemapIndex } from "@/utils/sitemapGenerator";
+import { Navigate } from "react-router-dom";
 
 const SitemapIndex = () => {
+  const [redirected, setRedirected] = useState(false);
+
   useEffect(() => {
     // Générer le sitemap index
     const sitemapIndex = generateSitemapIndex();
     
-    // Définir le type de contenu comme XML
-    document.contentType = "application/xml;charset=UTF-8";
+    // Créer un Blob avec le type MIME correct
+    const blob = new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n' + sitemapIndex], {
+      type: 'application/xml; charset=utf-8'
+    });
     
-    // Écrire directement le XML dans le document
-    document.write(sitemapIndex);
-    document.close();
+    // Créer une URL pour le Blob
+    const blobURL = URL.createObjectURL(blob);
+    
+    // Ouvrir le XML dans un nouvel onglet ou le télécharger directement
+    const newWindow = window.open(blobURL, '_blank');
+    
+    // Si le navigateur bloque l'ouverture, proposer le téléchargement
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      const link = document.createElement('a');
+      link.href = blobURL;
+      link.download = "sitemap-index.xml";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    
+    // Nettoyer l'URL du Blob
+    setTimeout(() => {
+      URL.revokeObjectURL(blobURL);
+      setRedirected(true);
+    }, 100);
   }, []);
 
-  // Le rendu React normal ne sera pas utilisé car nous écrivons directement au document
-  return null;
+  if (redirected) {
+    return <Navigate to="/" replace />;
+  }
+  
+  return (
+    <div className="p-8">
+      <h1>Génération du sitemap-index.xml...</h1>
+      <p>Si le téléchargement ne démarre pas, veuillez vérifier les paramètres de votre navigateur.</p>
+    </div>
+  );
 };
 
 export default SitemapIndex;
