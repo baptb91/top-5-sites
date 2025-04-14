@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -66,15 +67,12 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      // Alias React to ensure all components use the same instance
-      "react": path.resolve(__dirname, "./node_modules/react"),
-      "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
     },
     extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
   },
   build: {
     cssCodeSplit: false, // Combine CSS into a single file
-    sourcemap: mode === 'development', // Enable sourcemaps in development
+    sourcemap: false, // Disable sourcemaps in production
     outDir: 'dist',
     // Generate a template that routes all requests to index.html
     // This is crucial for SPA routing with history API

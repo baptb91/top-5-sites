@@ -9,16 +9,12 @@ import Sitemap from "./pages/Sitemap";
 import SitemapIndex from "./pages/SitemapIndex";
 import { Toaster } from "@/components/ui/toaster";
 
-// Debug log on app initialization
-console.log("App component initialized");
-
 // Define a ScrollToTop component to handle scrolling to top on page change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(`Scrolled to top on navigation to: ${pathname}`);
   }, [pathname]);
 
   return null;
@@ -45,8 +41,6 @@ const SeoHandler = () => {
 };
 
 const App = () => {
-  console.log("Rendering App component");
-  
   return (
     <div className="min-h-screen bg-gray-50">
       <ScrollToTop />
