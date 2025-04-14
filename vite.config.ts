@@ -59,7 +59,11 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
-    react(),
+    react({
+      jsxRuntime: 'automatic',
+      // Ensure React is always available
+      jsxImportSource: 'react',
+    }),
     mode === 'development' &&
     componentTagger(),
     mode === 'production' && sitemapPlugin(),
@@ -67,12 +71,15 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      // Alias React to ensure all components use the same instance
+      "react": path.resolve(__dirname, "./node_modules/react"),
+      "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
     },
     extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
   },
   build: {
     cssCodeSplit: false, // Combine CSS into a single file
-    sourcemap: false, // Disable sourcemaps in production
+    sourcemap: mode === 'development', // Enable sourcemaps in development
     outDir: 'dist',
     // Generate a template that routes all requests to index.html
     // This is crucial for SPA routing with history API
