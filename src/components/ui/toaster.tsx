@@ -15,8 +15,10 @@ export function Toaster() {
   return (
     <ToastProvider>
       {toasts.map(function ({ id, title, description, action, ...props }) {
+        // Filtrer les propriétés incompatibles pour éviter les erreurs TypeScript
+        const { type, ...safeProps } = props;
         return (
-          <Toast key={id} {...props}>
+          <Toast key={id} {...safeProps}>
             <div className="grid gap-1">
               {title && <ToastTitle>{title}</ToastTitle>}
               {description && (
