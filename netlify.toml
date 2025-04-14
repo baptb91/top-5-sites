@@ -4,7 +4,7 @@
   publish = "dist"
   command = "npm run build"
 
-# Handle SPA routing
+# Handle SPA routing - force directive ensure all routes go through index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -32,3 +32,21 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Ajouter des en-têtes de sécurité
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+# Fix for SPA router - ensure direct deep links work
+[[redirects]]
+  from = "/blog/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/mentions-legales/*"
+  to = "/index.html"
+  status = 200

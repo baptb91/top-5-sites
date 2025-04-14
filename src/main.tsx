@@ -42,6 +42,10 @@ if (!container) {
       }
     }
   });
+
+  // Log additional diagnostic information
+  console.log('Browser details:', navigator.userAgent);
+  console.log('React version:', React.version);
   
   try {
     root.render(

@@ -1,16 +1,19 @@
 
 import * as React from "react"
-import { toast as sonnerToast, type ToastT, type ToasterProps } from "sonner"
+import { type ToastActionElement, ToastProps } from "@/components/ui/toast"
 
 const TOAST_LIMIT = 5
 const TOAST_REMOVE_DELAY = 1000000
 
-type ToasterToast = ToastT & {
+type ToastType = "default" | "destructive" | "success" | "warning" | "info"
+
+export type ToasterToast = {
   id: string
+  type?: ToastType
   title?: React.ReactNode
   description?: React.ReactNode
-  action?: React.ReactNode
-  cancel?: React.ReactNode
+  action?: ToastActionElement
+  duration?: number
   onOpenChange?: (open: boolean) => void
 }
 
@@ -122,19 +125,6 @@ function handleDismiss(id: string) {
   toastTimeouts.set(id, timeout)
 }
 
-type ToastActionType = typeof actionTypes
-
-const listeners: Array<(state: State) => void> = []
-
-let memoryState: State = { toasts: [] }
-
-function dispatch(action: Action) {
-  memoryState = reducer(memoryState, action)
-  listeners.forEach((listener) => {
-    listener(memoryState)
-  })
-}
-
 type Toast = Omit<ToasterToast, "id">
 
 function toast({ ...props }: Toast) {
@@ -162,6 +152,17 @@ function toast({ ...props }: Toast) {
     dismiss,
     update,
   }
+}
+
+const listeners: Array<(state: State) => void> = []
+
+let memoryState: State = { toasts: [] }
+
+function dispatch(action: Action) {
+  memoryState = reducer(memoryState, action)
+  listeners.forEach((listener) => {
+    listener(memoryState)
+  })
 }
 
 function useToast() {
