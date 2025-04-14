@@ -1,56 +1,7 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import fs from "fs";
-
-// Plugin pour générer les sitemaps lors du build
-const sitemapPlugin = () => {
-  return {
-    name: 'vite-plugin-sitemap',
-    closeBundle: async () => {
-      try {
-        // Import dynamic directly from the file
-        const sitemapPath = path.resolve(__dirname, './src/utils/sitemapGenerator.ts');
-        
-        // We need to compile the TypeScript file before importing it
-        // Using a dynamic import with esbuild
-        const { build } = await import('esbuild');
-        const { outputFiles } = await build({
-          entryPoints: [sitemapPath],
-          bundle: true,
-          write: false,
-          format: 'cjs',
-          platform: 'node',
-          target: 'node16',
-        });
-        
-        // Write the compiled file to a temporary location
-        const tempFile = path.resolve(__dirname, './temp-sitemap-generator.cjs');
-        fs.writeFileSync(tempFile, outputFiles[0].text);
-        
-        // Import the compiled module
-        const { generateSitemap, generateSitemapIndex } = require(tempFile);
-        
-        const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemap();
-        const sitemapIndex = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemapIndex();
-        
-        // Écrire les fichiers dans le dossier dist
-        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap.xml'), sitemap);
-        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
-        
-        // Clean up the temporary file
-        fs.unlinkSync(tempFile);
-        
-        console.log('✅ Sitemap files generated successfully');
-      } catch (error) {
-        console.error('Error generating sitemap files:', error);
-        console.error(error);
-      }
-    }
-  };
-};
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -62,7 +13,6 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' &&
     componentTagger(),
-    mode === 'production' && sitemapPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
