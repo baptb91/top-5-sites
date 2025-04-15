@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { HelpCircle } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import QuizModal from "./QuizModal";
 
 const QuizButton = () => {
@@ -32,10 +32,12 @@ const QuizButton = () => {
         Trouvez votre site idéal
       </motion.button>
       
-      <QuizModal 
-        isOpen={isOpen} 
-        onClose={() => setIsOpen(false)} 
-      />
+      {isOpen && (
+        <QuizModal 
+          isOpen={isOpen} 
+          onClose={() => setIsOpen(false)} 
+        />
+      )}
     </div>
   );
 };
