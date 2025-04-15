@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import SiteList from "@/components/SiteList";
 import MeetingMethodsSection from "@/components/MeetingMethodsSection";
 import SeoContent from "@/components/SeoContent";
+import QuizButton from "@/components/QuizButton";
 
 const Index = () => {
   const currentDate = new Date().toISOString().split('T')[0];
@@ -184,6 +185,10 @@ const Index = () => {
                 passionnées et discrètes. Découvrez les sites les mieux notés selon 37 critères d'évaluation.
               </p>
             </div>
+            
+            {/* Ajout du bouton de quiz ici */}
+            <QuizButton />
+            
             <SiteList />
           </section>
 
