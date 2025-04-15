@@ -4,8 +4,14 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
 
-createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  console.error("Failed to find the root element");
+} else {
+  createRoot(rootElement).render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}
