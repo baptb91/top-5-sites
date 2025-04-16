@@ -25,4 +25,3 @@
   for = "/sitemap-index.xml"
   [headers.values]
     Content-Type = "application/xml"
-
