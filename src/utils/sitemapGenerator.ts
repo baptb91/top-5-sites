@@ -7,6 +7,14 @@ interface SitemapURL {
   lastmod: string;
   changefreq: string;
   priority: string;
+  images?: Array<{
+    loc: string;
+    caption: string;
+  }>;
+  hreflang?: Array<{
+    href: string;
+    hreflang: string;
+  }>;
 }
 
 export const generateSitemap = (): string => {
@@ -18,13 +26,21 @@ export const generateSitemap = (): string => {
       loc: `${baseURL}/`,
       lastmod: today,
       changefreq: "weekly",
-      priority: "1.0"
+      priority: "1.0",
+      hreflang: [{
+        href: `${baseURL}/`,
+        hreflang: "fr"
+      }]
     },
     {
       loc: `${baseURL}/blog`,
       lastmod: today,
       changefreq: "weekly",
-      priority: "0.8"
+      priority: "0.8",
+      hreflang: [{
+        href: `${baseURL}/blog`,
+        hreflang: "fr"
+      }]
     }
   ];
   
@@ -33,7 +49,17 @@ export const generateSitemap = (): string => {
       loc: `${baseURL}/blog/${post.slug}`,
       lastmod: today,
       changefreq: "monthly",
-      priority: "0.7"
+      priority: "0.7",
+      images: [
+        {
+          loc: `${baseURL}${post.imageUrl}`,
+          caption: post.title
+        }
+      ],
+      hreflang: [{
+        href: `${baseURL}/blog/${post.slug}`,
+        hreflang: "fr"
+      }]
     });
   });
 
@@ -41,11 +67,18 @@ export const generateSitemap = (): string => {
     loc: `${baseURL}/mentions-legales`,
     lastmod: today,
     changefreq: "yearly",
-    priority: "0.3"
+    priority: "0.3",
+    hreflang: [{
+      href: `${baseURL}/mentions-legales`,
+      hreflang: "fr"
+    }]
   });
 
+  // Créer le sitemap avec les espaces de noms nécessaires
   let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+  sitemap += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"\n';
+  sitemap += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
   
   urls.forEach(url => {
     sitemap += '  <url>\n';
@@ -53,6 +86,24 @@ export const generateSitemap = (): string => {
     sitemap += `    <lastmod>${url.lastmod}</lastmod>\n`;
     sitemap += `    <changefreq>${url.changefreq}</changefreq>\n`;
     sitemap += `    <priority>${url.priority}</priority>\n`;
+    
+    // Ajouter les informations d'image si disponibles
+    if (url.images && url.images.length > 0) {
+      url.images.forEach(image => {
+        sitemap += '    <image:image>\n';
+        sitemap += `      <image:loc>${image.loc}</image:loc>\n`;
+        sitemap += `      <image:caption>${image.caption}</image:caption>\n`;
+        sitemap += '    </image:image>\n';
+      });
+    }
+    
+    // Ajouter les informations hreflang si disponibles
+    if (url.hreflang && url.hreflang.length > 0) {
+      url.hreflang.forEach(link => {
+        sitemap += `    <xhtml:link rel="alternate" hreflang="${link.hreflang}" href="${link.href}" />\n`;
+      });
+    }
+    
     sitemap += '  </url>\n';
   });
   
@@ -65,6 +116,7 @@ export const generateSitemapIndex = (): string => {
   const baseURL = "https://rencontrecoquine.info";
   const today = new Date().toISOString().split('T')[0];
   
+  // Créer le sitemap index qui référence directement le sitemap.xml
   let sitemapIndex = '<?xml version="1.0" encoding="UTF-8"?>\n';
   sitemapIndex += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   sitemapIndex += '  <sitemap>\n';

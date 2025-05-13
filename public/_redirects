@@ -2,3 +2,7 @@
 # Netlify redirects file
 # This ensures that all routes are handled by the SPA router
 /* /index.html 200
+
+# Redirection explicite pour les pages de blog
+/blog/* /index.html 200
+
