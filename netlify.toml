@@ -10,18 +10,23 @@
   to = "/index.html"
   status = 200
 
-# Make sure sitemap files are served correctly with proper content type
+# Ensure sitemap files are served correctly with proper content type
 [[headers]]
   for = "/*.xml"
   [headers.values]
     Content-Type = "application/xml"
+    X-Robots-Tag = "index, follow"
 
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
     Content-Type = "application/xml"
+    X-Robots-Tag = "index, follow"
+    Access-Control-Allow-Origin = "*"
 
 [[headers]]
   for = "/sitemap-index.xml"
   [headers.values]
     Content-Type = "application/xml"
+    X-Robots-Tag = "index, follow"
+    Access-Control-Allow-Origin = "*"

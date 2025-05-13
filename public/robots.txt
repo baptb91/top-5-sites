@@ -1,11 +1,14 @@
 
+# Instructions pour les robots d'indexation
 User-agent: *
 Allow: /
 Allow: /blog/
 Allow: /blog/*
 Disallow: /mentions-legales
 
-# Nous spécifions explicitement le sitemap-index et le sitemap principal
-Sitemap: https://rencontrecoquine.info/sitemap-index.xml
-Sitemap: https://rencontrecoquine.info/sitemap.xml
+# Notification explicite de contenu adulte pour les moteurs de recherche
+# adult-content: true
 
+# Sitemaps pour améliorer l'indexation
+Sitemap: https://rencontrecoquine.info/sitemap.xml
+Sitemap: https://rencontrecoquine.info/sitemap-index.xml

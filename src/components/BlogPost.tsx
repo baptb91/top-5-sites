@@ -32,11 +32,11 @@ const BlogPost = () => {
   const metaDescription = post.excerpt.length > 155 ? post.excerpt.substring(0, 155) + '...' : post.excerpt;
   
   // Création de mots-clés à partir du slug et du titre
-  const keywords = `rencontres coquines, ${post.slug.replace(/-/g, ', ')}, ${post.title.toLowerCase().split(' ').slice(0, 5).join(', ')}`;
+  const keywords = `rencontres coquines, rencontres adultes, ${post.slug.replace(/-/g, ', ')}, ${post.title.toLowerCase().split(' ').slice(0, 5).join(', ')}`;
 
   // Fix date format for ISO
   const publishDate = new Date(post.date).toISOString();
-  const modifiedDate = new Date().toISOString();
+  const modifiedDate = post.modifiedDate ? new Date(post.modifiedDate).toISOString() : new Date().toISOString();
 
   return (
     <>
@@ -44,8 +44,11 @@ const BlogPost = () => {
         <title>{post.title} | Guide Rencontres Coquines 2024</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={keywords} />
-        <meta name="author" content="RencontreCoquine.info" />
+        <meta name="author" content={post.authorName || "RencontreCoquine.info"} />
         <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="rating" content="adult" />
+        <meta name="adult" content="yes" />
+        <meta name="mature" content="yes" />
         <meta httpEquiv="content-language" content="fr" />
         
         <link rel="canonical" href={`https://rencontrecoquine.info/blog/${post.slug}`} />
@@ -78,7 +81,7 @@ const BlogPost = () => {
               "dateModified": "${modifiedDate}",
               "author": {
                 "@type": "Organization",
-                "name": "RencontreCoquine.info"
+                "name": "${post.authorName || 'RencontreCoquine.info'}"
               },
               "publisher": {
                 "@type": "Organization",
@@ -92,7 +95,10 @@ const BlogPost = () => {
               "mainEntityOfPage": {
                 "@type": "WebPage",
                 "@id": "https://rencontrecoquine.info/blog/${post.slug}"
-              }
+              },
+              "isAccessibleForFree": "True",
+              "inLanguage": "fr-FR",
+              "keywords": "${keywords.replace(/"/g, '\\"')}"
             }
           `}
         </script>
