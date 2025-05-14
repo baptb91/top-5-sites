@@ -74,9 +74,8 @@ export const generateSitemap = (): string => {
     }]
   });
 
-  // Créer le sitemap avec les espaces de noms nécessaires
-  let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+  // Créer le sitemap sans la déclaration XML, elle sera ajoutée séparément
+  let sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
   sitemap += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"\n';
   sitemap += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
   
@@ -116,9 +115,8 @@ export const generateSitemapIndex = (): string => {
   const baseURL = "https://rencontrecoquine.info";
   const today = new Date().toISOString().split('T')[0];
   
-  // Créer le sitemap index qui référence directement le sitemap.xml
-  let sitemapIndex = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  sitemapIndex += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  // Créer le sitemap index sans la déclaration XML, elle sera ajoutée séparément
+  let sitemapIndex = '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   sitemapIndex += '  <sitemap>\n';
   sitemapIndex += `    <loc>${baseURL}/sitemap.xml</loc>\n`;
   sitemapIndex += `    <lastmod>${today}</lastmod>\n`;

@@ -10,7 +10,7 @@ const Sitemap = () => {
     // Générer le sitemap
     const sitemap = generateSitemap();
     
-    // Créer un Blob avec le type MIME correct
+    // Créer un Blob avec le type MIME correct et la déclaration XML au début
     const blob = new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n' + sitemap], {
       type: 'application/xml; charset=utf-8'
     });
