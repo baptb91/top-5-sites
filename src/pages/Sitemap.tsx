@@ -7,21 +7,22 @@ const Sitemap = () => {
   const [redirected, setRedirected] = useState(false);
 
   useEffect(() => {
-    // Générer le sitemap
+    // Generate sitemap
     const sitemap = generateSitemap();
     
-    // Créer un Blob avec le type MIME correct et la déclaration XML au début
-    const blob = new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n' + sitemap], {
+    // Create a Blob with the correct MIME type and XML declaration at the beginning
+    const xmlContent = '<?xml version="1.0" encoding="UTF-8"?>\n' + sitemap;
+    const blob = new Blob([xmlContent], {
       type: 'application/xml; charset=utf-8'
     });
     
-    // Créer une URL pour le Blob
+    // Create a URL for the Blob
     const blobURL = URL.createObjectURL(blob);
     
-    // Ouvrir le XML dans un nouvel onglet ou le télécharger directement
+    // Open the XML in a new tab or download it directly
     const newWindow = window.open(blobURL, '_blank');
     
-    // Si le navigateur bloque l'ouverture, proposer le téléchargement
+    // If the browser blocks opening, offer download
     if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
       const link = document.createElement('a');
       link.href = blobURL;
@@ -31,7 +32,7 @@ const Sitemap = () => {
       document.body.removeChild(link);
     }
     
-    // Nettoyer l'URL du Blob
+    // Clean up the Blob URL
     setTimeout(() => {
       URL.revokeObjectURL(blobURL);
       setRedirected(true);

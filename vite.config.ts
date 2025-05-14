@@ -5,7 +5,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import fs from "fs";
 
-// Plugin pour générer les sitemaps lors du build
+// Plugin to generate sitemaps during build
 const sitemapPlugin = () => {
   return {
     name: 'vite-plugin-sitemap',
@@ -33,11 +33,12 @@ const sitemapPlugin = () => {
         // Import the compiled module
         const { generateSitemap, generateSitemapIndex } = require(tempFile);
         
-        // Assurer que la déclaration XML est correctement ajoutée
-        const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemap();
-        const sitemapIndex = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemapIndex();
+        // Make sure XML declaration is properly added at the very beginning (no hidden characters)
+        const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        const sitemap = xmlDeclaration + generateSitemap();
+        const sitemapIndex = xmlDeclaration + generateSitemapIndex();
         
-        // Écrire les fichiers dans le dossier dist
+        // Write files to the dist folder
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap.xml'), sitemap);
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
         
@@ -76,7 +77,6 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false, // Disable sourcemaps in production
     outDir: 'dist',
     // Generate a template that routes all requests to index.html
-    // This is crucial for SPA routing with history API
     rollupOptions: {
       output: {
         manualChunks: (id) => {

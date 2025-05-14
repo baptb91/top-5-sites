@@ -6,9 +6,6 @@ Allow: /blog/
 Allow: /blog/*
 Disallow: /mentions-legales
 
-# Notification explicite de contenu adulte pour les moteurs de recherche
-# adult-content: true
-
 # Sitemaps pour améliorer l'indexation
 Sitemap: https://rencontrecoquine.info/sitemap.xml
 Sitemap: https://rencontrecoquine.info/sitemap-index.xml

@@ -74,10 +74,10 @@ export const generateSitemap = (): string => {
     }]
   });
 
-  // Créer le sitemap sans la déclaration XML, elle sera ajoutée séparément
-  let sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
-  sitemap += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"\n';
-  sitemap += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
+  // Without XML declaration - will be added separately
+  let sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ';
+  sitemap += 'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" ';
+  sitemap += 'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
   
   urls.forEach(url => {
     sitemap += '  <url>\n';
@@ -86,7 +86,7 @@ export const generateSitemap = (): string => {
     sitemap += `    <changefreq>${url.changefreq}</changefreq>\n`;
     sitemap += `    <priority>${url.priority}</priority>\n`;
     
-    // Ajouter les informations d'image si disponibles
+    // Add image information if available
     if (url.images && url.images.length > 0) {
       url.images.forEach(image => {
         sitemap += '    <image:image>\n';
@@ -96,7 +96,7 @@ export const generateSitemap = (): string => {
       });
     }
     
-    // Ajouter les informations hreflang si disponibles
+    // Add hreflang information if available
     if (url.hreflang && url.hreflang.length > 0) {
       url.hreflang.forEach(link => {
         sitemap += `    <xhtml:link rel="alternate" hreflang="${link.hreflang}" href="${link.href}" />\n`;
@@ -115,7 +115,7 @@ export const generateSitemapIndex = (): string => {
   const baseURL = "https://rencontrecoquine.info";
   const today = new Date().toISOString().split('T')[0];
   
-  // Créer le sitemap index sans la déclaration XML, elle sera ajoutée séparément
+  // Without XML declaration - will be added separately
   let sitemapIndex = '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   sitemapIndex += '  <sitemap>\n';
   sitemapIndex += `    <loc>${baseURL}/sitemap.xml</loc>\n`;
