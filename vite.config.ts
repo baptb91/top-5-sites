@@ -31,16 +31,18 @@ const sitemapPlugin = () => {
         fs.writeFileSync(tempFile, outputFiles[0].text);
         
         // Import the compiled module
-        const { generateSitemap, generateSitemapIndex } = require(tempFile);
+        const { generateSitemap, generateSitemapIndex, generateSimpleSitemap } = require(tempFile);
         
         // Make sure XML declaration is properly added at the very beginning (no hidden characters)
         const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>\n';
         const sitemap = xmlDeclaration + generateSitemap();
         const sitemapIndex = xmlDeclaration + generateSitemapIndex();
+        const simpleSitemap = xmlDeclaration + generateSimpleSitemap();
         
         // Write files to the dist folder
-        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap.xml'), sitemap);
+        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-content.xml'), sitemap);
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
+        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap.xml'), simpleSitemap);
         
         // Clean up the temporary file
         fs.unlinkSync(tempFile);

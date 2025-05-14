@@ -74,7 +74,7 @@ export const generateSitemap = (): string => {
     }]
   });
 
-  // Without XML declaration - will be added separately
+  // Generate sitemap without XML declaration
   let sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ';
   sitemap += 'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" ';
   sitemap += 'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
@@ -115,13 +115,43 @@ export const generateSitemapIndex = (): string => {
   const baseURL = "https://rencontrecoquine.info";
   const today = new Date().toISOString().split('T')[0];
   
-  // Without XML declaration - will be added separately
+  // Generate sitemap index without XML declaration
   let sitemapIndex = '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   sitemapIndex += '  <sitemap>\n';
-  sitemapIndex += `    <loc>${baseURL}/sitemap.xml</loc>\n`;
+  sitemapIndex += `    <loc>${baseURL}/sitemap-content.xml</loc>\n`;
   sitemapIndex += `    <lastmod>${today}</lastmod>\n`;
   sitemapIndex += '  </sitemap>\n';
   sitemapIndex += '</sitemapindex>';
   
   return sitemapIndex;
+};
+
+// Generate a simplified sitemap for Google Search Console
+export const generateSimpleSitemap = (): string => {
+  const baseURL = "https://rencontrecoquine.info";
+  const today = new Date().toISOString().split('T')[0];
+  
+  let sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  
+  sitemap += '  <url>\n';
+  sitemap += `    <loc>${baseURL}/</loc>\n`;
+  sitemap += `    <lastmod>${today}</lastmod>\n`;
+  sitemap += '    <priority>1.0</priority>\n';
+  sitemap += '  </url>\n';
+  
+  sitemap += '  <url>\n';
+  sitemap += `    <loc>${baseURL}/blog</loc>\n`;
+  sitemap += `    <lastmod>${today}</lastmod>\n`;
+  sitemap += '    <priority>0.8</priority>\n';
+  sitemap += '  </url>\n';
+  
+  sitemap += '  <url>\n';
+  sitemap += `    <loc>${baseURL}/sitemap-content.xml</loc>\n`;
+  sitemap += `    <lastmod>${today}</lastmod>\n`;
+  sitemap += '    <priority>0.5</priority>\n';
+  sitemap += '  </url>\n';
+  
+  sitemap += '</urlset>';
+  
+  return sitemap;
 };

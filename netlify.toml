@@ -30,3 +30,10 @@
     Content-Type = "application/xml"
     X-Robots-Tag = "index, follow"
     Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/sitemap-content.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+    X-Robots-Tag = "index, follow"
+    Access-Control-Allow-Origin = "*"

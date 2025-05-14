@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { generateSitemap } from "@/utils/sitemapGenerator";
+import { generateSimpleSitemap } from "@/utils/sitemapGenerator";
 import { Navigate } from "react-router-dom";
 
 const Sitemap = () => {
@@ -8,7 +8,7 @@ const Sitemap = () => {
 
   useEffect(() => {
     // Generate sitemap
-    const sitemap = generateSitemap();
+    const sitemap = generateSimpleSitemap();
     
     // Create a Blob with the correct MIME type and XML declaration at the beginning
     const xmlContent = '<?xml version="1.0" encoding="UTF-8"?>\n' + sitemap;
