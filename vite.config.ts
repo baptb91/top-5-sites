@@ -33,6 +33,7 @@ const sitemapPlugin = () => {
         // Import the compiled module
         const { generateSitemap, generateSitemapIndex } = require(tempFile);
         
+        // Assurer que la déclaration XML est correctement ajoutée
         const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemap();
         const sitemapIndex = '<?xml version="1.0" encoding="UTF-8"?>\n' + generateSitemapIndex();
         
