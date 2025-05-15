@@ -10,6 +10,22 @@ import { openingLinesPost } from "./blog-posts/openingLinesPost";
 import { firstMessagePost } from "./blog-posts/firstMessagePost";
 import { instantConnectionPost } from "./blog-posts/instantConnectionPost";
 
+// Logging pour le débogage
+console.log("Loaded blog posts with slugs:", [
+  instantConnectionPost.slug,
+  datingProfilePost.slug,
+  avoidErrorsPost.slug,
+  seductionSecretsPost.slug,
+  flirtingTechniquesPost.slug,
+  attractMoreMessagesPost.slug,
+  openingLinesPost.slug,
+  firstMessagePost.slug
+]);
+
+// Vérifions spécifiquement le slug de flirtingTechniquesPost
+console.log("flirtingTechniquesPost slug:", flirtingTechniquesPost.slug);
+console.log("Full flirtingTechniquesPost:", flirtingTechniquesPost);
+
 export const blogPosts: BlogPost[] = [
   instantConnectionPost, // Ajout du nouvel article en tête de liste
   datingProfilePost,

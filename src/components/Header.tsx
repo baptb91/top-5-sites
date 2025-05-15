@@ -6,7 +6,7 @@ const Header = () => {
     <header className="flex items-center justify-between py-6 mb-12">
       <div className="flex-1">
         <Link to="/" className="text-2xl font-bold text-romance-600">
-          RencontreCoquine.info
+          {/* Texte supprimé comme demandé */}
         </Link>
       </div>
       

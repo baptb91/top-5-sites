@@ -3,7 +3,7 @@ import { BlogPost } from "@/types/blog";
 export const flirtingTechniquesPost: BlogPost = {
   id: "5",
   title: "Les Techniques de Drague en Ligne qui Fonctionnent à Tous les Coups : Guide Pratique pour des Résultats Garantis",
-  slug: "techniques-drague-ligne-resultats-garantis",
+  slug: "techniques-flirt-efficaces-rencontres-coquines",
   excerpt: "Découvrez les meilleures techniques de séduction en ligne qui fonctionnent vraiment. Guide complet avec conseils pratiques pour optimiser votre profil et créer des connexions authentiques.",
   date: "2024-04-05",
   imageUrl: "/lovable-uploads/5fd3022b-b120-4dbc-8f62-e06f6ce5ab77.png",

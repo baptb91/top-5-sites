@@ -10,14 +10,24 @@ const BlogPost = () => {
   const { slug } = useParams();
   const post = blogPosts.find((post) => post.slug === slug);
 
-  // Log page access for debugging
+  // Log page access for debugging - with more details
   useEffect(() => {
     console.log(`BlogPost accessed with slug: ${slug}`);
     console.log(`Post found:`, post ? "Yes" : "No");
     
-    // If post not found, log all available slugs for comparison
-    if (!post) {
-      console.log("Available slugs:", blogPosts.map(p => p.slug));
+    // Log all available slugs for comparison
+    console.log("All available slugs:", blogPosts.map(p => p.slug));
+    
+    // Detailed log for this specific slug case
+    if (slug === "techniques-flirt-efficaces-rencontres-coquines" || 
+        slug === "techniques-drague-ligne-resultats-garantis") {
+      console.log("*** IMPORTANT: Special slug match check ***");
+      console.log("Slug from URL parameter:", slug);
+      const matchingPost = blogPosts.find(p => p.slug === slug);
+      console.log("Matching post found:", matchingPost ? "Yes" : "No");
+      if (!matchingPost) {
+        console.log("All blog slugs for comparison:", blogPosts.map(p => p.slug));
+      }
     }
   }, [slug, post]);
 
