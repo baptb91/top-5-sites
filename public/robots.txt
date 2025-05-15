@@ -5,6 +5,9 @@ Allow: /
 Allow: /blog/
 Allow: /blog/*
 Disallow: /mentions-legales
+Disallow: /politique-confidentialite
+Disallow: /conditions-utilisation
+Disallow: /politique-cookies
 
 # Sitemaps pour améliorer l'indexation
 Sitemap: https://rencontrecoquine.info/sitemap-index.xml

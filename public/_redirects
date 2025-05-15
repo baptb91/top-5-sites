@@ -6,3 +6,8 @@
 # Redirection explicite pour les pages de blog
 /blog/* /index.html 200
 
+# Redirections pour les pages légales
+/mentions-legales /index.html 200
+/politique-confidentialite /index.html 200
+/conditions-utilisation /index.html 200
+/politique-cookies /index.html 200

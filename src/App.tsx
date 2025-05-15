@@ -7,6 +7,10 @@ import NotFound from "./pages/NotFound";
 import BlogPost from "./components/BlogPost";
 import Sitemap from "./pages/Sitemap";
 import SitemapIndex from "./pages/SitemapIndex";
+import LegalNotice from "./pages/LegalNotice";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
 import { Toaster } from "@/components/ui/toaster";
 
 // Define a ScrollToTop component to handle scrolling to top on page change
@@ -51,6 +55,11 @@ const App = () => {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/sitemap.xml" element={<Sitemap />} />
         <Route path="/sitemap-index.xml" element={<SitemapIndex />} />
+        {/* Pages légales */}
+        <Route path="/mentions-legales" element={<LegalNotice />} />
+        <Route path="/politique-confidentialite" element={<PrivacyPolicy />} />
+        <Route path="/conditions-utilisation" element={<TermsOfService />} />
+        <Route path="/politique-cookies" element={<CookiePolicy />} />
         {/* Ajout des chemins alternatifs pour les robots qui pourraient utiliser ces URL */}
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap-index" element={<SitemapIndex />} />

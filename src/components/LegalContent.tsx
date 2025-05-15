@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const LegalContent = () => {
   return (
@@ -11,86 +12,104 @@ const LegalContent = () => {
           transition={{ duration: 0.5 }}
           className="prose prose-lg mx-auto max-w-4xl"
         >
-          <h1 className="text-4xl font-bold mb-8">Conditions Générales d'Utilisation et Mentions Légales</h1>
+          <h1 className="text-4xl font-bold mb-8">Mentions Légales</h1>
+
+          <div className="mb-10 flex flex-wrap gap-4">
+            <Link 
+              to="/mentions-legales" 
+              className="px-4 py-2 bg-romance-500 text-white rounded hover:bg-romance-600 transition-colors"
+            >
+              Mentions Légales
+            </Link>
+            <Link 
+              to="/conditions-utilisation" 
+              className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
+            >
+              CGU
+            </Link>
+            <Link 
+              to="/politique-confidentialite" 
+              className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
+            >
+              Politique de Confidentialité
+            </Link>
+            <Link 
+              to="/politique-cookies" 
+              className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
+            >
+              Cookies
+            </Link>
+          </div>
 
           <h2 className="text-2xl font-semibold mb-6">1. Informations Légales</h2>
           <p className="mb-6 text-gray-700">
-            Le présent site est édité par [Nom de la Société], société [forme juridique] au capital de [montant] euros,
-            immatriculée au Registre du Commerce et des Sociétés de [ville] sous le numéro [numéro RCS],
-            dont le siège social est situé [adresse complète].
+            Le présent site est édité par RencontreCoquine.info, site d'information et de comparaison de plateformes de rencontres pour adultes.
           </p>
           <p className="mb-6 text-gray-700">
-            Directeur de la publication : [Nom du directeur]<br />
-            Contact : [email]<br />
-            Téléphone : [numéro]
+            Directeur de la publication : Le directeur de la publication<br />
+            Contact : contact@rencontrecoquine.info<br />
           </p>
 
           <h2 className="text-2xl font-semibold mb-6">2. Hébergement</h2>
           <p className="mb-6 text-gray-700">
-            Le site est hébergé par [Nom de l'hébergeur], [forme juridique],<br />
-            Siège social : [adresse de l'hébergeur]<br />
-            Téléphone : [numéro]
+            Le site est hébergé par Netlify, Inc.,<br />
+            Siège social : 2325 3rd Street, Suite 215, San Francisco, California 94107, USA<br />
+            Site web : https://www.netlify.com
           </p>
 
-          <h2 className="text-2xl font-semibold mb-6">3. Conditions d'Utilisation du Service</h2>
-          
-          <h3 className="text-xl font-medium mb-4">3.1 Accès au Service</h3>
-          <p className="mb-6 text-gray-700">
-            L'accès au service est strictement réservé aux personnes majeures de plus de 18 ans. En accédant au service,
-            l'utilisateur déclare et garantit être majeur selon la législation en vigueur dans son pays de résidence.
-          </p>
-
-          <h3 className="text-xl font-medium mb-4">3.2 Inscription</h3>
-          <p className="mb-6 text-gray-700">
-            Lors de l'inscription, l'utilisateur s'engage à fournir des informations exactes et à jour. Toute utilisation
-            de fausses informations pourra entraîner la fermeture immédiate du compte.
-          </p>
-
-          <h2 className="text-2xl font-semibold mb-6">4. Protection des Données Personnelles</h2>
-          <p className="mb-6 text-gray-700">
-            Conformément au Règlement Général sur la Protection des Données (RGPD), les utilisateurs disposent
-            d'un droit d'accès, de rectification, de suppression et d'opposition à leurs données personnelles.
-          </p>
-
-          <h3 className="text-xl font-medium mb-4">4.1 Collecte des Données</h3>
-          <p className="mb-6 text-gray-700">
-            Les informations recueillies font l'objet d'un traitement informatique destiné à :
-          </p>
-          <ul className="space-y-3 mb-8 text-gray-700">
-            <li>La gestion des comptes utilisateurs</li>
-            <li>L'amélioration des services proposés</li>
-            <li>La personnalisation des contenus</li>
-            <li>L'envoi d'informations commerciales (avec consentement)</li>
-          </ul>
-
-          <h2 className="text-2xl font-semibold mb-6">5. Propriété Intellectuelle</h2>
+          <h2 className="text-2xl font-semibold mb-6">3. Propriété Intellectuelle</h2>
           <p className="mb-6 text-gray-700">
             L'ensemble des éléments composant le site (textes, graphismes, logiciels, photographies, images, vidéos, sons,
             plans, noms, logos, marques, créations et œuvres protégeables diverses, bases de données, etc.) ainsi que le site
             lui-même, relèvent des législations françaises et internationales sur le droit d'auteur et la propriété intellectuelle.
           </p>
-
-          <h2 className="text-2xl font-semibold mb-6">6. Responsabilité</h2>
           <p className="mb-6 text-gray-700">
-            La responsabilité du site ne peut être engagée en cas de défaillance, panne, difficulté ou interruption de
-            fonctionnement, empêchant l'accès au site ou à une de ses fonctionnalités.
+            Ces éléments sont la propriété exclusive de RencontreCoquine.info. Toute reproduction ou représentation, totale ou partielle,
+            du site ou de l'un des éléments qui le composent, sans l'autorisation expresse de RencontreCoquine.info, est interdite et
+            constituerait une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.
           </p>
 
-          <h2 className="text-2xl font-semibold mb-6">7. Modification des CGU</h2>
+          <h2 className="text-2xl font-semibold mb-6">4. Liens Hypertextes</h2>
           <p className="mb-6 text-gray-700">
-            Les présentes conditions peuvent être modifiées à tout moment. Les utilisateurs du site sont donc invités
-            à les consulter de manière régulière. Les nouvelles conditions s'imposent à l'utilisateur qui est invité
-            à les consulter et à les accepter.
+            Le site RencontreCoquine.info peut contenir des liens hypertextes vers d'autres sites internet qui ne sont pas sous
+            le contrôle de RencontreCoquine.info. RencontreCoquine.info ne peut être tenu responsable du contenu de ces sites et
+            des liens qu'ils contiennent.
           </p>
 
-          <h2 className="text-2xl font-semibold mb-6">8. Loi Applicable</h2>
+          <h2 className="text-2xl font-semibold mb-6">5. Protection des Données Personnelles</h2>
           <p className="mb-6 text-gray-700">
-            Les présentes conditions générales d'utilisation et mentions légales sont soumises au droit français.
-            En cas de litige, les tribunaux français seront compétents.
+            RencontreCoquine.info s'engage à respecter votre vie privée et à protéger les informations que vous lui communiquez.
+            Pour plus d'informations sur la collecte et le traitement de vos données personnelles, veuillez consulter notre 
+            <Link to="/politique-confidentialite" className="text-romance-600 hover:underline ml-1">
+              Politique de Confidentialité
+            </Link>.
+          </p>
+
+          <h2 className="text-2xl font-semibold mb-6">6. Cookies</h2>
+          <p className="mb-6 text-gray-700">
+            RencontreCoquine.info utilise des cookies pour améliorer l'expérience utilisateur. Pour plus d'informations sur
+            notre utilisation des cookies, veuillez consulter notre 
+            <Link to="/politique-cookies" className="text-romance-600 hover:underline ml-1">
+              Politique de Cookies
+            </Link>.
+          </p>
+
+          <h2 className="text-2xl font-semibold mb-6">7. Conditions Générales d'Utilisation</h2>
+          <p className="mb-6 text-gray-700">
+            L'utilisation du site RencontreCoquine.info est soumise au respect des 
+            <Link to="/conditions-utilisation" className="text-romance-600 hover:underline ml-1">
+              Conditions Générales d'Utilisation
+            </Link>.
+          </p>
+
+          <h2 className="text-2xl font-semibold mb-6">8. Loi Applicable et Juridiction</h2>
+          <p className="mb-6 text-gray-700">
+            Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux français
+            seront seuls compétents.
           </p>
 
           <div className="text-sm text-gray-500 mt-12">
-            <p>Dernière mise à jour : [Date]</p>
+            <p>Dernière mise à jour : Mai 2025</p>
           </div>
         </motion.div>
       </div>
