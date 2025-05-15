@@ -126,7 +126,8 @@ export const generateSitemapIndex = (): string => {
   return sitemapIndex;
 };
 
-// Generate a simplified sitemap for Google Search Console
+// Cette fonction n'est plus utilisée, mais est conservée pour la référence
+// Elle pourrait être utile si vous décidez de revenir à une structure à trois fichiers
 export const generateSimpleSitemap = (): string => {
   const baseURL = "https://rencontrecoquine.info";
   const today = new Date().toISOString().split('T')[0];

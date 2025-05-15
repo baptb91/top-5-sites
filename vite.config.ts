@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -31,18 +30,16 @@ const sitemapPlugin = () => {
         fs.writeFileSync(tempFile, outputFiles[0].text);
         
         // Import the compiled module
-        const { generateSitemap, generateSitemapIndex, generateSimpleSitemap } = require(tempFile);
+        const { generateSitemap, generateSitemapIndex } = require(tempFile);
         
         // Make sure XML declaration is properly added at the very beginning (no hidden characters)
         const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>\n';
         const sitemap = xmlDeclaration + generateSitemap();
         const sitemapIndex = xmlDeclaration + generateSitemapIndex();
-        const simpleSitemap = xmlDeclaration + generateSimpleSitemap();
         
-        // Write files to the dist folder
+        // Write files to the dist folder - only the two required files
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-content.xml'), sitemap);
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
-        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap.xml'), simpleSitemap);
         
         // Clean up the temporary file
         fs.unlinkSync(tempFile);
@@ -75,10 +72,9 @@ export default defineConfig(({ mode }) => ({
     extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
   },
   build: {
-    cssCodeSplit: false, // Combine CSS into a single file
-    sourcemap: false, // Disable sourcemaps in production
+    cssCodeSplit: false, 
+    sourcemap: false,
     outDir: 'dist',
-    // Generate a template that routes all requests to index.html
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -115,11 +111,11 @@ export default defineConfig(({ mode }) => ({
         chunkFileNames: 'assets/[name]-[hash].js',
       },
     },
-    minify: 'terser', // Use terser for better minification
+    minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: false, // Keep console logs in production for now for debugging
-        drop_debugger: true // Remove debugger statements
+        drop_console: false,
+        drop_debugger: true
       }
     }
   },

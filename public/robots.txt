@@ -7,6 +7,5 @@ Allow: /blog/*
 Disallow: /mentions-legales
 
 # Sitemaps pour améliorer l'indexation
-Sitemap: https://rencontrecoquine.info/sitemap.xml
 Sitemap: https://rencontrecoquine.info/sitemap-index.xml
 Sitemap: https://rencontrecoquine.info/sitemap-content.xml
