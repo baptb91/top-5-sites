@@ -65,10 +65,10 @@ const CookiePolicy = () => {
                   Pour gérer les cookies dans votre navigateur :
                 </p>
                 <ul className="space-y-3 mb-8 text-gray-700">
-                  <li><strong>Chrome :</strong> Menu > Paramètres > Confidentialité et sécurité > Cookies et autres données des sites</li>
-                  <li><strong>Firefox :</strong> Menu > Options > Vie privée et sécurité > Cookies et données de sites</li>
-                  <li><strong>Safari :</strong> Préférences > Confidentialité > Cookies et données de sites web</li>
-                  <li><strong>Edge :</strong> Menu > Paramètres > Confidentialité, recherche et services > Effacer les données de navigation</li>
+                  <li><strong>Chrome :</strong> Menu {'->'} Paramètres {'->'} Confidentialité et sécurité {'->'} Cookies et autres données des sites</li>
+                  <li><strong>Firefox :</strong> Menu {'->'} Options {'->'} Vie privée et sécurité {'->'} Cookies et données de sites</li>
+                  <li><strong>Safari :</strong> Préférences {'->'} Confidentialité {'->'} Cookies et données de sites web</li>
+                  <li><strong>Edge :</strong> Menu {'->'} Paramètres {'->'} Confidentialité, recherche et services {'->'} Effacer les données de navigation</li>
                 </ul>
 
                 <h2 className="text-2xl font-semibold mb-6">5. Conséquences du Refus des Cookies</h2>
