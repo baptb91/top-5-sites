@@ -35,6 +35,14 @@ const SeoHandler = () => {
     // Log navigation for debugging purposes
     console.log(`Navigation to: ${pathname}`);
 
+    // Add viewport meta tag for better mobile support
+    if (!document.querySelector('meta[name="viewport"]')) {
+      const meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, initial-scale=1, maximum-scale=1';
+      document.head.appendChild(meta);
+    }
+
     // Pour les robots de Google, ajouter les en-têtes appropriés
     if (pathname.endsWith('.xml')) {
       document.title = pathname.includes('index') ? 'Sitemap Index' : 'Sitemap';
