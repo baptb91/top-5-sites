@@ -181,7 +181,7 @@ const Index = () => {
               </motion.h1>
               <p className="mx-auto max-w-2xl text-lg text-gray-600">
                 Notre sélection exclusive des plateformes les plus performantes en 2025 pour des rencontres 
-                passionnées et discrètes. Découvrez les sites les mieux notés selon 37 critères d'évaluation.
+                passionnées et discrètes. Découvrez les sites les mieux notés selon 62 critères d'évaluation.
               </p>
             </div>
             <SiteList />

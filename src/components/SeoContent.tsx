@@ -27,7 +27,7 @@ const SeoContent = () => {
           <div className="bg-romance-50 p-6 rounded-lg mb-10 shadow-sm">
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">📋 Notre Processus d'Évaluation</h3>
             <p className="mb-4 text-gray-700">
-              Pour vous garantir une expérience de qualité, notre équipe suit une méthodologie rigoureuse basée sur des critères objectifs :
+              Pour vous garantir une expérience de qualité, notre équipe suit une méthodologie rigoureuse basée sur 62 critères objectifs :
             </p>
             <ul className="space-y-3 mb-6 text-gray-700">
               <li className="flex items-start">
