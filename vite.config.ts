@@ -4,17 +4,15 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import fs from "fs";
 
-// Plugin to generate sitemaps during build
-const sitemapPlugin = () => {
+// Plugin to generate sitemaps and static pages during build
+const seoPlugin = () => {
   return {
-    name: 'vite-plugin-sitemap',
+    name: 'vite-plugin-seo',
     closeBundle: async () => {
       try {
-        // Import dynamic directly from the file
+        // 1. Generate sitemaps
         const sitemapPath = path.resolve(__dirname, './src/utils/sitemapGenerator.ts');
         
-        // We need to compile the TypeScript file before importing it
-        // Using a dynamic import with esbuild
         const { build } = await import('esbuild');
         const { outputFiles } = await build({
           entryPoints: [sitemapPath],
@@ -25,29 +23,45 @@ const sitemapPlugin = () => {
           target: 'node16',
         });
         
-        // Write the compiled file to a temporary location
-        const tempFile = path.resolve(__dirname, './temp-sitemap-generator.cjs');
-        fs.writeFileSync(tempFile, outputFiles[0].text);
+        const tempSitemapFile = path.resolve(__dirname, './temp-sitemap-generator.cjs');
+        fs.writeFileSync(tempSitemapFile, outputFiles[0].text);
         
-        // Import the compiled module
-        const { generateSitemap, generateSitemapIndex } = require(tempFile);
+        const { generateSitemap, generateSitemapIndex } = require(tempSitemapFile);
         
-        // Make sure XML declaration is properly added at the very beginning (no hidden characters)
         const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>\n';
         const sitemap = xmlDeclaration + generateSitemap();
         const sitemapIndex = xmlDeclaration + generateSitemapIndex();
         
-        // Write files to the dist folder - only the two required files
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-content.xml'), sitemap);
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
         
-        // Clean up the temporary file
-        fs.unlinkSync(tempFile);
-        
+        fs.unlinkSync(tempSitemapFile);
         console.log('✅ Sitemap files generated successfully');
+        
+        // 2. Generate static pages
+        const staticPagesPath = path.resolve(__dirname, './scripts/generateStaticPages.ts');
+        
+        const { outputFiles: staticOutputFiles } = await build({
+          entryPoints: [staticPagesPath],
+          bundle: true,
+          write: false,
+          format: 'cjs',
+          platform: 'node',
+          target: 'node16',
+          external: ['fs', 'path']
+        });
+        
+        const tempStaticFile = path.resolve(__dirname, './temp-static-generator.cjs');
+        fs.writeFileSync(tempStaticFile, staticOutputFiles[0].text);
+        
+        const { generateAllStaticPages } = require(tempStaticFile);
+        generateAllStaticPages();
+        
+        fs.unlinkSync(tempStaticFile);
+        console.log('✅ Static pages generated successfully');
+        
       } catch (error) {
-        console.error('Error generating sitemap files:', error);
-        console.error(error);
+        console.error('Error generating SEO files:', error);
       }
     }
   };
@@ -63,7 +77,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' &&
     componentTagger(),
-    mode === 'production' && sitemapPlugin(),
+    mode === 'production' && seoPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {

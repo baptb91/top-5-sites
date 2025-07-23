@@ -1,14 +1,11 @@
 
-# Instructions pour les robots d'indexation
 User-agent: *
 Allow: /
 Allow: /blog/
-Allow: /blog/*
-Disallow: /mentions-legales
-Disallow: /politique-confidentialite
-Disallow: /conditions-utilisation
-Disallow: /politique-cookies
+Allow: /mentions-legales
+Allow: /politique-confidentialite
+Allow: /conditions-utilisation
+Allow: /politique-cookies
 
-# Sitemaps pour améliorer l'indexation
-Sitemap: https://rencontrecoquine.info/sitemap-index.xml
-Sitemap: https://rencontrecoquine.info/sitemap-content.xml
+Sitemap: https://www.rencontrecoquine.info/sitemap-index.xml
+Sitemap: https://www.rencontrecoquine.info/sitemap-content.xml

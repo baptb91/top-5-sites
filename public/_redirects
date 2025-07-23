@@ -1,13 +1,17 @@
 
-# Netlify redirects file
-# This ensures that all routes are handled by the SPA router
+# Netlify redirects file - Configuration SEO optimisée
+# Redirections pour robots vers pages statiques, SPA pour humains
+
+# Pages principales pour robots
+/ /index.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+/blog /blog/index.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+/blog/:slug /blog/:slug.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+
+# Pages légales pour robots
+/mentions-legales /mentions-legales.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+/politique-confidentialite /politique-confidentialite.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+/conditions-utilisation /conditions-utilisation.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+/politique-cookies /politique-cookies.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+
+# Fallback SPA pour tous les autres (utilisateurs humains)
 /* /index.html 200
-
-# Redirection explicite pour les pages de blog
-/blog/* /index.html 200
-
-# Redirections pour les pages légales
-/mentions-legales /index.html 200
-/politique-confidentialite /index.html 200
-/conditions-utilisation /index.html 200
-/politique-cookies /index.html 200

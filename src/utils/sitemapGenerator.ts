@@ -18,7 +18,7 @@ interface SitemapURL {
 }
 
 export const generateSitemap = (): string => {
-  const baseURL = "https://rencontrecoquine.info";
+  const baseURL = "https://www.rencontrecoquine.info";
   const today = new Date().toISOString().split('T')[0];
   
   const urls: SitemapURL[] = [
@@ -63,15 +63,25 @@ export const generateSitemap = (): string => {
     });
   });
 
-  urls.push({
-    loc: `${baseURL}/mentions-legales`,
-    lastmod: today,
-    changefreq: "yearly",
-    priority: "0.3",
-    hreflang: [{
-      href: `${baseURL}/mentions-legales`,
-      hreflang: "fr"
-    }]
+  // Ajouter toutes les pages légales
+  const legalPages = [
+    'mentions-legales',
+    'politique-confidentialite', 
+    'conditions-utilisation',
+    'politique-cookies'
+  ];
+  
+  legalPages.forEach(page => {
+    urls.push({
+      loc: `${baseURL}/${page}`,
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.3",
+      hreflang: [{
+        href: `${baseURL}/${page}`,
+        hreflang: "fr"
+      }]
+    });
   });
 
   // Generate sitemap without XML declaration
@@ -112,7 +122,7 @@ export const generateSitemap = (): string => {
 };
 
 export const generateSitemapIndex = (): string => {
-  const baseURL = "https://rencontrecoquine.info";
+  const baseURL = "https://www.rencontrecoquine.info";
   const today = new Date().toISOString().split('T')[0];
   
   // Generate sitemap index without XML declaration
@@ -129,7 +139,7 @@ export const generateSitemapIndex = (): string => {
 // Cette fonction n'est plus utilisée, mais est conservée pour la référence
 // Elle pourrait être utile si vous décidez de revenir à une structure à trois fichiers
 export const generateSimpleSitemap = (): string => {
-  const baseURL = "https://rencontrecoquine.info";
+  const baseURL = "https://www.rencontrecoquine.info";
   const today = new Date().toISOString().split('T')[0];
   
   let sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
