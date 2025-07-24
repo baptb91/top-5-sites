@@ -1,103 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rencontrecoquine.info/</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/blog</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/blog</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/blog/creer-connexion-instantanee-personne-en-ligne</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/blog/creer-connexion-instantanee</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://rencontrecoquine.info/lovable-uploads/207bab30-93e0-4564-b332-33c2b5b9387a.png</image:loc>
-      <image:caption>Comment Créer une Connexion Instantanée avec Quelqu'un Rencontré en Ligne</image:caption>
+      <image:loc>https://www.rencontrecoquine.info/lovable-uploads/bf6fe96a-7b07-4b5f-a8e9-61a9977d06ea.png</image:loc>
+      <image:caption>Comment créer une connexion instantanée en ligne</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/blog/creer-connexion-instantanee-personne-en-ligne" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog/creer-connexion-instantanee" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/blog/rediger-profil-irresistible-rencontre-coquine</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/blog/profil-parfait-site-coquin</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://rencontrecoquine.info/lovable-uploads/246a3f22-6751-41e7-86cc-87af7137a6d9.png</image:loc>
-      <image:caption>Comment Rédiger un Profil de Rencontre Coquine Irrésistible</image:caption>
+      <image:loc>https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png</image:loc>
+      <image:caption>Comment créer le profil parfait sur un site de rencontre coquin</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/blog/rediger-profil-irresistible-rencontre-coquine" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog/profil-parfait-site-coquin" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/blog/erreurs-a-eviter-site-rencontre-coquine</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/blog/eviter-erreurs-sites-rencontre-adultes</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://rencontrecoquine.info/lovable-uploads/5fd3022b-b120-4dbc-8f62-e06f6ce5ab77.png</image:loc>
-      <image:caption>7 Erreurs Fatales à Éviter sur un Site de Rencontre Coquine</image:caption>
+      <image:loc>https://www.rencontrecoquine.info/lovable-uploads/1b836fd3-2a34-42fa-ab3f-8bf1e3d74f96.png</image:loc>
+      <image:caption>Les 5 erreurs à éviter sur les sites de rencontre pour adultes</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/blog/erreurs-a-eviter-site-rencontre-coquine" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog/eviter-erreurs-sites-rencontre-adultes" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/blog/techniques-flirt-efficaces-rencontres-coquines</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/blog/secrets-seduction-sites-adultes</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://rencontrecoquine.info/lovable-uploads/29343a3b-fb30-47a6-9b6e-a10a05e6c4c5.png</image:loc>
-      <image:caption>Les Techniques de Séduction Secrètes des Experts en Rencontres Coquines</image:caption>
+      <image:loc>https://www.rencontrecoquine.info/lovable-uploads/2725c6f7-27bf-4794-ae16-8f1a510020ba.png</image:loc>
+      <image:caption>Les secrets de la séduction sur les sites de rencontre pour adultes</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/blog/techniques-flirt-efficaces-rencontres-coquines" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog/secrets-seduction-sites-adultes" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/blog/attirer-plus-messages-application-rencontre</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/blog/techniques-drague-en-ligne</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://rencontrecoquine.info/lovable-uploads/1b836fd3-2a34-42fa-ab3f-8bf1e3d74f96.png</image:loc>
-      <image:caption>5 Secrets pour Attirer Plus de Messages sur les Applications de Rencontre</image:caption>
+      <image:loc>https://www.rencontrecoquine.info/lovable-uploads/885c79b8-4cc5-4e52-9521-973a62d8891c.png</image:loc>
+      <image:caption>Les meilleures techniques de drague en ligne</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/blog/attirer-plus-messages-application-rencontre" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog/techniques-drague-en-ligne" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/blog/phrases-accroche-efficaces-applications-rencontre</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/blog/attirer-plus-messages</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://rencontrecoquine.info/lovable-uploads/db052966-c9c0-44f8-b8e5-c30cef94992a.png</image:loc>
-      <image:caption>Les 10 Phrases d'Accroche qui Attirent le Plus de Réponses sur les Applications de Rencontre</image:caption>
+      <image:loc>https://www.rencontrecoquine.info/lovable-uploads/db052966-c9c0-44f8-b8e5-c30cef94992a.png</image:loc>
+      <image:caption>Comment attirer plus de messages sur une application de rencontre</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/blog/phrases-accroche-efficaces-applications-rencontre" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog/attirer-plus-messages" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/blog/premier-message-impactant-site-coquin</loc>
-    <lastmod>2024-05-25</lastmod>
+    <loc>https://www.rencontrecoquine.info/blog/phrases-accroche-efficaces</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://rencontrecoquine.info/lovable-uploads/dd60dd92-a4da-447c-987f-e67953948868.png</image:loc>
-      <image:caption>Comment Rédiger un Premier Message Qui Fait Mouche sur un Site Coquin</image:caption>
+      <image:loc>https://www.rencontrecoquine.info/lovable-uploads/365ab1bb-4f55-4356-987c-3e75a85f877f.png</image:loc>
+      <image:caption>10 phrases d'accroche efficaces pour les sites de rencontre</image:caption>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/blog/premier-message-impactant-site-coquin" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog/phrases-accroche-efficaces" />
   </url>
   <url>
-    <loc>https://rencontrecoquine.info/mentions-legales</loc>
-    <lastmod>2024-05-25</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.rencontrecoquine.info/blog/premier-message-parfait</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.rencontrecoquine.info/lovable-uploads/ce51fe8e-dfe9-4f07-8311-41a128f4e000.png</image:loc>
+      <image:caption>Comment rédiger le premier message parfait sur un site de rencontre adulte</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/blog/premier-message-parfait" />
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/mentions-legales</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://rencontrecoquine.info/mentions-legales" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/mentions-legales" />
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/politique-confidentialite</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/politique-confidentialite" />
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/conditions-utilisation</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/conditions-utilisation" />
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/politique-cookies</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/politique-cookies" />
   </url>
 </urlset>
