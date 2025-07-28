@@ -4,6 +4,11 @@ import { getStaticPagesConfig, generateStaticHTML } from '../src/utils/staticPag
 
 const OUTPUT_DIR = './dist';
 
+// Assurer que le répertoire dist existe
+if (!fs.existsSync(OUTPUT_DIR)) {
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+}
+
 // Fonction pour créer un répertoire s'il n'existe pas
 const ensureDirectory = (dirPath: string) => {
   if (!fs.existsSync(dirPath)) {
@@ -20,6 +25,8 @@ const generateAllStaticPages = () => {
   
   const staticPages = getStaticPagesConfig();
   let generatedCount = 0;
+  
+  console.log(`📋 Génération de ${staticPages.length} pages statiques...`);
   
   staticPages.forEach(pageConfig => {
     try {

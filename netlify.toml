@@ -9,43 +9,54 @@
   from = "/"
   to = "/index.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*facebook*", "*twitter*"]}
+  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
 
 [[redirects]]
   from = "/blog"
   to = "/blog/index.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*facebook*", "*twitter*"]}
+  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
 
 [[redirects]]
   from = "/blog/:slug"
   to = "/blog/:slug.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*facebook*", "*twitter*"]}
+  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
 
 [[redirects]]
   from = "/mentions-legales"
   to = "/mentions-legales.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*facebook*", "*twitter*"]}
+  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
 
 [[redirects]]
   from = "/politique-confidentialite"
   to = "/politique-confidentialite.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*facebook*", "*twitter*"]}
+  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
 
 [[redirects]]
   from = "/conditions-utilisation"
   to = "/conditions-utilisation.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*facebook*", "*twitter*"]}
+  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
 
 [[redirects]]
   from = "/politique-cookies"
   to = "/politique-cookies.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*facebook*", "*twitter*"]}
+  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
+
+# Redirections pour forcer l'indexation (nouveaux sitemaps)
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-v2-index.xml"
+  status = 301
+
+[[redirects]]
+  from = "/sitemaps.xml"
+  to = "/sitemap-v2-index.xml"
+  status = 301
 
 # Fallback SPA pour les utilisateurs humains
 [[redirects]]
@@ -58,9 +69,27 @@
   for = "/*.xml"
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
-    X-Robots-Tag = "index, follow"
-    Cache-Control = "public, max-age=3600"
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=1800"
+    Access-Control-Allow-Origin = "*"
 
+[[headers]]
+  for = "/sitemap-v2-index.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=1800"
+
+[[headers]]
+  for = "/sitemap-v2-content.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=1800"
+
+# Headers pour anciens sitemaps (conservés temporairement)
 [[headers]]
   for = "/sitemap-index.xml"
   [headers.values]
@@ -81,8 +110,9 @@
 [[headers]]
   for = "/*.html"
   [headers.values]
-    X-Robots-Tag = "index, follow, max-image-preview:large"
-    Cache-Control = "public, max-age=3600"
+    X-Robots-Tag = "index, follow, max-image-preview:large, max-snippet:-1"
+    Cache-Control = "public, max-age=1800"
+    X-Frame-Options = "SAMEORIGIN"
 
 # Headers spéciaux pour améliorer le SEO
 [[headers]]
