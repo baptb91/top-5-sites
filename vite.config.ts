@@ -35,6 +35,10 @@ const seoPlugin = () => {
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-content.xml'), sitemap);
         fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
         
+        // Copy v2 sitemaps to dist
+        fs.copyFileSync(path.resolve(__dirname, './public/sitemap-v2-index.xml'), path.resolve(__dirname, './dist/sitemap-v2-index.xml'));
+        fs.copyFileSync(path.resolve(__dirname, './public/sitemap-v2-content.xml'), path.resolve(__dirname, './dist/sitemap-v2-content.xml'));
+        
         fs.unlinkSync(tempSitemapFile);
         console.log('✅ Sitemap files generated successfully');
         
