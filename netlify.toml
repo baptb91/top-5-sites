@@ -9,43 +9,43 @@
   from = "/"
   to = "/index.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
+  conditions = {User-Agent = ["*GoogleBot*", "*Bingbot*", "*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*", "*slurp*", "*DuckDuckGo*", "*Yandex*", "*Applebot*"]}
 
 [[redirects]]
   from = "/blog"
   to = "/blog/index.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
+  conditions = {User-Agent = ["*GoogleBot*", "*Bingbot*", "*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*", "*slurp*", "*DuckDuckGo*", "*Yandex*", "*Applebot*"]}
 
 [[redirects]]
   from = "/blog/:slug"
   to = "/blog/:slug.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
+  conditions = {User-Agent = ["*GoogleBot*", "*Bingbot*", "*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*", "*slurp*", "*DuckDuckGo*", "*Yandex*", "*Applebot*"]}
 
 [[redirects]]
   from = "/mentions-legales"
   to = "/mentions-legales.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
+  conditions = {User-Agent = ["*GoogleBot*", "*Bingbot*", "*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*", "*slurp*", "*DuckDuckGo*", "*Yandex*", "*Applebot*"]}
 
 [[redirects]]
   from = "/politique-confidentialite"
   to = "/politique-confidentialite.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
+  conditions = {User-Agent = ["*GoogleBot*", "*Bingbot*", "*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*", "*slurp*", "*DuckDuckGo*", "*Yandex*", "*Applebot*"]}
 
 [[redirects]]
   from = "/conditions-utilisation"
   to = "/conditions-utilisation.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
+  conditions = {User-Agent = ["*GoogleBot*", "*Bingbot*", "*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*", "*slurp*", "*DuckDuckGo*", "*Yandex*", "*Applebot*"]}
 
 [[redirects]]
   from = "/politique-cookies"
   to = "/politique-cookies.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*"]}
+  conditions = {User-Agent = ["*GoogleBot*", "*Bingbot*", "*bot*", "*crawl*", "*spider*", "*scan*", "*index*", "*facebook*", "*twitter*", "*linkedin*", "*google*", "*slurp*", "*DuckDuckGo*", "*Yandex*", "*Applebot*"]}
 
 # Redirections pour forcer l'indexation (nouveaux sitemaps)
 [[redirects]]

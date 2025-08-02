@@ -2,16 +2,16 @@
 # Netlify redirects file - Configuration SEO optimisée
 # Redirections pour robots vers pages statiques, SPA pour humains
 
-# Pages principales pour robots
-/ /index.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
-/blog /blog/index.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
-/blog/:slug /blog/:slug.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+# Pages principales pour robots (User-Agent étendu pour GoogleBot)
+/ /index.html 200 User-Agent:*GoogleBot*,*Bingbot*,*bot*,*crawl*,*spider*,*facebook*,*twitter*,*slurp*,*DuckDuckGo*,*Yandex*,*Applebot*
+/blog /blog/index.html 200 User-Agent:*GoogleBot*,*Bingbot*,*bot*,*crawl*,*spider*,*facebook*,*twitter*,*slurp*,*DuckDuckGo*,*Yandex*,*Applebot*
+/blog/:slug /blog/:slug.html 200 User-Agent:*GoogleBot*,*Bingbot*,*bot*,*crawl*,*spider*,*facebook*,*twitter*,*slurp*,*DuckDuckGo*,*Yandex*,*Applebot*
 
 # Pages légales pour robots
-/mentions-legales /mentions-legales.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
-/politique-confidentialite /politique-confidentialite.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
-/conditions-utilisation /conditions-utilisation.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
-/politique-cookies /politique-cookies.html 200 User-Agent:*bot*,*crawl*,*spider*,*facebook*,*twitter*
+/mentions-legales /mentions-legales.html 200 User-Agent:*GoogleBot*,*Bingbot*,*bot*,*crawl*,*spider*,*facebook*,*twitter*,*slurp*,*DuckDuckGo*,*Yandex*,*Applebot*
+/politique-confidentialite /politique-confidentialite.html 200 User-Agent:*GoogleBot*,*Bingbot*,*bot*,*crawl*,*spider*,*facebook*,*twitter*,*slurp*,*DuckDuckGo*,*Yandex*,*Applebot*
+/conditions-utilisation /conditions-utilisation.html 200 User-Agent:*GoogleBot*,*Bingbot*,*bot*,*crawl*,*spider*,*facebook*,*twitter*,*slurp*,*DuckDuckGo*,*Yandex*,*Applebot*
+/politique-cookies /politique-cookies.html 200 User-Agent:*GoogleBot*,*Bingbot*,*bot*,*crawl*,*spider*,*facebook*,*twitter*,*slurp*,*DuckDuckGo*,*Yandex*,*Applebot*
 
 # Fallback SPA pour tous les autres (utilisateurs humains)
 /* /index.html 200
