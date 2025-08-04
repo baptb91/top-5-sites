@@ -9,8 +9,8 @@ const LegalNotice = () => {
       <Helmet>
         <title>Mentions Légales | RencontreCoquine.info</title>
         <meta name="description" content="Mentions légales et informations légales du site RencontreCoquine.info" />
-        <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://rencontrecoquine.info/mentions-legales" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href="https://www.rencontrecoquine.info/mentions-legales" />
       </Helmet>
       
       <div className="min-h-screen bg-white">

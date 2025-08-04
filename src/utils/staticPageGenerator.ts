@@ -55,16 +55,58 @@ export const getStaticPagesConfig = (): StaticPageConfig[] => {
           <section class="advantages">
             <h2>Pourquoi Utiliser Notre Classement ?</h2>
             <ul>
-              <li>Tests réels effectués par notre équipe</li>
-              <li>Analyses objectives basées sur des critères précis</li>
-              <li>Mises à jour régulières du classement</li>
-              <li>Conseils personnalisés selon vos besoins</li>
+              <li>Tests réels effectués par notre équipe d'experts</li>
+              <li>Analyses objectives basées sur 62 critères précis de sécurité, qualité et performance</li>
+              <li>Mises à jour régulières du classement selon les évolutions du marché</li>
+              <li>Conseils personnalisés selon vos besoins et préférences spécifiques</li>
+              <li>Comparatifs détaillés des fonctionnalités et tarifs</li>
+              <li>Évaluations de la sécurité et de la discrétion des plateformes</li>
             </ul>
           </section>
           
           <section class="guide">
-            <h2>Comment Choisir le Bon Site ?</h2>
-            <p>Le choix d'un site de rencontres coquines dépend de plusieurs facteurs : vos objectifs, votre budget, votre localisation et vos préférences. Notre guide vous aide à identifier la plateforme qui vous correspond le mieux.</p>
+            <h2>Comment Choisir le Bon Site de Rencontres Coquines ?</h2>
+            <p>Le choix d'un site de rencontres coquines dépend de plusieurs facteurs essentiels que nous analysons dans notre classement :</p>
+            
+            <h3>Critères de Sécurité</h3>
+            <p>La sécurité de vos données personnelles est primordiale. Nous évaluons les mesures de protection, le cryptage SSL, la vérification des profils et les politiques de confidentialité de chaque plateforme.</p>
+            
+            <h3>Qualité de la Communauté</h3>
+            <p>Une communauté active et respectueuse améliore considérablement vos chances de rencontres réussies. Nous analysons le ratio hommes/femmes, l'activité des membres et la qualité des profils.</p>
+            
+            <h3>Fonctionnalités et Ergonomie</h3>
+            <p>L'interface utilisateur, les outils de recherche, les options de communication et la compatibilité mobile sont des éléments déterminants pour une expérience optimale.</p>
+            
+            <h3>Tarification et Rapport Qualité/Prix</h3>
+            <p>Nous comparons les différentes formules d'abonnement, les fonctionnalités incluses et la transparence des tarifs pour vous aider à faire le meilleur choix économique.</p>
+          </section>
+          
+          <section class="methodology">
+            <h2>Notre Méthodologie d'Évaluation</h2>
+            <p>Chaque site de notre classement est testé selon une méthodologie rigoureuse développée par nos experts en rencontres en ligne :</p>
+            
+            <h3>Phase de Test Anonyme</h3>
+            <p>Nos testeurs créent des profils anonymes et utilisent réellement chaque plateforme pendant plusieurs semaines pour évaluer l'expérience utilisateur authentique.</p>
+            
+            <h3>Analyse Technique Approfondie</h3>
+            <p>Nous examinons la sécurité, la vitesse de chargement, la stabilité des serveurs et la protection des données personnelles de chaque site.</p>
+            
+            <h3>Évaluation de la Modération</h3>
+            <p>La qualité de la modération, la gestion des faux profils et la réactivité du service client sont des critères essentiels pour garantir votre sécurité.</p>
+          </section>
+          
+          <section class="tips">
+            <h2>Conseils pour Maximiser Vos Chances de Succès</h2>
+            <p>Au-delà du choix de la plateforme, voici nos conseils d'experts pour optimiser vos rencontres :</p>
+            
+            <h3>Optimisez Votre Profil</h3>
+            <p>Un profil attractif et authentique est la clé du succès. <a href="/blog">Découvrez nos conseils détaillés</a> pour créer un profil irrésistible qui attire les bonnes personnes.</p>
+            
+            <h3>Maîtrisez l'Art du Premier Message</h3>
+            <p>Le premier contact est déterminant. Apprenez les techniques qui fonctionnent réellement pour engager la conversation et créer une connexion immédiate.</p>
+            
+            <h3>Restez Vigilant et Sécurisé</h3>
+            <p>La discrétion et la sécurité sont primordiales dans les rencontres coquines. Suivez nos recommandations pour protéger votre vie privée tout en profitant pleinement de l'expérience.</p>
           </section>
         </main>
       `,
@@ -247,8 +289,16 @@ export const getStaticPagesConfig = (): StaticPageConfig[] => {
             ${post.imageUrl ? `<img src="${post.imageUrl}" alt="${post.title}" class="article-image" />` : ''}
             
             <div class="content">
-              ${post.content.substring(0, 500)}...
-              <p><em>Contenu complet disponible avec JavaScript activé.</em></p>
+              ${post.content.substring(0, 2000).replace(/#{1,6}\s/g, '').replace(/\*\*/g, '').replace(/\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}...
+              
+              <h2>Articles Connexes</h2>
+              <ul>
+                <li><a href="/blog">Tous nos conseils rencontres</a></li>
+                <li><a href="/">Meilleurs sites de rencontres coquines</a></li>
+                <li><a href="/mentions-legales">Informations légales</a></li>
+              </ul>
+              
+              <p><em>Contenu interactif complet disponible avec JavaScript activé.</em></p>
             </div>
             
             <footer>

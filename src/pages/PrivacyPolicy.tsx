@@ -9,8 +9,8 @@ const PrivacyPolicy = () => {
       <Helmet>
         <title>Politique de Confidentialité | RencontreCoquine.info</title>
         <meta name="description" content="Politique de confidentialité détaillée du site RencontreCoquine.info, protection de vos données personnelles" />
-        <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://rencontrecoquine.info/politique-confidentialite" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href="https://www.rencontrecoquine.info/politique-confidentialite" />
       </Helmet>
       
       <div className="min-h-screen bg-white">

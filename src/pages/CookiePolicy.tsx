@@ -9,8 +9,8 @@ const CookiePolicy = () => {
       <Helmet>
         <title>Politique de Cookies | RencontreCoquine.info</title>
         <meta name="description" content="Politique d'utilisation des cookies sur le site RencontreCoquine.info" />
-        <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://rencontrecoquine.info/politique-cookies" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href="https://www.rencontrecoquine.info/politique-cookies" />
       </Helmet>
       
       <div className="min-h-screen bg-white">

@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import InternalLinking from "@/components/InternalLinking";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { blogPosts } from "@/data/blogPosts";
@@ -61,7 +62,7 @@ const BlogPost = () => {
         <meta name="mature" content="yes" />
         <meta httpEquiv="content-language" content="fr" />
         
-        <link rel="canonical" href={`https://rencontrecoquine.info/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://www.rencontrecoquine.info/blog/${post.slug}`} />
         
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={metaDescription} />
@@ -172,6 +173,10 @@ const BlogPost = () => {
                   {post.content}
                 </Markdown>
               </div>
+            </div>
+            
+            <div className="max-w-4xl mx-auto mt-12">
+              <InternalLinking currentPage={`/blog/${post.slug}`} />
             </div>
           </div>
         </div>

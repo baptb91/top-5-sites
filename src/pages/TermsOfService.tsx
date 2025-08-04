@@ -9,8 +9,8 @@ const TermsOfService = () => {
       <Helmet>
         <title>Conditions Générales d'Utilisation | RencontreCoquine.info</title>
         <meta name="description" content="Conditions générales d'utilisation du site RencontreCoquine.info" />
-        <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://rencontrecoquine.info/conditions-utilisation" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href="https://www.rencontrecoquine.info/conditions-utilisation" />
       </Helmet>
       
       <div className="min-h-screen bg-white">

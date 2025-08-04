@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import InternalLinking from "@/components/InternalLinking";
 import { Helmet } from "react-helmet";
 import BlogList from "@/components/BlogList";
 import { blogPosts } from "@/data/blogPosts";
@@ -67,6 +68,10 @@ const Blog = () => {
           </header>
 
           <BlogList posts={blogPosts} />
+          
+          <div className="max-w-4xl mx-auto mt-16">
+            <InternalLinking currentPage="/blog" />
+          </div>
         </div>
       </motion.div>
     </>
