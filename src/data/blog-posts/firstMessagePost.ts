@@ -4,7 +4,7 @@ import { BlogPost } from "@/types/blog";
 export const firstMessagePost: BlogPost = {
   id: "7",
   title: "Comment Réussir un Premier Message Impactant sur un Site Coquin : Guide Pratique",
-  slug: "premier-message-impactant-site-coquin",
+  slug: "envoyer-premier-message-parfait-rencontre-coquine",
   excerpt: "Découvrez comment rédiger un premier message captivant sur un site de rencontres coquines pour maximiser vos chances de succès. Guide complet avec exemples concrets et astuces d'experts.",
   date: "2024-04-20",
   imageUrl: "/lovable-uploads/d159bfd8-28e8-4515-8a77-87f96f2f5178.png",

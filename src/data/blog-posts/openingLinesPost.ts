@@ -3,7 +3,7 @@ import { BlogPost } from "@/types/blog";
 export const openingLinesPost: BlogPost = {
   id: "6",
   title: "Les 10 Phrases d'Accroche qui Attirent le Plus de Réponses sur les Applications de Rencontre",
-  slug: "phrases-accroche-efficaces-applications-rencontre",
+  slug: "phrases-ouverture-originales-sites-rencontres",
   excerpt: "Découvrez les 10 meilleures phrases d'accroche pour maximiser vos chances d'obtenir des réponses sur les applications de rencontre. Guide expert avec exemples concrets et conseils pratiques.",
   date: "2024-04-05",
   imageUrl: "/lovable-uploads/db052966-c9c0-44f8-b8e5-c30cef94992a.png",
