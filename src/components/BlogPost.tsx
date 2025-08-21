@@ -56,10 +56,7 @@ const BlogPost = () => {
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={keywords} />
         <meta name="author" content={post.authorName || "RencontreCoquine.info"} />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="rating" content="adult" />
-        <meta name="adult" content="yes" />
-        <meta name="mature" content="yes" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <meta httpEquiv="content-language" content="fr" />
         
         <link rel="canonical" href={`https://www.rencontrecoquine.info/blog/${post.slug}`} />
