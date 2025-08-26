@@ -63,8 +63,8 @@ const BlogPost = () => {
         
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:image" content={`https://rencontrecoquine.info${post.imageUrl}`} />
-        <meta property="og:url" content={`https://rencontrecoquine.info/blog/${post.slug}`} />
+        <meta property="og:image" content={`https://www.rencontrecoquine.info${post.imageUrl}`} />
+        <meta property="og:url" content={`https://www.rencontrecoquine.info/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="RencontreCoquine.info" />
         
@@ -76,7 +76,7 @@ const BlogPost = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content={`https://rencontrecoquine.info${post.imageUrl}`} />
+        <meta name="twitter:image" content={`https://www.rencontrecoquine.info${post.imageUrl}`} />
         
         <script type="application/ld+json">
           {`
@@ -84,7 +84,7 @@ const BlogPost = () => {
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               "headline": "${post.title.replace(/"/g, '\\"')}",
-              "image": "https://rencontrecoquine.info${post.imageUrl}",
+              "image": "https://www.rencontrecoquine.info${post.imageUrl}",
               "datePublished": "${publishDate}",
               "dateModified": "${modifiedDate}",
               "author": {
@@ -96,13 +96,13 @@ const BlogPost = () => {
                 "name": "RencontreCoquine.info",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png"
+                  "url": "https://www.rencontrecoquine.info/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png"
                 }
               },
               "description": "${metaDescription.replace(/"/g, '\\"')}",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://rencontrecoquine.info/blog/${post.slug}"
+                "@id": "https://www.rencontrecoquine.info/blog/${post.slug}"
               },
               "isAccessibleForFree": "True",
               "inLanguage": "fr-FR",
