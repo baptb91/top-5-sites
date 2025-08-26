@@ -50,17 +50,8 @@ const seoPlugin = () => {
         } catch (error) {
           console.log('⚠️ Fallback static page generation...');
           
-          // Génération manuelle si l'import échoue
-          const blogPosts = [
-            { slug: "creer-connexion-instantanee-personne-en-ligne", title: "Comment créer une connexion instantanée avec une personne en ligne" },
-            { slug: "rediger-profil-irresistible-rencontre-coquine", title: "Comment rédiger un profil irrésistible pour une rencontre coquine" },
-            { slug: "erreurs-a-eviter-site-rencontre-coquine", title: "Les erreurs à éviter sur un site de rencontre coquine" },
-            { slug: "secrets-seduction-site-rencontre-coquine", title: "Les secrets de la séduction sur un site de rencontre coquine" },
-            { slug: "techniques-flirt-efficaces-rencontres-coquines", title: "Techniques de flirt efficaces pour les rencontres coquines" },
-            { slug: "attirer-plus-messages-application-rencontre", title: "Comment attirer plus de messages sur une application de rencontre" },
-            { slug: "phrases-ouverture-originales-sites-rencontres", title: "Phrases d'ouverture originales pour les sites de rencontres" },
-            { slug: "envoyer-premier-message-parfait-rencontre-coquine", title: "Comment envoyer le premier message parfait sur une rencontre coquine" }
-          ];
+          // Import des vrais slugs des articles de blog
+          const { blogPosts } = await import(path.resolve(__dirname, './src/data/blogPosts.ts'));
           
           // Créer les dossiers
           const blogDir = path.resolve(__dirname, './dist/blog');
@@ -69,7 +60,7 @@ const seoPlugin = () => {
           }
           
           // Générer chaque page d'article
-          blogPosts.forEach(post => {
+          blogPosts.forEach((post: any) => {
             const html = `<!DOCTYPE html>
 <html lang="fr">
 <head>

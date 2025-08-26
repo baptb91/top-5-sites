@@ -347,10 +347,7 @@ export const generateStaticHTML = (pageConfig: StaticPageConfig): string => {
   <meta name="description" content="${pageConfig.description}" />
   ${pageConfig.keywords ? `<meta name="keywords" content="${pageConfig.keywords}" />` : ''}
   <meta name="author" content="RencontreCoquine.info" />
-  <meta name="rating" content="adult" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="adult" content="yes" />
-  <meta name="mature" content="yes" />
   
   <link rel="icon" type="image/png" href="/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png" />
   <link rel="apple-touch-icon" href="/lovable-uploads/1b8df8e6-53e1-442d-9478-19e1f51a73c2.png" />
