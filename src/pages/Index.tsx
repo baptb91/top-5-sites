@@ -17,6 +17,7 @@ const Index = () => {
         <title>Top Sites Rencontres Coquines en 2025 | Classement + Avis</title>
         <meta name="description" content="Découvrez notre classement exclusif des meilleurs sites coquins en 2025. Avis détaillés, tests réels et comparatif des fonctionnalités pour trouver votre plateforme idéale." />
         <meta name="keywords" content="comparatif sites rencontres coquines 2025, avis sites libertins sécurisés, classement applications discrètes adultes, site rencontre adulte vérifié 18+, application coquine sans engagement, meilleur site libertin français modéré" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://www.rencontrecoquine.info" />
         
         <meta property="og:title" content="Top Sites Rencontres Coquines en 2025 | Classement + Avis" />

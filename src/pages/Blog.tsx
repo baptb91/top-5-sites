@@ -16,6 +16,7 @@ const Blog = () => {
         <title>Blog Rencontres Coquines 2024 | Conseils d'Experts pour Séduction et Rencontres Réussies</title>
         <meta name="description" content="Articles exclusifs et conseils d'experts pour optimiser vos expériences sur les sites de rencontres coquines. Techniques de séduction, astuces pour profils attractifs et guides de conversation." />
         <meta name="keywords" content="blog rencontres coquines, conseils rencontres coquines, astuces séduction, guide rencontres libertines, premier message, profil attractif" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://www.rencontrecoquine.info/blog" />
         <meta property="og:title" content="Blog Rencontres Coquines 2024 | Conseils d'Experts pour des Rencontres Réussies" />
         <meta property="og:description" content="Articles exclusifs et guides pratiques pour optimiser vos expériences de rencontres. Apprenez à créer un profil irrésistible, éviter les pièges courants et maîtriser l'art de la séduction en ligne." />
