@@ -1,4 +1,3 @@
-#!/usr/bin/env tsx
 import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { 
