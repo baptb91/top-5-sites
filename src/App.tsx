@@ -12,7 +12,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
 import { Toaster } from "@/components/ui/toaster";
-import { checkNoIndexTags } from "@/utils/debugNoindex";
 
 // Define a ScrollToTop component to handle scrolling to top on page change
 const ScrollToTop = () => {
@@ -48,11 +47,6 @@ const SeoHandler = () => {
     if (pathname.endsWith('.xml')) {
       document.title = pathname.includes('index') ? 'Sitemap Index' : 'Sitemap';
     }
-    
-    // Debug noindex après 2 secondes pour laisser le temps aux meta de se charger
-    setTimeout(() => {
-      checkNoIndexTags();
-    }, 2000);
     
   }, [pathname]);
 

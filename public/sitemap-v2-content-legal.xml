@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.rencontrecoquine.info/mentions-legales</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/mentions-legales" />
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/politique-confidentialite</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/politique-confidentialite" />
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/conditions-utilisation</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/conditions-utilisation" />
+  </url>
+  <url>
+    <loc>https://www.rencontrecoquine.info/politique-cookies</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rencontrecoquine.info/politique-cookies" />
+  </url>
+</urlset>

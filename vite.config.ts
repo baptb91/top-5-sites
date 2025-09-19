@@ -10,37 +10,65 @@ const seoPlugin = () => {
     name: 'vite-plugin-seo',
     closeBundle: async () => {
       try {
-        // 1. Generate sitemaps
-        const sitemapPath = path.resolve(__dirname, './src/utils/sitemapGenerator.ts');
+        console.log('🚀 SEO Plugin: Génération des sitemaps v2 et pages statiques...');
         
-        const { build } = await import('esbuild');
-        const { outputFiles } = await build({
-          entryPoints: [sitemapPath],
-          bundle: true,
-          write: false,
-          format: 'cjs',
-          platform: 'node',
-          target: 'node16',
+        // 1. Générer les nouveaux sitemaps v2 structurés
+        try {
+          const { generateV2Sitemaps } = await import('./scripts/generateV2Sitemaps');
+          await generateV2Sitemaps();
+          console.log('✅ Sitemaps v2 générés avec succès');
+        } catch (error) {
+          console.log('⚠️ Fallback vers génération classique des sitemaps...');
+          
+          // Générer les sitemaps classiques en fallback
+          const sitemapPath = path.resolve(__dirname, './src/utils/sitemapGenerator.ts');
+          
+          const { build } = await import('esbuild');
+          const { outputFiles } = await build({
+            entryPoints: [sitemapPath],
+            bundle: true,
+            write: false,
+            format: 'cjs',
+            platform: 'node',
+            target: 'node16',
+          });
+          
+          const tempSitemapFile = path.resolve(__dirname, './temp-sitemap-generator.cjs');
+          fs.writeFileSync(tempSitemapFile, outputFiles[0].text);
+          
+          const { generateSitemap, generateSitemapIndex } = require(tempSitemapFile);
+          
+          const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>\n';
+          const sitemap = xmlDeclaration + generateSitemap();
+          const sitemapIndex = xmlDeclaration + generateSitemapIndex();
+          
+          fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-content.xml'), sitemap);
+          fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
+          
+          fs.unlinkSync(tempSitemapFile);
+          console.log('✅ Sitemaps classiques générés');
+        }
+        
+        // 2. Copier tous les sitemaps v2 vers dist/
+        const v2Files = [
+          'sitemap-v2-index.xml',
+          'sitemap-v2-content-main.xml',
+          'sitemap-v2-content-blog.xml', 
+          'sitemap-v2-content-legal.xml'
+        ];
+        
+        v2Files.forEach(filename => {
+          try {
+            const publicPath = path.resolve(__dirname, `./public/${filename}`);
+            const distPath = path.resolve(__dirname, `./dist/${filename}`);
+            if (fs.existsSync(publicPath)) {
+              fs.copyFileSync(publicPath, distPath);
+              console.log(`✅ Copié: ${filename}`);
+            }
+          } catch (error) {
+            console.log(`⚠️ ${filename} non trouvé`);
+          }
         });
-        
-        const tempSitemapFile = path.resolve(__dirname, './temp-sitemap-generator.cjs');
-        fs.writeFileSync(tempSitemapFile, outputFiles[0].text);
-        
-        const { generateSitemap, generateSitemapIndex } = require(tempSitemapFile);
-        
-        const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>\n';
-        const sitemap = xmlDeclaration + generateSitemap();
-        const sitemapIndex = xmlDeclaration + generateSitemapIndex();
-        
-        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-content.xml'), sitemap);
-        fs.writeFileSync(path.resolve(__dirname, './dist/sitemap-index.xml'), sitemapIndex);
-        
-        // Copy v2 sitemaps to dist
-        fs.copyFileSync(path.resolve(__dirname, './public/sitemap-v2-index.xml'), path.resolve(__dirname, './dist/sitemap-v2-index.xml'));
-        fs.copyFileSync(path.resolve(__dirname, './public/sitemap-v2-content.xml'), path.resolve(__dirname, './dist/sitemap-v2-content.xml'));
-        
-        fs.unlinkSync(tempSitemapFile);
-        console.log('✅ Sitemap files generated successfully');
         
         // 2. Forcer la génération des pages statiques maintenant
         try {
