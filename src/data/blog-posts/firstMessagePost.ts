@@ -1,5 +1,5 @@
 
-import { BlogPost } from "@/types/blog";
+import { BlogPost } from "../../types/blog";
 
 export const firstMessagePost: BlogPost = {
   id: "7",

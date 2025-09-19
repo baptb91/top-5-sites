@@ -1,6 +1,6 @@
 
 // This file exports all blog posts for easier imports across the application
-import { BlogPost } from "@/types/blog";
+import { BlogPost } from "../types/blog";
 import { datingProfilePost } from "./blog-posts/datingProfilePost";
 import { avoidErrorsPost } from "./blog-posts/avoidErrorsPost";
 import { seductionSecretsPost } from "./blog-posts/seductionSecretsPost";
