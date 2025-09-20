@@ -28,11 +28,14 @@ const generateV2Sitemaps = async () => {
   ensureDirectory(distDir);
   
   try {
-    // Générer le contenu des sitemaps
+    // Générer le contenu des sitemaps avec les slugs corrects depuis blogPosts.ts
     const sitemapIndex = generateV2SitemapIndex();
     const mainSitemap = generateMainSitemap();
     const blogSitemap = generateBlogSitemap();
     const legalSitemap = generateLegalSitemap();
+    
+    console.log('🔍 Vérification des slugs utilisés dans le sitemap blog...');
+    console.log('📝 Nombre d\'articles dans blogPosts:', require('../src/data/blogPosts').blogPosts.length);
     
     // Fichiers à créer
     const files = [
@@ -76,7 +79,6 @@ const generateV2Sitemaps = async () => {
       }
     });
     
-    // Générer un rapport de génération
     const report = {
       timestamp: new Date().toISOString(),
       sitemapsGenerated: files.map(f => f.name),
@@ -85,7 +87,10 @@ const generateV2Sitemaps = async () => {
         blog: blogSitemap.split('<url>').length - 1,
         legal: 4 // 4 pages légales
       },
-      indexUrl: 'https://www.rencontrecoquine.info/sitemap-v2-index.xml'
+      indexUrl: 'https://www.rencontrecoquine.info/sitemap-v2-index.xml',
+      blogUrlsGenerated: blogSitemap.match(/<loc>https:\/\/www\.rencontrecoquine\.info\/blog\/([^<]+)<\/loc>/g)?.map(match => 
+        match.replace(/<loc>https:\/\/www\.rencontrecoquine\.info\/blog\//, '').replace(/<\/loc>/, '')
+      ) || []
     };
     
     const reportPath = join(publicDir, 'sitemap-v2-generation-report.json');

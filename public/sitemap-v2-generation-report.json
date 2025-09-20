@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-09-19T12:00:00.000Z",
+  "timestamp": "2025-09-20T12:00:00.000Z",
   "sitemapsGenerated": [
     "sitemap-v2-index.xml",
-    "sitemap-v2-content-main.xml", 
+    "sitemap-v2-content-main.xml",
     "sitemap-v2-content-blog.xml",
     "sitemap-v2-content-legal.xml"
   ],
@@ -12,16 +12,22 @@
     "legal": 4
   },
   "indexUrl": "https://www.rencontrecoquine.info/sitemap-v2-index.xml",
-  "structure": {
-    "description": "Sitemap XML structuré sans auto-référence",
-    "features": [
-      "Index principal séparé des contenus",
-      "Sitemaps thématiques (main, blog, legal)",
-      "Conformité protocole XML sitemap",
-      "Images et hreflang inclus",
-      "Validation anti-boucle"
-    ]
-  },
+  "blogUrlsGenerated": [
+    "creer-connexion-instantanee-personne-en-ligne",
+    "rediger-profil-irresistible-rencontre-authentique",
+    "erreurs-a-eviter-site-rencontre-authentique",
+    "secrets-attraction-naturelle-plateforme-connexions",
+    "techniques-flirt-efficaces-rencontres-authentiques",
+    "attirer-plus-messages-application-rencontre",
+    "phrases-ouverture-originales-sites-rencontres",
+    "envoyer-premier-message-parfait-plateforme-connexions"
+  ],
+  "status": "CORRIGÉ - URLs synchronisées avec le code source",
+  "corrections": [
+    "erreurs-a-eviter-plateforme-connexions → erreurs-a-eviter-site-rencontre-authentique",
+    "techniques-flirt-efficaces-plateformes-connexions → techniques-flirt-efficaces-rencontres-authentiques", 
+    "premier-message-impact-connexion-immediat → envoyer-premier-message-parfait-plateforme-connexions"
+  ],
   "submission": {
     "googleSearchConsole": "https://www.rencontrecoquine.info/sitemap-v2-index.xml",
     "status": "ready"
