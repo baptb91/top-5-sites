@@ -7,12 +7,8 @@ Allow: /politique-confidentialite
 Allow: /conditions-utilisation
 Allow: /politique-cookies
 
-# Sitemap principal optimisé et nettoyé
-Sitemap: https://www.rencontrecoquine.info/sitemap.xml
-Sitemap: https://www.rencontrecoquine.info/sitemap-clean.xml
-
-# Sitemaps techniques  
-Sitemap: https://www.rencontrecoquine.info/sitemap-v2-content.xml
+# Sitemap principal - Structure complète et optimisée
+Sitemap: https://www.rencontrecoquine.info/sitemap-v2-index.xml
 
 # Crawl delay pour préserver les performances
 Crawl-delay: 1
