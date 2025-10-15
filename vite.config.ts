@@ -70,47 +70,50 @@ const seoPlugin = () => {
           }
         });
         
-        // 2. Forcer la génération des pages statiques maintenant
+        // 2. Générer les pages statiques du blog avec le nouveau script optimisé
         try {
-          const { generateAllStaticPages } = await import(path.resolve(__dirname, './scripts/generateStaticPages.ts'));
-          await generateAllStaticPages();
-          console.log('✅ Static pages generated successfully');
-        } catch (error) {
-          console.log('⚠️ Fallback static page generation...');
+          // Exécuter le script de génération de pages HTML blog
+          const { execSync } = await import('child_process');
+          const scriptPath = path.resolve(__dirname, './scripts/generate-blog-html.js');
           
-          // Import des vrais slugs des articles de blog
-          const { blogPosts } = await import(path.resolve(__dirname, './src/data/blogPosts.ts'));
-          
-          // Créer les dossiers
-          const blogDir = path.resolve(__dirname, './dist/blog');
-          if (!fs.existsSync(blogDir)) {
-            fs.mkdirSync(blogDir, { recursive: true });
-          }
-          
-          // Générer chaque page d'article
-          blogPosts.forEach((post: any) => {
-            const html = `<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${post.title} | RencontreCoquine.info</title>
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://www.rencontrecoquine.info/blog/${post.slug}" />
-</head>
-<body>
-  <main>
-    <h1>${post.title}</h1>
-    <p>Contenu optimisé pour les moteurs de recherche. Version interactive disponible avec JavaScript.</p>
-  </main>
-</body>
-</html>`;
-            
-            fs.writeFileSync(path.join(blogDir, `${post.slug}.html`), html, 'utf8');
-            console.log(`✅ Generated: /blog/${post.slug}.html`);
+          execSync(`node "${scriptPath}"`, { 
+            stdio: 'inherit',
+            cwd: __dirname 
           });
           
-          console.log('✅ Fallback static pages generated successfully');
+          // Copier les fichiers générés dans public/blog vers dist/blog
+          const publicBlogDir = path.resolve(__dirname, './public/blog');
+          const distBlogDir = path.resolve(__dirname, './dist/blog');
+          
+          if (fs.existsSync(publicBlogDir)) {
+            // Créer le dossier de destination s'il n'existe pas
+            if (!fs.existsSync(distBlogDir)) {
+              fs.mkdirSync(distBlogDir, { recursive: true });
+            }
+            
+            // Copier tous les fichiers HTML
+            const blogFiles = fs.readdirSync(publicBlogDir).filter(f => f.endsWith('.html'));
+            blogFiles.forEach(file => {
+              fs.copyFileSync(
+                path.join(publicBlogDir, file),
+                path.join(distBlogDir, file)
+              );
+            });
+            console.log(`✅ ${blogFiles.length} pages blog copiées vers dist/blog/`);
+          }
+          
+          console.log('✅ Static blog pages generated successfully');
+        } catch (error) {
+          console.error('❌ Erreur génération pages blog:', error);
+          
+          // Fallback simple en cas d'erreur
+          try {
+            const { generateAllStaticPages } = await import(path.resolve(__dirname, './scripts/generateStaticPages.ts'));
+            await generateAllStaticPages();
+            console.log('✅ Fallback: pages statiques générées');
+          } catch (fallbackError) {
+            console.error('❌ Échec du fallback:', fallbackError);
+          }
         }
         
       } catch (error) {
