@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import InternalLinking from "@/components/InternalLinking";
+
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { blogPosts } from "@/data/blogPosts";
@@ -170,10 +170,6 @@ const BlogPost = () => {
                   {post.content}
                 </Markdown>
               </div>
-            </div>
-            
-            <div className="max-w-4xl mx-auto mt-12">
-              <InternalLinking currentPage={`/blog/${post.slug}`} />
             </div>
           </div>
         </div>

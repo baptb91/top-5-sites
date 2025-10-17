@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import SiteList from "@/components/SiteList";
 import MeetingMethodsSection from "@/components/MeetingMethodsSection";
 import SeoContent from "@/components/SeoContent";
-import InternalLinking from "@/components/InternalLinking";
+
 
 const Index = () => {
   const currentDate = new Date().toISOString().split('T')[0];
@@ -206,7 +206,6 @@ const Index = () => {
             
             <MeetingMethodsSection />
             <SeoContent />
-            <InternalLinking currentPage="/" />
           </div>
 
           <footer className="mt-20 border-t border-gray-200 pt-8 pb-4">
