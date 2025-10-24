@@ -4,50 +4,7 @@
   publish = "dist"
   command = "npm run build"
 
-# Redirections simplifiées et optimisées pour les robots
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*Google*", "*Bing*"]}
-
-[[redirects]]
-  from = "/blog"
-  to = "/blog/index.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*Google*", "*Bing*"]}
-
-[[redirects]]
-  from = "/blog/:slug"
-  to = "/blog/:slug.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*Google*", "*Bing*"]}
-
-[[redirects]]
-  from = "/mentions-legales"
-  to = "/mentions-legales.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*Google*", "*Bing*"]}
-
-[[redirects]]
-  from = "/politique-confidentialite"
-  to = "/politique-confidentialite.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*Google*", "*Bing*"]}
-
-[[redirects]]
-  from = "/conditions-utilisation"
-  to = "/conditions-utilisation.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*Google*", "*Bing*"]}
-
-[[redirects]]
-  from = "/politique-cookies"
-  to = "/politique-cookies.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawl*", "*spider*", "*Google*", "*Bing*"]}
-
-# Redirections pour forcer l'indexation (nouveaux sitemaps)
+# Redirections sitemaps
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap-v2-index.xml"
@@ -58,7 +15,51 @@
   to = "/sitemap-v2-index.xml"
   status = 301
 
-# Fallback SPA pour les utilisateurs humains
+# IMPORTANT: Les robots reçoivent les HTML statiques via les règles ci-dessous
+# Googlebot et autres crawlers
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/index.html"
+  status = 200
+  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/:splat.html"
+  status = 200
+  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
+
+[[redirects]]
+  from = "/mentions-legales"
+  to = "/mentions-legales.html"
+  status = 200
+  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
+
+[[redirects]]
+  from = "/politique-confidentialite"
+  to = "/politique-confidentialite.html"
+  status = 200
+  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
+
+[[redirects]]
+  from = "/conditions-utilisation"
+  to = "/conditions-utilisation.html"
+  status = 200
+  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
+
+[[redirects]]
+  from = "/politique-cookies"
+  to = "/politique-cookies.html"
+  status = 200
+  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
+
+# Fallback SPA React pour tous les utilisateurs normaux (DOIT être en dernier)
 [[redirects]]
   from = "/*"
   to = "/index.html"
