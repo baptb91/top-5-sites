@@ -16,50 +16,38 @@
   status = 301
 
 # IMPORTANT: Les robots reçoivent les HTML statiques via les règles ci-dessous
-# Googlebot et autres crawlers
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
-  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
-
-[[redirects]]
-  from = "/blog"
-  to = "/blog/index.html"
-  status = 200
-  conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
-
+# Googlebot et autres crawlers - redirection vers le dossier static-seo
 [[redirects]]
   from = "/blog/*"
-  to = "/blog/:splat.html"
+  to = "/static-seo/blog/:splat.html"
   status = 200
   conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
 
 [[redirects]]
   from = "/mentions-legales"
-  to = "/mentions-legales.html"
+  to = "/static-seo/mentions-legales.html"
   status = 200
   conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
 
 [[redirects]]
   from = "/politique-confidentialite"
-  to = "/politique-confidentialite.html"
+  to = "/static-seo/politique-confidentialite.html"
   status = 200
   conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
 
 [[redirects]]
   from = "/conditions-utilisation"
-  to = "/conditions-utilisation.html"
+  to = "/static-seo/conditions-utilisation.html"
   status = 200
   conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
 
 [[redirects]]
   from = "/politique-cookies"
-  to = "/politique-cookies.html"
+  to = "/static-seo/politique-cookies.html"
   status = 200
   conditions = {User-Agent = ["Googlebot", "Googlebot-Image", "Googlebot-News", "Googlebot-Video", "AdsBot-Google", "Bingbot", "Slurp", "DuckDuckBot", "Baiduspider", "YandexBot", "Sogou", "Exabot", "facebot", "facebookexternalhit", "ia_archiver"]}
 
-# Fallback SPA React pour tous les utilisateurs normaux (DOIT être en dernier)
+# Fallback SPA React pour TOUS les utilisateurs normaux (DOIT être en dernier)
 [[redirects]]
   from = "/*"
   to = "/index.html"
