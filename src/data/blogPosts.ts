@@ -9,10 +9,12 @@ import { attractMoreMessagesPost } from "./blog-posts/attractMoreMessagesPost";
 import { openingLinesPost } from "./blog-posts/openingLinesPost";
 import { firstMessagePost } from "./blog-posts/firstMessagePost";
 import { instantConnectionPost } from "./blog-posts/instantConnectionPost";
+import { interestedSignsPost } from "./blog-posts/interestedSignsPost";
 
 
 export const blogPosts: BlogPost[] = [
-  instantConnectionPost, // Ajout du nouvel article en tête de liste
+  interestedSignsPost,
+  instantConnectionPost,
   datingProfilePost,
   avoidErrorsPost, 
   seductionSecretsPost,
