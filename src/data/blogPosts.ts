@@ -10,9 +10,11 @@ import { openingLinesPost } from "./blog-posts/openingLinesPost";
 import { firstMessagePost } from "./blog-posts/firstMessagePost";
 import { instantConnectionPost } from "./blog-posts/instantConnectionPost";
 import { interestedSignsPost } from "./blog-posts/interestedSignsPost";
+import { aiDatingPost } from "./blog-posts/aiDatingPost";
 
 
 export const blogPosts: BlogPost[] = [
+  aiDatingPost,
   interestedSignsPost,
   instantConnectionPost,
   datingProfilePost,
