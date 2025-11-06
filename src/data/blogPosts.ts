@@ -11,11 +11,9 @@ import { firstMessagePost } from "./blog-posts/firstMessagePost";
 import { instantConnectionPost } from "./blog-posts/instantConnectionPost";
 import { interestedSignsPost } from "./blog-posts/interestedSignsPost";
 import { aiDatingPost } from "./blog-posts/aiDatingPost";
-import { comparativeSitesPost } from "./blog-posts/comparativeSitesPost";
 
 
 export const blogPosts: BlogPost[] = [
-  comparativeSitesPost,
   aiDatingPost,
   interestedSignsPost,
   instantConnectionPost,
