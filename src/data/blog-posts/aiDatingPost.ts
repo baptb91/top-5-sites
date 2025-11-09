@@ -7,7 +7,7 @@ export const aiDatingPost: BlogPost = {
   excerpt: "Découvrez comment l'intelligence artificielle révolutionne les rencontres en ligne en 2025. Algorithmes de matching, détection de faux profils, compatibilité émotionnelle : guide complet.",
   date: "2025-11-03",
   modifiedDate: "2025-11-03",
-  imageUrl: "/lovable-uploads/5464b755-8f01-429c-83fd-eb700f419b4c.png",
+  imageUrl: "/lovable-uploads/ia-rencontres-2025-hero.png",
   readTime: "10 min",
   keywords: [
     "intelligence artificielle rencontres en ligne",
