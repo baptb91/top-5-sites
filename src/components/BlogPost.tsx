@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getBlogPostBySlug } from "@/lib/sanityQueries";
 import { SanityBlogPost } from "@/types/sanity";
 import { PortableText } from "@portabletext/react";
+import "../styles/blog.css";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -78,33 +79,51 @@ const BlogPost = () => {
       ),
       // Custom style for "Conseil" boxes
       conseil: ({ children }: any) => (
-        <div className="bg-primary/10 border-l-4 border-primary rounded-r-lg p-4 my-6">
-          <div className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
-              <svg className="w-4 h-4 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <p className="font-semibold text-primary mb-1">💡 Conseil</p>
-              <div className="text-foreground/90">{children}</div>
-            </div>
+        <div className="conseil-box">
+          <div className="icon">💡</div>
+          <div className="content">
+            <p className="title">Conseil</p>
+            <div className="text">{children}</div>
           </div>
         </div>
       ),
       // Custom style for "Exemple" boxes
       exemple: ({ children }: any) => (
-        <div className="bg-secondary/30 border-l-4 border-secondary rounded-r-lg p-4 my-6">
-          <div className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary flex items-center justify-center">
-              <svg className="w-4 h-4 text-secondary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <p className="font-semibold text-secondary-foreground mb-1">📝 Exemple</p>
-              <div className="text-foreground/90">{children}</div>
-            </div>
+        <div className="exemple-box">
+          <div className="icon">📝</div>
+          <div className="content">
+            <p className="title">Exemple</p>
+            <div className="text">{children}</div>
+          </div>
+        </div>
+      ),
+      // Custom style for "Attention" boxes
+      attention: ({ children }: any) => (
+        <div className="attention-box">
+          <div className="icon">⚠️</div>
+          <div className="content">
+            <p className="title">Attention</p>
+            <div className="text">{children}</div>
+          </div>
+        </div>
+      ),
+      // Custom style for "Rappel Important" boxes
+      rappel: ({ children }: any) => (
+        <div className="rappel-box">
+          <div className="icon">💡</div>
+          <div className="content">
+            <p className="title">Rappel Important</p>
+            <div className="text">{children}</div>
+          </div>
+        </div>
+      ),
+      // Custom style for "Astuce" boxes
+      astuce: ({ children }: any) => (
+        <div className="astuce-box">
+          <div className="icon">💡</div>
+          <div className="content">
+            <p className="title">Astuce</p>
+            <div className="text">{children}</div>
           </div>
         </div>
       ),

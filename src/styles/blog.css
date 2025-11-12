@@ -1,0 +1,210 @@
+/* Styles pour les encadrés de blog */
+
+.conseil-box {
+  background-color: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.conseil-box .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+
+.conseil-box .content {
+  flex: 1;
+}
+
+.conseil-box .title {
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.conseil-box .text {
+  color: #451a03;
+  line-height: 1.6;
+}
+
+/* Encadré Exemple */
+.exemple-box {
+  background-color: #f0fdf4;
+  border-left: 4px solid #10b981;
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.exemple-box .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+
+.exemple-box .content {
+  flex: 1;
+}
+
+.exemple-box .title {
+  font-weight: 600;
+  color: #065f46;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.exemple-box .text {
+  color: #064e3b;
+  line-height: 1.6;
+}
+
+/* Encadré Attention */
+.attention-box {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.attention-box .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+
+.attention-box .content {
+  flex: 1;
+}
+
+.attention-box .title {
+  font-weight: 600;
+  color: #991b1b;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.attention-box .text {
+  color: #7f1d1d;
+  line-height: 1.6;
+}
+
+/* Style pour les rappels importants (bordure rose/rouge) */
+.rappel-box {
+  background-color: #fef2f2;
+  border-left: 4px solid #f472b6;
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rappel-box .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f472b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+
+.rappel-box .content {
+  flex: 1;
+}
+
+.rappel-box .title {
+  font-weight: 600;
+  color: #9f1239;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.rappel-box .text {
+  color: #881337;
+  line-height: 1.6;
+}
+
+/* Style pour les astuces */
+.astuce-box {
+  background-color: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.astuce-box .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+
+.astuce-box .content {
+  flex: 1;
+}
+
+.astuce-box .title {
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.astuce-box .text {
+  color: #1e3a8a;
+  line-height: 1.6;
+}
