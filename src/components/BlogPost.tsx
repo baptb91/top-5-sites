@@ -5,11 +5,22 @@ import { useEffect, useState } from "react";
 import { getBlogPostBySlug } from "@/lib/sanityQueries";
 import { SanityBlogPost } from "@/types/sanity";
 import { PortableText } from "@portabletext/react";
+import { blogPosts } from "@/data/blogPosts";
+import { BlogPost as LocalBlogPost } from "@/types/blog";
+import ReactMarkdown from "react-markdown";
 import "../styles/blog.css";
 
-const BlogPost = () => {
+type PostData = {
+  type: 'sanity';
+  data: SanityBlogPost;
+} | {
+  type: 'local';
+  data: LocalBlogPost;
+};
+
+const BlogPostComponent = () => {
   const { slug } = useParams();
-  const [post, setPost] = useState<SanityBlogPost | null>(null);
+  const [post, setPost] = useState<PostData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,12 +28,24 @@ const BlogPost = () => {
       if (!slug) return;
       
       setLoading(true);
-      const fetchedPost = await getBlogPostBySlug(slug);
-      setPost(fetchedPost);
-      setLoading(false);
       
-      console.log(`BlogPost accessed with slug: ${slug}`);
-      console.log(`Post found:`, fetchedPost ? "Yes" : "No");
+      // Try Sanity first
+      const sanityPost = await getBlogPostBySlug(slug);
+      if (sanityPost) {
+        setPost({ type: 'sanity', data: sanityPost });
+        setLoading(false);
+        return;
+      }
+      
+      // Fallback to local posts
+      const localPost = blogPosts.find(p => p.slug === slug);
+      if (localPost) {
+        setPost({ type: 'local', data: localPost });
+      } else {
+        setPost(null);
+      }
+      
+      setLoading(false);
     };
 
     fetchPost();
@@ -42,11 +65,23 @@ const BlogPost = () => {
     );
   }
 
-  const metaDescription = post.excerpt?.length > 155 ? post.excerpt.substring(0, 155) + '...' : post.excerpt;
-  const keywords = post.keywords?.join(', ') || `rencontres en ligne, ${post.title.toLowerCase()}`;
-  const publishDate = new Date(post.date).toISOString();
-  const modifiedDate = post.modifiedDate ? new Date(post.modifiedDate).toISOString() : new Date().toISOString();
-  const canonicalUrl = `https://rencontrecoquine.info/blog/${post.slug.current}`;
+  // Extract common data based on post type
+  const title = post.type === 'sanity' ? post.data.title : post.data.title;
+  const excerpt = post.type === 'sanity' ? post.data.excerpt : post.data.excerpt;
+  const imageUrl = post.type === 'sanity' ? post.data.imageUrl : post.data.imageUrl;
+  const date = post.type === 'sanity' ? post.data.date : post.data.date;
+  const readTime = post.type === 'sanity' ? post.data.readTime : post.data.readTime;
+  const authorName = post.type === 'sanity' ? post.data.authorName : undefined;
+  const keywords = post.type === 'sanity' ? post.data.keywords : undefined;
+  const postSlug = post.type === 'sanity' ? post.data.slug.current : post.data.slug;
+
+  const metaDescription = excerpt?.length > 155 ? excerpt.substring(0, 155) + '...' : excerpt;
+  const keywordsStr = keywords?.join(', ') || `rencontres en ligne, ${title.toLowerCase()}`;
+  const publishDate = new Date(date).toISOString();
+  const modifiedDate = post.type === 'sanity' && post.data.modifiedDate 
+    ? new Date(post.data.modifiedDate).toISOString() 
+    : new Date().toISOString();
+  const canonicalUrl = `https://rencontrecoquine.info/blog/${postSlug}`;
   
   // Custom components for Portable Text with styled boxes
   const portableTextComponents = {
@@ -77,7 +112,6 @@ const BlogPost = () => {
           {children}
         </a>
       ),
-      // Custom style for "Conseil" boxes
       conseil: ({ children }: any) => (
         <div className="conseil-box">
           <div className="icon">💡</div>
@@ -87,7 +121,6 @@ const BlogPost = () => {
           </div>
         </div>
       ),
-      // Custom style for "Exemple" boxes
       exemple: ({ children }: any) => (
         <div className="exemple-box">
           <div className="icon">📝</div>
@@ -97,7 +130,6 @@ const BlogPost = () => {
           </div>
         </div>
       ),
-      // Custom style for "Attention" boxes
       attention: ({ children }: any) => (
         <div className="attention-box">
           <div className="icon">⚠️</div>
@@ -107,7 +139,6 @@ const BlogPost = () => {
           </div>
         </div>
       ),
-      // Custom style for "Rappel Important" boxes
       rappel: ({ children }: any) => (
         <div className="rappel-box">
           <div className="icon">💡</div>
@@ -117,7 +148,6 @@ const BlogPost = () => {
           </div>
         </div>
       ),
-      // Custom style for "Astuce" boxes
       astuce: ({ children }: any) => (
         <div className="astuce-box">
           <div className="icon">💡</div>
@@ -133,18 +163,18 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
-        <title>{post.title} | RencontreCoquine.info</title>
+        <title>{title} | RencontreCoquine.info</title>
         <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={keywords} />
-        <meta name="author" content={post.authorName || "RencontreCoquine.info"} />
+        <meta name="keywords" content={keywordsStr} />
+        <meta name="author" content={authorName || "RencontreCoquine.info"} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <meta httpEquiv="content-language" content="fr" />
         
         <link rel="canonical" href={canonicalUrl} />
         
-        <meta property="og:title" content={post.title} />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:image" content={post.imageUrl || `https://rencontrecoquine.info/logo.png`} />
+        <meta property="og:image" content={imageUrl || `https://rencontrecoquine.info/logo.png`} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="RencontreCoquine.info" />
@@ -152,24 +182,24 @@ const BlogPost = () => {
         <meta property="article:published_time" content={publishDate} />
         <meta property="article:modified_time" content={modifiedDate} />
         <meta property="article:section" content="Rencontres Coquines" />
-        <meta property="article:tag" content={post.slug.current.replace(/-/g, ', ')} />
+        <meta property="article:tag" content={postSlug.replace(/-/g, ', ')} />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content={post.imageUrl || `https://rencontrecoquine.info/logo.png`} />
+        <meta name="twitter:image" content={imageUrl || `https://rencontrecoquine.info/logo.png`} />
         
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            "headline": post.title,
-            "image": post.imageUrl || "https://rencontrecoquine.info/logo.png",
+            "headline": title,
+            "image": imageUrl || "https://rencontrecoquine.info/logo.png",
             "datePublished": publishDate,
             "dateModified": modifiedDate,
             "author": {
               "@type": "Organization",
-              "name": post.authorName || "RencontreCoquine.info"
+              "name": authorName || "RencontreCoquine.info"
             },
             "publisher": {
               "@type": "Organization",
@@ -186,7 +216,7 @@ const BlogPost = () => {
             },
             "isAccessibleForFree": "True",
             "inLanguage": "fr-FR",
-            "keywords": keywords
+            "keywords": keywordsStr
           })}
         </script>
       </Helmet>
@@ -212,13 +242,13 @@ const BlogPost = () => {
             </div>
             
             <h1 className="text-4xl font-bold text-foreground mb-6">
-              {post.title}
+              {title}
             </h1>
 
-            {post.imageUrl && (
+            {imageUrl && (
               <img 
-                src={post.imageUrl} 
-                alt={post.title}
+                src={imageUrl} 
+                alt={title}
                 className="w-full h-auto rounded-lg mb-8 shadow-lg"
               />
             )}
@@ -228,24 +258,51 @@ const BlogPost = () => {
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                {post.readTime || "5 min de lecture"}
+                {readTime || "5 min de lecture"}
               </div>
-              {post.authorName && (
+              {authorName && (
                 <div className="flex items-center">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                  {post.authorName}
+                  {authorName}
                 </div>
               )}
             </div>
 
             <div className="prose prose-lg max-w-none">
               <div className="bg-card rounded-lg shadow-sm p-8 border border-border">
-                <PortableText 
-                  value={post.content}
-                  components={portableTextComponents}
-                />
+                {post.type === 'sanity' ? (
+                  <PortableText 
+                    value={post.data.content}
+                    components={portableTextComponents}
+                  />
+                ) : (
+                  <ReactMarkdown
+                    components={{
+                      h1: ({ children }) => <h1 className="text-3xl font-bold mb-6 text-foreground">{children}</h1>,
+                      h2: ({ children }) => <h2 className="text-2xl font-bold mb-4 mt-8 text-foreground">{children}</h2>,
+                      h3: ({ children }) => <h3 className="text-xl font-bold mb-3 mt-6 text-foreground">{children}</h3>,
+                      p: ({ children }) => <p className="text-foreground/90 leading-relaxed mb-4">{children}</p>,
+                      ul: ({ children }) => <ul className="list-disc pl-6 mb-4 text-foreground/90">{children}</ul>,
+                      ol: ({ children }) => <ol className="list-decimal pl-6 mb-4 text-foreground/90">{children}</ol>,
+                      li: ({ children }) => <li className="mb-2">{children}</li>,
+                      blockquote: ({ children }) => (
+                        <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-foreground/80">
+                          {children}
+                        </blockquote>
+                      ),
+                      a: ({ href, children }) => (
+                        <Link to={href || '#'} className="text-primary hover:underline">
+                          {children}
+                        </Link>
+                      ),
+                      strong: ({ children }) => <strong className="font-bold text-foreground">{children}</strong>,
+                    }}
+                  >
+                    {post.data.content}
+                  </ReactMarkdown>
+                )}
               </div>
             </div>
           </div>
@@ -255,4 +312,4 @@ const BlogPost = () => {
   );
 };
 
-export default BlogPost;
+export default BlogPostComponent;
